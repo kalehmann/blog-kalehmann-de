@@ -31,7 +31,9 @@ noch mit verminderter Geschwindigkeit weitersurfen.
 
 Da die Stromaufnahme von WLan-Stick und 3G-Modem zusammen bereits 300 mA
 beträgt, empfiehlt sich die Verwendung eines aktiven USB-Hubs.
+
 ![USB-3g-Modem mit angeschlossenem Amperemeter]( {{ "assets/raspberry-pi-3g-hotspot/Stromaufnahme_3g_modem.jpg" | absolute_url }})
+
 ![USB-Wlan-Stick mit angeschlossenem Amperemeter]( {{ "assets/raspberry-pi-3g-hotspot/Stromaufnahme_wlan_stick.jpg" | absolute_url }})
 
 Nachdem man das 3g-Modem an den Raspberry Pi angeschlossen hat, muss als erstes
@@ -102,7 +104,8 @@ Das tolle an den HiLink-Modems ist, dass sie sich wie bereits erwähnt als
 USB-Ethernet Adapter anmelden können und die Konfiguration über ein Webinterface
 erfolgt. Bei dem Huawei E3131 ist dieses unter der Adresse 192.168.8.1 zu
 erreichen.
-![Webinterface Huawei E3131]( {{ "assets/raspberry-pi-3g-hotspo/huawei_e3131_webinterface.jpg" | absolute_url }})
+
+![Webinterface Huawei E3131]( {{ "assets/raspberry-pi-3g-hotspot/huawei_e3131_webinterface.jpg" | absolute_url }})
 
 Die Einwahl in das Internet erfolgt automatisch, zur Not können im Webinterface
 aber auch Änderungen vorgenommen werden.
