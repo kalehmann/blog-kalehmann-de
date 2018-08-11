@@ -12,12 +12,12 @@ Studiums ein Praktikum in einem Chemieunternehmen.
 Ein Prozess dieses Unternehmens umfasst die thermische Vorbehandlung von
 Reststoffen aus der Salzsäurehydrolyse unter pyrolytischen Bedingungen.
 
-Das Ziel des Praktikums ist es, diesen Prozess zu optimieren, indem die optimale
-Temperatur zur Verdampfung gefunden wird.
+Das Ziel des Praktikums ist es, diesen Prozess zu optimieren, indem in
+Versuchsreihen die optimale Temperatur zur Verdampfung gefunden wird.
 
-Dazu werden Versuchsreihen mit verschiedenen Temperaturen durchgeführt.
-In den Versuchen wird das Hydrolysat in einem Muffelofen mit einem Usamar RK44
-Temperaturregler über verschiedene Zeiträume Temperaturen erhitzt.
+In den Versuchen werden die Rückstoffe der Hydrolyse in einem Muffelofen
+mit einem Usamar RK44 Temperaturregler über unterschiedlich lange Zeiträume
+auf verschiedene Temperaturen erhitzt.
 
 ![Beheizter Muffelofen mit offener Tür]({{ "assets/usamar-rk44-temperaturerfassung/muffelofen.jpg" | absolute_url }})
 
