@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Automatische Temperaturerfassung mit einem Usamar RK44 Temperaturregler"
+title:  "Automatische Temperaturerfassung mit einem Ursamar RK44 Temperaturregler"
 date:   2018-07-30 13:12:29 +0200
 categories: blog
 ---
@@ -16,10 +16,10 @@ Das Ziel des Praktikums ist es, diesen Prozess zu optimieren, indem in
 Versuchsreihen die optimale Temperatur zur Verdampfung gefunden wird.
 
 In den Versuchen werden die Rückstoffe der Hydrolyse in einem Muffelofen
-mit einem Usamar RK44 Temperaturregler über unterschiedlich lange Zeiträume
+mit einem Ursamar RK44 Temperaturregler über unterschiedlich lange Zeiträume
 auf verschiedene Temperaturen erhitzt.
 
-![Beheizter Muffelofen mit offener Tür]({{ "assets/usamar-rk44-temperaturerfassung/muffelofen.jpg" | absolute_url }})
+![Beheizter Muffelofen mit offener Tür]({{ "assets/ursamar-rk44-temperaturerfassung/muffelofen.jpg" | absolute_url }})
 
 Diese Versuche erstrecken sich jeweils über mehrere Stunden. Schnell zeigte
 sich, dass manuelle Messungen zu monoton sind und am besten wegautomatisiert
@@ -28,15 +28,15 @@ werden.
 Dafür habe ich eine Lösung auf Raspberry Pi Basis entwickelt, um die Temperatur
 an dem Temperaturregler aufzunehmen und auszuwerten.
 
-## Auslesen der Temperatur an dem Usamar RK44 Temperaturregler
+## Auslesen der Temperatur an dem Ursamar RK44 Temperaturregler
 
 Der Temperaturregler gibt die aktuelle Temperatur auf einer LED-Anzeige aus.
 Diese Schnittstelle ist jedoch ungeeignet zum automatischen Erfassen der
 Temperatur.
-![Usamar RK44 Frontalansicht]({{ "assets/usamar-rk44-temperaturerfassung/usamar-rk44.jpg" | absolute_url }})
+![Ursamar RK44 Frontalansicht]({{ "assets/ursamar-rk44-temperaturerfassung/ursamar-rk44.jpg" | absolute_url }})
 Ein Blick auf den Schaltplan verrät, dass zwischen den Klemmen 10 und 12 eine
 Spannung proportional zur gemessenen Temperatur anliegt.
-![Usamar RK44 Schaltplan]({{ "assets/usamar-rk44-temperaturerfassung/usamar-rk44-schaltplan.jpg" | absolute_url }})
+![Ursamar RK44 Schaltplan]({{ "assets/ursamar-rk44-temperaturerfassung/ursamar-rk44-schaltplan.jpg" | absolute_url }})
 
 Diese Spannung - Ux - lässt sich mit einem Raspberry Pi und einem Analog
 Digital Converter (ADC) auslesen und als Grundlage für die Berechnung der
@@ -47,7 +47,7 @@ Temperatur nehmen.
 
 Zum Messen der Spannung wird der 16-bit ADC ads1115 verwendet. Dieser wird
 direkt an den Raspberry Pi angeschlossen. Damit liegt seine maximale
-Eingangsspannung bei 3.3 V. Allerdings variiert die an dem Usamar RK44 zu
+Eingangsspannung bei 3.3 V. Allerdings variiert die an dem Ursamar RK44 zu
 messende Spannung Ux zwischen 0 und 10 V.
 
 Diese Differenz lässt sich mit einem einfachen Spannungsteiler umgehen. Dafür
@@ -55,18 +55,18 @@ werden 2 ohmsche Widerstände mit 3.3 KOhm und 10 KOhm verwenden.
 
 Das Teilungsverhältnis t für diesen Spannungsteiler errechnet sich
 folgendermaßen:
-![t = R2 / (R1 + R2) = 3.3 KOhm / (10 KOhm + 3.3 KOhm) = 0.25]({{ "assets/usamar-rk44-temperaturerfassung/spannungsteiler_verhaeltnis.svg" | absolute_url }})
+![t = R2 / (R1 + R2) = 3.3 KOhm / (10 KOhm + 3.3 KOhm) = 0.25]({{ "assets/ursamar-rk44-temperaturerfassung/spannungsteiler_verhaeltnis.svg" | absolute_url }})
 
 Zur optimalen Erfassung von Werten wird der Messbereich des ADC auf -4,096 V bis
 +4,096 V eingestellt.
 
 Somit lässt sich die Messauflösung R des ADC wie folgt ermitteln:
-![R = (Umax - Umin) / 2^16 = (4.096 V - (-4.096V)) / 2^16 ≈ 120 µV]({{ "assets/usamar-rk44-temperaturerfassung/adc_schrittweite.svg" | absolute_url }})
+![R = (Umax - Umin) / 2^16 = (4.096 V - (-4.096V)) / 2^16 ≈ 120 µV]({{ "assets/ursamar-rk44-temperaturerfassung/adc_schrittweite.svg" | absolute_url }})
 
 Daraus ergibt sich folgende Formel zu Berechnung der Spannung am
 Temperaturregler aus dem Messwert des ADCs:
 
-![Ux = Messwert * 1/t * R ≈ Messwert/2000]({{ "assets/usamar-rk44-temperaturerfassung/ux_formel.svg" | absolute_url }})
+![Ux = Messwert * 1/t * R ≈ Messwert/2000]({{ "assets/ursamar-rk44-temperaturerfassung/ux_formel.svg" | absolute_url }})
 
 Nun lässt sich mit folgendem Code die Spannung an dem Temperaturregler lesen.
 
@@ -120,7 +120,7 @@ Derartige Displays sind bereits unter für weniger als 5€ zu haben.
 
 ### Die Schaltung
 
-![Der Schaltplan des Messprojektes]({{ "assets/usamar-rk44-temperaturerfassung/messprojekt_steckplatine.png" | absolute_url }})
+![Der Schaltplan des Messprojektes]({{ "assets/ursamar-rk44-temperaturerfassung/messprojekt_steckplatine.png" | absolute_url }})
 
 An den Raspberry Pi werden 6 Taster zur Steuerung angeschlossen. Die Taster
 nutzten die internen Pull Up Widerstände des Raspberry Pis, es müssen keine
@@ -133,16 +133,16 @@ und robust sind.
 
 ### Das fertige Konstrukt.
 
-![]({{ "assets/usamar-rk44-temperaturerfassung/messprojekt.jpg" | absolute_url }})
+![]({{ "assets/ursamar-rk44-temperaturerfassung/messprojekt.jpg" | absolute_url }})
 
-![]({{ "assets/usamar-rk44-temperaturerfassung/ssd1306_oled_display_128_64.jpg" | absolute_url }})
+![]({{ "assets/ursamar-rk44-temperaturerfassung/ssd1306_oled_display_128_64.jpg" | absolute_url }})
 
-![Raspberry Pi in Videokassettenchassis mit USB-Stick]({{ "assets/usamar-rk44-temperaturerfassung/raspberry_pi_usb.jpg" | absolute_url }})
+![Raspberry Pi in Videokassettenchassis mit USB-Stick]({{ "assets/ursamar-rk44-temperaturerfassung/raspberry_pi_usb.jpg" | absolute_url }})
 Die LAN und USB Anschlüsse des Raspberry Pis sind von außen gut erreichbar.
 Somit kann man die Messdaten direkt auf dem USB-Stick speichern oder sich über
 das Netzwerk mit dem Raspberry Pi verbinden und auf Fehlersuche gehen.
 
-![]({{ "assets/usamar-rk44-temperaturerfassung/cinch_socket.jpg" | absolute_url }})
+![]({{ "assets/ursamar-rk44-temperaturerfassung/cinch_socket.jpg" | absolute_url }})
 
 ## Software
 
