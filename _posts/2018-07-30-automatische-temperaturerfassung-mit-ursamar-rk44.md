@@ -4,6 +4,10 @@ title:        Automatische Temperaturerfassung mit einem Ursamar RK44 Temperatur
 date:         2018-07-30 13:12:29 +0200
 lang:         de
 categories:   blog
+tags:
+  - Make
+  - Coding
+  - RaspberryPi
 ---
 
 ## Die Ausgangssituation

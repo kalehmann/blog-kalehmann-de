@@ -4,6 +4,10 @@ title:        Der vernetzte Bierkasten
 date:         2016-07-01 13:12:29 +0200
 lang:         de
 categories:   blog
+tags:
+  - Make
+  - Coding
+  - RaspberryPi
 ---
 
 Um es gleich vorwegzunehmen: Ja, dieser Bierkasten erkennt tatsächlich, welche

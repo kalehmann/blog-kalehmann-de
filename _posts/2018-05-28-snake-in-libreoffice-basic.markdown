@@ -1,9 +1,11 @@
 ---
-layout:     post
-title:      Snake in LibreOffice Basic
-date:       2018-05-28 13:12:29 +0200
-lang:       de
-categories: blog
+layout:       post
+title:        Snake in LibreOffice Basic
+date:         2018-05-28 13:12:29 +0200
+lang:         de
+categories:   blog
+tags:
+  - Coding
 ---
 
 In der Berufsausbildung zum Fachinformatiker gehört es natürlich auch dazu,

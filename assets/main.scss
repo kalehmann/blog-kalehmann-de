@@ -1,0 +1,22 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.post_tag, .post_tag:hover, .post_tag:visited {
+  margin: 0 .3em 0 .3em;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  background-color: #629dea;
+  padding: 5px 10px;
+}
+
+/* .tag {
+  display: none;
+}
+
+.tag:target {
+  display: block;
+}
+*/

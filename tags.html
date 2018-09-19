@@ -1,0 +1,46 @@
+---
+layout:     page
+title:      Tags
+permalink:  /tags/
+---
+{%- comment -%}
+ Generate a sorted array of all tags used on the blog.
+
+ Unfortunately an array cannot simply be created in liquid. But the array
+ can be created from a string with the split filter.
+
+ First a string with the tags of every blog seperated by commatas is created.
+ Then the string is divided into an array. After that, all duplicated entries
+ are removed with the uniq filter.
+ Last but not least the array gets sorted.
+{%- endcomment -%}
+
+{%- assign tags = "" -%}
+
+{%- for post in site.posts -%}
+  {%- for tag in post.tags -%}
+    {%- assign tags = tags | append: tag | append: ", " -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+{%- assign tags = tags | split: ", " | uniq | sort -%}
+
+{%- comment -%}
+ Iterate over all tags and render links to every post with the tag.
+{%- endcomment -%}
+{%- for tag in tags -%}
+  <div class="tag" id="{{ tag }}">
+    <h1 id="{{ tag }}">{{ tag }}</h1>
+    <div style="margin-left : 1em;">
+      {%- for post in site.posts -%}
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {%- for post_tag in post.tags -%}
+          {%- if tag == post_tag -%}
+              <span class="post-meta">{{ post.date | date: date_format }}</span>
+              <a  class="post-link" href="{{ post.url }}">{{ post.title }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endfor -%}
