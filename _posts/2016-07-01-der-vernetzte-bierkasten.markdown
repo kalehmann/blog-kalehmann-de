@@ -1,8 +1,9 @@
 ---
-layout: post
-title:  "Der vernetzte Bierkasten"
-date:   2016-07-01 13:12:29 +0200
-categories: blog
+layout:       post
+title:        Der vernetzte Bierkasten
+date:         2016-07-01 13:12:29 +0200
+lang:         de
+categories:   blog
 ---
 
 Um es gleich vorwegzunehmen: Ja, dieser Bierkasten erkennt tatsächlich, welche

@@ -1,8 +1,9 @@
 ---
-layout: post
-title:  "Automatische Temperaturerfassung mit einem Ursamar RK44 Temperaturregler"
-date:   2018-07-30 13:12:29 +0200
-categories: blog
+layout:       post
+title:        Automatische Temperaturerfassung mit einem Ursamar RK44 Temperaturregler
+date:         2018-07-30 13:12:29 +0200
+lang:         de
+categories:   blog
 ---
 
 ## Die Ausgangssituation

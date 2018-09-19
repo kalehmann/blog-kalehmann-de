@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  "Snake in LibreOffice Basic"
-date:   2018-05-28 13:12:29 +0200
+layout:     post
+title:      Snake in LibreOffice Basic
+date:       2018-05-28 13:12:29 +0200
+lang:       de
 categories: blog
 ---
 

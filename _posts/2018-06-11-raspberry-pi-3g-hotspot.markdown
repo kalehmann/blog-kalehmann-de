@@ -1,8 +1,9 @@
 ---
-layout: post
-title:  "3G Hotspot mit einem Raspberry Pi"
-date:   2018-06-11 18:06:31 +0200
-categories: blog
+layout:       post
+title:        3G Hotspot mit einem Raspberry Pi"
+date:         2018-06-11 18:06:31 +0200
+lang:         de
+categories:   blog
 ---
 Eine Verbindung über einen Wlan-Hotspot ist eine gute Möglichkeit für eine
 Kommunikation zwischen einem Smartphone und einem Raspberry Pi.
