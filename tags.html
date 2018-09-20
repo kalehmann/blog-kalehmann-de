@@ -30,7 +30,7 @@ permalink:  /tags/
 {%- endcomment -%}
 {%- for tag in tags -%}
   <div class="tag" id="{{ tag }}">
-    <h1 id="{{ tag }}">{{ tag }}</h1>
+    <a id="{{ tag }}" href="#{{ tag }}">#{{ tag }}</a>
     <div style="margin-left : 1em;">
       {%- for post in site.posts -%}
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}

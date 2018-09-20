@@ -17,7 +17,7 @@ layout: default
 
       {%- if page.tags -%}
         {%- for tag in page.tags -%}
-          <a href="/tags/#{{ tag }}" class="post_tag">{{ tag }}</a>
+          <a href="/tags/#{{ tag }}" class="post_tag">#{{ tag }}</a>
         {%- endfor -%}
       {%- endif -%}
   </header>
