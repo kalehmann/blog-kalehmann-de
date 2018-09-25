@@ -1,7 +1,7 @@
 ---
 layout:       post
 title:        Der vernetzte Bierkasten
-date:         2016-07-01 13:12:29 +0200
+date:         2015-04-20 13:12:29 +0200
 lang:         de
 categories:   blog
 tags:
