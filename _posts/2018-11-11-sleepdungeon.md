@@ -18,7 +18,11 @@ innerhalb von 48 Stunden von einem fünfköpfigen Team entwickelt.
 Als Inspiration für das Spiel dienten die ersten *The Legend of Zelda* Spiele
 und *The Binding of Isaac.*
 
-Hier Spiele ich das Tutorial:
+Der Name des Spiels ist von dem Genre des Games, *Dungeon Crawler* und dem
+Namen den unser Team während der Einführung gewählt hat, *Team Sleep*
+abgeleitet.
+
+Hier kommentiere ich das erste Level<sup>[[1]](#quelle-1)</sup>:
 
 <video width="740" controls>
   <source src="{{ "assets/sleepdungeon/sleepdungeon-lets_play_the_tutorial.webm" | absolute_url }}" type="video/webm">
@@ -130,3 +134,15 @@ auch eine fertig gebundelte Version des Spiels herunterladen.
 
 Diese gibt es für beide Systeme auf der
 [Website des Spiels](https://sleepdungeon.de).
+
+
+## Einzelnachweise
+
+<small>
+1: <a id="quelle-1"></a>
+Der im Hintergrund laufende Soundtrack des Spiels ist eine modifizierte Version
+von [*La Calahorra*](http://freemusicarchive.org/music/Rolemusic/~/calahorra)
+des Künstlers [*Rolemusic*](http://rolemusic.sawsquarenoise.com/) und lizensiert
+unter
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+</small>
