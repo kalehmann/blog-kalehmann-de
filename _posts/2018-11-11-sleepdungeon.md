@@ -1,7 +1,7 @@
 ---
 layout:       post
 title:        SleepDungeon - eine 48 Stunden GameJam
-date:         2018-09-29 17:48:01 +0200
+date:         2018-11-11 17:48:01 +0200
 lang:         de
 categories:   blog
 tags:
