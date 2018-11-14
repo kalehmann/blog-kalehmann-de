@@ -94,7 +94,7 @@ erstellen hat er sich dabei auch Skizzen auf Papier erstellt:
 ![Eine der initialen Skizzen der Karte des Spiels]({{ "assets/sleepdungeon/map_sketch.jpg" | absolute_url }})
 
 Der Stand zum Release lässt sich auf dem
-[original Branch des Repositories](https://github.com/r0bertu/gamejam2/tree/original)
+[original Branch des Repositories](https://github.com/r0bertu/sleepdungeon/tree/original)
 nachvollziehen.
 
 
@@ -122,7 +122,7 @@ nicht erreichen können.
 
 Das Spiel kann prinzipiell auf allen Plattformen gezockt werden, auf denen
 Python3 und PyGame läuft. Dazu checkt man einfach das zur Entwicklung
-genutzte [Repository von Robert](https://github.com/r0bertu/gamejam2) aus und
+genutzte [Repository von Robert](https://github.com/r0bertu/sleepdungeon) aus und
 startet das Spiel mittels folgendem Befehl:
 
 ```
