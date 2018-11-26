@@ -40,7 +40,7 @@ Beschaffung leerer Bierdosen geleistet haben.)
 
 ![Schaltplan eines Raspberry Pis mit Taster und Pullup-Widerstand]( {{ "assets/der-vernetzte-bierkasten/RaspberryPi_Taster_pullup.jpg" | absolute_url }})
 
-<video autoplay loop width="200" heigh="352">
+<video autoplay loop style="max-width: 200px;">
   <source src="{{ "assets/der-vernetzte-bierkasten/Flaschensensor.mp4" | absolute_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>

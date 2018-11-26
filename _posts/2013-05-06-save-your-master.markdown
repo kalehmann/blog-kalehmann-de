@@ -58,7 +58,7 @@ frei rotierenden Zahnrädern.
 Wenn ein Angreifer von diesem erfasst wird, wird diesem der Unterkörper
 abgetrennt und er kann nur noch auf dem Boden weiter kriechen.
 
-<video width="740" controls>
+<video controls>
   <source src="{{ "assets/save-your-master/save_your_master_gameplay.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -68,7 +68,7 @@ abgetrennt und er kann nur noch auf dem Boden weiter kriechen.
 Als Vorbild für das Spiel diente unter anderem das Kapital "We don't go to
 Ravenholm" aus dem Spiel Half Life 2.
 
-<video loop width="740" controls>
+<video loop controls>
   <source src="{{ "assets/save-your-master/hl2_zombies.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>

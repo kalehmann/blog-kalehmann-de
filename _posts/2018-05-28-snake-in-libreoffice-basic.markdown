@@ -40,7 +40,7 @@ spielerisch an die Makroprogrammierung heran zu tasten.
 
 Das Ergebnis kann im nachfolgenden Video betrachtet werden.
 
-<video width="480" height="270" controls>
+<video style="max-width: 480px" controls>
   <source src="https://raw.githubusercontent.com/kalehmann/LibreofficeGames/master/media/snake.mp4" type="video/mp4">
   Ihr Browser scheint den video-Tag leider nicht zu unterstützen.
 </video>

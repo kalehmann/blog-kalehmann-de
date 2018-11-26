@@ -104,7 +104,7 @@ Punkte wird in der linken oberen Ecke des Fensters angezeit.
 
 Insgesamt dauert ein Spiel bis maximal 3 Minuten.
 
-<video width="740" controls>
+<video controls>
   <source src="{{ "assets/lander/gameplay.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>

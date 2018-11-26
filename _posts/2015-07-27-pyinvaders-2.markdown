@@ -62,7 +62,7 @@ Im Unterschied zum Original existieren in PyInvaders2 jedoch keine Barrieren
 hinter denen das Raumschiff Schutz findet. Außerdem bleibt die Geschwindigkeit
 der Aliens mit fortlaufendem Spiel konstant.
 
-<video width="740" controls>
+<video controls>
   <source src="{{ "assets/pyinvaders2/pyinvaders2-gameplay.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -83,7 +83,7 @@ abgebildet. Diese bestehen aus jeweils 5 Zeilen zu 19 Zeichen. Dabei bildet eine
 Zur Erstellung dieser Dateien existiert ein Levelcreator, welcher dem Spiel
 beiliegt.
 
-<video loop width="740" controls>
+<video loop controls>
   <source src="{{ "assets/pyinvaders2/pyinvaders2-editor.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>

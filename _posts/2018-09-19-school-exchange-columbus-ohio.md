@@ -75,7 +75,7 @@ Since it was a school trip, we had an educational mission. Therefore we visited
 the Columbus State Community College and the Ohio State University. There we had
 a nice tour from one of the students and seen some experiments.
 
-<video autoplay loop style="max-width : 100%; height : auto;">
+<video autoplay loop>
   <source src="{{ "assets/18-columbus-ohio-exchange/fire_in_the_hole.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>

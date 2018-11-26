@@ -24,7 +24,7 @@ abgeleitet.
 
 Hier kommentiere ich das erste Level<sup>[[1]](#quelle-1)</sup>:
 
-<video width="740" controls>
+<video controls>
   <source src="{{ "assets/sleepdungeon/sleepdungeon-lets_play_the_tutorial.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
