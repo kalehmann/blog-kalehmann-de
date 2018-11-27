@@ -45,6 +45,7 @@ minima:
 # to override the default setting.
 exclude:
  - assets/*/RAW_ASSETS/*
+ - scripts
  - Gemfile
  - Gemfile.lock
  - Readme.md
