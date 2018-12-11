@@ -1,0 +1,7 @@
+\begin{huge}
+\begin{alignat*}{3}
+	&cylinder &&= \frac{LBA}{SectorsPerTrack * NumberOfHeads} \\
+	&sector  &&= LBA \bmod SectorsPerTrack + 1 \\
+	&head &&= \frac{LBA}{SectorsPerTrack} \bmod NumberOfHeads
+\end{alignat*}
+\end{huge}
