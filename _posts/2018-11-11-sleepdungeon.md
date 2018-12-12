@@ -94,14 +94,14 @@ erstellen hat er sich dabei auch Skizzen auf Papier erstellt:
 ![Eine der initialen Skizzen der Karte des Spiels]({{ "assets/sleepdungeon/map_sketch.jpg" | absolute_url }})
 
 Der Stand zum Release lässt sich auf dem
-[original Branch des Repositories](https://github.com/r0bertu/sleepdungeon/tree/original)
+[original Branch des Repositories](https://github.com/robuf/sleepdungeon/tree/original)
 nachvollziehen.
 
 
 ## Weiterentwicklung nach der GameJam
 
 Im Verlauf der letzten Woche sind noch einige Änderungen hinzugekommen.
-Zusammen mit [Robert](https://github.com/r0bertu) habe ich noch ein Hauptmenü
+Zusammen mit [Robert](https://github.com/robuf) habe ich noch ein Hauptmenü
 implementiert. Dazu sind auch noch zwei weitere Schwierigkeitsgrade
 hinzugekommen.
 
@@ -122,7 +122,7 @@ nicht erreichen können.
 
 Das Spiel kann prinzipiell auf allen Plattformen gezockt werden, auf denen
 Python3 und PyGame läuft. Dazu checkt man einfach das zur Entwicklung
-genutzte [Repository von Robert](https://github.com/r0bertu/sleepdungeon) aus und
+genutzte [Repository von Robert](https://github.com/robuf/sleepdungeon) aus und
 startet das Spiel mittels folgendem Befehl:
 
 ```
