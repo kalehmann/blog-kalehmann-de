@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        Ledstrip
+title:        Kristall Ledstreifen
 date:         2019-02-19 23:13:12 +0200
 lang:         de
 categories:   blog
@@ -29,7 +29,7 @@ zur Kommunikation mit dem Arduino über die serielle Schnittstelle habe ich
 eine C++ Erweiterung geschrieben.
 
 Der Quellcode ist auf GitLab in dem Repository
-[kalehmann/led_strip](https://gitlab.com/kalehmann/led_strip)
+[kalehmann/led_strip](https://gitlab.com/kalehmann/crystal_led_strip)
 einsehbar.
 
 Die Gui besteht im Wesentlichen aus zwei Komponenten, der Verbindung mit dem

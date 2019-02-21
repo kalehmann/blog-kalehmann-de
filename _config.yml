@@ -39,6 +39,8 @@ plugins:
 minima:
   date_format: "%Y-%m-%d %H:%M:%S"
 
+# set timezone
+timezone: Europe/Berlin
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
