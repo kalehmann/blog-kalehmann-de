@@ -95,7 +95,7 @@ die Aufprallgeschwindigkeit unter 6 <sup>m</sup>/<sub>s</sub> liegen.
 Zu guter letzt muss ein Mindestabstand zu den anderen Ländeplätzen gegeben sein.
 
 Die Stelle einer erfolgreichen Landung wird dabei von der
-[Flagge der Erde nach Oskar Pernefeldt](www.flagofplanetearth.com/) markiert.
+[Flagge der Erde nach Oskar Pernefeldt](https://www.flagofplanetearth.com/) markiert.
 
 ![Bild des Lunar Modules kurz nach Spielstart]({{ "assets/lander/landingzone.jpg" | absolute_url }})
 
