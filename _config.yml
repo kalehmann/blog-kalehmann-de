@@ -51,3 +51,9 @@ exclude:
  - Gemfile
  - Gemfile.lock
  - Readme.md
+
+# Set the image for the Open Graph Protocol
+image:
+  path: /assets/favicons/android-chrome-192x192.png
+  height: 192
+  width: 192
