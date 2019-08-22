@@ -7,6 +7,10 @@ categories:   blog
 tags:
   - Coding
   - Games
+image:
+    path: assets/sleepdungeon/og_image.png
+    width: 500
+    height: 500
 ---
 
 ## SleepDungeon
