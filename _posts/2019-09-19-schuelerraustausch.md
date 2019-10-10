@@ -2,7 +2,7 @@
 layout:       post
 title:        Schuelerraustausch - Hosting American exchange students in Dresden
 date:         2019-09-19 12:34:56 +0200
-last_modified_at: 2019-10-08 23:33:00 +0200
+last_modified_at: 2019-10-10 20:48:00 +0200
 lang:         en
 categories:   blog
 tags:
@@ -64,7 +64,7 @@ Pactec in Dresden. The company is a big player in the field of manufacturing
 technology. The company presented itself in a really interesting way. The guy
 giving us a presentation was some kind of salesman and doing this for a few
 centuries already. The presentation of him was correspondingly good and in my
-opinion the best of the three companies we visited. After the presentation we
+opinion the best of the four companies we visited. After the presentation we
 had a demonstration of a machine packaging sweets and after that we could try
 to package a piece of candy by our self according to a template.
 
