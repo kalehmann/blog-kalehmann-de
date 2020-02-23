@@ -140,7 +140,8 @@ Weiterhin wurden zusätzliche Öffnungen für eine Wlan-Stick, Stromversorgung u
 IDE Kabel zur Verbindung mit den Drucktastern angebracht.
 
 ![Eine Videokassette als Gehäuse für einen Raspberry Pi]( {{ "assets/der-vernetzte-bierkasten/RaspberryPi_in_Videokasette.jpg" | absolute_url }})
-![Eine Videokassette als Gehäuse für einen Raspberry Pi]( {{ "assets/der-vernetzte-bierkasten/RaspberryPi_in_Videokasette2.jpg" | absolute_url }})
+
+![Eine Videokassette als Gehäuse für einen Raspberry Pi]( {{ "assets/der-vernetzte-bierkasten/RaspberryPi_in_Videokasette_2.jpg" | absolute_url }})
 
 Das andere Ende des IDE Kabels ist mit einer selbst gebauten Steckverbindung mit
 dem Bierkasten verbunden.
