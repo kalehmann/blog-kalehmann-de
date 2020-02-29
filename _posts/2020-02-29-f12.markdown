@@ -1,0 +1,121 @@
+---
+layout:       post
+title:        'f12 - rootless floppy image handling'   
+date:         2020-02-29 17:12:03 +0100
+last_modified_at: 2020-02-29 17:12:03 +0100
+lang:         en
+categories:   blog
+tags:
+  - Coding
+---
+
+I already had to create bootable floppy images in some of my projects .
+This process has always been a hassle, especially automating it.
+So I decided to write my own all-in-one solution to create FAT12 formatted
+images - f12.
+f12 is a program written in C, that provides various functions to handle FAT12
+formatted images, for example moving files to the image, dumping files from the
+image and listing contents of directories on the image.
+But the most import feature of all for me is creating new images with a set
+files and installing a bootloader in one command, but let's start at the
+beginning:
+
+### What's the problem with creating FAT12 images?
+
+My first way of creating disk images and filling them was using the mount
+command.
+For example, to create an image of a floppy which uses
+[my simple bootloader]({% post_url 2017-07-20-simple-boot-loader %})
+to boot
+[pong implemented from scratch]({% post_url 2016-07-13-pong %})
+one would write the following shell commands:
+
+{% highlight shell %}
+# Create an empty FAT12 formatted image
+mkfs.msdos -C test.flp 1440
+# Write a bootloader to it
+dd if=bootloader.bin of=test.flp conv=notrunc bs=512 count=1
+# Do some hack to configure the bootloader
+echo "PONG    BIN" | dd of=test.flp conv=notrunc bs=1 count=11 seek=498
+# Mount the image to put some files on it
+MOUNTPOINT="$(mktemp --directory --quiet)"
+LOOP_DEVICE="$(sudo losetup -f)"
+sudo losetup "${LOOP_DEVICE}" test.flp
+sudo mount -t msdos -o umask=022,uid=$(id -u),gid=$(id -g) "${LOOP_DEVICE}" "${MOUNTPOINT}"
+cp PONG.BIN "${MOUNTPOINT}"/
+sudo umount "${MOUNTPOINT}"
+rm -rf "${MOUNTPOINT}"
+sudo losetup -d "${LOOP_DEVICE}"
+{% endhighlight %}
+
+These commands have some disadvantages.
+At first they require superuser privileges to mount the images.
+This should not be necessary for such a simple process and may not work in
+containerized environments.
+Instead of mounting the image, one can also use the
+[GNU mtools homepage](https://www.gnu.org/software/mtools)
+to put files on to the image without superuser privileges:
+
+{% highlight shell %}
+# Create an empty FAT12 formatted image
+mkfs.msdos -C test.flp 1440
+# Write a bootloader to it
+dd if=bootloader.bin of=test.flp conv=notrunc bs=512 count=1
+# Do some hack to configure the bootloader
+echo "PONG    BIN" | dd of=test.flp conv=notrunc bs=1 count=11 seek=498
+# Copy the file to the image
+mcopy -i test.flp PONG.BIN ::
+{% endhighlight %}
+
+This way requires less commands and will also run in a container environment.
+But I still decided to go one step further and have been working since the
+summer of 2018 to write f12.
+
+### Why spend so much time on this solution?
+
+Of course my goal was not just to pack 4 shell commands into one.
+I did this project mostly for learning purposes.
+The main points I wanted to learn about were:
+* setting up a continuous integration for C programs with tests, leak checking
+and code coverage
+* internationalization of C programs
+* the FAT12 filesystem
+
+The setup of the continuous integration took quite some time.
+At first I only used a self hosted
+[drone.io instance](https://drone.io)
+to run some tests:
+
+![A screenshot of the drone io webinterface showing a finished pipeline]({{ "assets/f12/drone-io.jpg" | absolute_url }})
+
+Later I added also [GitLab CI](https://gitlab.com/kalehmann/f12/pipelines) and
+[Travis CI](https://travis-ci.org/kalehmann/f12).
+
+The unit tests were written using [Check](https://libcheck.github.io/check), a
+simple framework providing functions for all necessary assertions.
+There are also high level tests using
+[bats-core](https://github.com/bats-core/bats-core).
+Bats is a utility to check the command line usage of the program.
+It allows to test the output and the exit code of the program using bash syntax.
+An example of a bats test looks like this:
+
+{% highlight shell %}
+@test "I can delete a file from a fat12 image" {
+    _run "${BINARY}" del "${TEST_IMAGE}" FOLDER1/DATA.DAT
+    [[ "$status" -eq 0 ]]
+    _run "${BINARY}" list "${TEST_IMAGE}" FOLDER1/DATA.DAT
+    [[ "$output" == "File not found" ]]
+}
+{% endhighlight %}
+
+_Note:_ Here `_run` instead of `run` is used, this is a special wrapper, that
+runs a command with valgrind to check for memory leaks.
+
+While this was a nice little project for me, I do not plan to actively use it.
+I am sure, I ignored the FAT12 specification on several occasions, therefore it
+may be a waste of my time to choose my self developed solution over battle
+proven approaches like the one using GNU mtools, I have shown at the beginning
+of this post.
+
+Nevertheless I really enjoyed all the evenings I spend coding f12, the whole
+[source code is available on GitLab](https://gitlab.com/kalehmann/f12).
