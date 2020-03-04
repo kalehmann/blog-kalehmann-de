@@ -51,7 +51,7 @@ sudo losetup -d "${LOOP_DEVICE}"
 These commands have some disadvantages.
 At first they require superuser privileges to mount the images.
 This should not be necessary for such a simple process and may not work in
-containerised  environments.
+containerized  environments.
 Instead of mounting the image, one can also use the
 [GNU mtools homepage](https://www.gnu.org/software/mtools)
 to put files on to the image without superuser privileges:
