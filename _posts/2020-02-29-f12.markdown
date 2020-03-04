@@ -16,8 +16,8 @@ images - f12.
 f12 is a program written in C, that provides various functions to handle FAT12
 formatted images, for example moving files to the image, dumping files from the
 image and listing contents of directories on the image.
-But the most import feature of all for myself is creating new images with a set
-file and installing a bootloader in one command, but let's start at the
+But the most important feature of all for myself is creating new images with a set
+of files and installing a bootloader in one command, but let's start at the
 beginning:
 
 ### What's the problem with creating FAT12 images?
