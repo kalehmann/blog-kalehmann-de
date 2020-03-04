@@ -9,15 +9,15 @@ tags:
   - Coding
 ---
 
-I already had to create bootable floppy images in some of my projects .
+I've already had to create bootable floppy images in some of my projects.
 This process has always been a hassle, especially automating it.
-So I decided to write my own all-in-one solution to create FAT12 formatted
+So I've decided to write my own all-in-one solution to create FAT12 formatted
 images - f12.
 f12 is a program written in C, that provides various functions to handle FAT12
 formatted images, for example moving files to the image, dumping files from the
 image and listing contents of directories on the image.
-But the most import feature of all for me is creating new images with a set
-files and installing a bootloader in one command, but let's start at the
+But the most important feature of all for myself is creating new images with a set
+of files and installing a bootloader in one command, but let's start at the
 beginning:
 
 ### What's the problem with creating FAT12 images?
@@ -37,7 +37,7 @@ mkfs.msdos -C test.flp 1440
 dd if=bootloader.bin of=test.flp conv=notrunc bs=512 count=1
 # Do some hack to configure the bootloader
 echo "PONG    BIN" | dd of=test.flp conv=notrunc bs=1 count=11 seek=498
-# Mount the image to put some files on it
+# Mount the image to put files on it
 MOUNTPOINT="$(mktemp --directory --quiet)"
 LOOP_DEVICE="$(sudo losetup -f)"
 sudo losetup "${LOOP_DEVICE}" test.flp
@@ -51,7 +51,7 @@ sudo losetup -d "${LOOP_DEVICE}"
 These commands have some disadvantages.
 At first they require superuser privileges to mount the images.
 This should not be necessary for such a simple process and may not work in
-containerized environments.
+containerized  environments.
 Instead of mounting the image, one can also use the
 [GNU mtools homepage](https://www.gnu.org/software/mtools)
 to put files on to the image without superuser privileges:
@@ -88,7 +88,7 @@ to run some tests:
 
 ![A screenshot of the drone io webinterface showing a finished pipeline]({{ "assets/f12/drone-io.jpg" | absolute_url }})
 
-Later I added also [GitLab CI](https://gitlab.com/kalehmann/f12/pipelines) and
+Later I also added [GitLab CI](https://gitlab.com/kalehmann/f12/pipelines) and
 [Travis CI](https://travis-ci.org/kalehmann/f12).
 
 The unit tests were written using [Check](https://libcheck.github.io/check), a
@@ -114,8 +114,8 @@ runs a command with valgrind to check for memory leaks.
 While this was a nice little project for me, I do not plan to actively use it.
 I am sure, I ignored the FAT12 specification on several occasions, therefore it
 may be a waste of my time to choose my self developed solution over battle
-proven approaches like the one using GNU mtools, I have shown at the beginning
+proven approaches like the one using GNU mtools, that I've shown at the beginning
 of this post.
 
-Nevertheless I really enjoyed all the evenings I spend coding f12, the whole
+Nevertheless I've really enjoyed all the evenings I spend coding f12, the whole
 [source code is available on GitLab](https://gitlab.com/kalehmann/f12).
