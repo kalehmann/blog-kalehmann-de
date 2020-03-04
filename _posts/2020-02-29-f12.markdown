@@ -35,7 +35,7 @@ one would write the following shell commands:
 mkfs.msdos -C test.flp 1440
 # Write a bootloader to it
 dd if=bootloader.bin of=test.flp conv=notrunc bs=512 count=1
-# Do some hacking to configure the bootloader
+# Do some hack to configure the bootloader
 echo "PONG    BIN" | dd of=test.flp conv=notrunc bs=1 count=11 seek=498
 # Mount the image to put files on it
 MOUNTPOINT="$(mktemp --directory --quiet)"
