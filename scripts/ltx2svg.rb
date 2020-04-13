@@ -53,6 +53,7 @@ class Latex2Svg
 \\documentclass[landscape]{article}
 \\usepackage[landscape]{geometry}
 \\usepackage{amsmath}
+\\usepackage{siunitx}
 \\pagenumbering{gobble}
 
 \\begin{document}

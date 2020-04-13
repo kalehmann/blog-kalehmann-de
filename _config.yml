@@ -46,6 +46,7 @@ timezone: Europe/Berlin
 # to override the default setting.
 exclude:
  - assets/*/RAW_ASSETS/*
+ - assets/*/raw/*
  - scripts
  - Gemfile
  - Gemfile.lock
