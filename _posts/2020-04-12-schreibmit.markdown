@@ -36,7 +36,7 @@ Natürlich habe ich mich sofort bereit erklärt, diese Anwendung zu entwickeln.
 
 ### Die Umkreissuche von Pflegeheimen
 
-Die erste Herausforderung ist das Finden des nächstegelegenen Alten- oder
+Die erste Herausforderung ist das Finden des nächstgelegenen Alten- oder
 Pflegeheimes.
 Der Nutzer der Anwendung gibt seine Position anhand seiner Postleitzahl preis.
 Die Datenbank nach einem Pflegeheim mit der selben Postleitzahl zu durchsuchen
@@ -117,7 +117,7 @@ Namen, seiner Postleitzahl und seiner E-Mail-Adresse abfragt.
 ![]({{ "assets/schreibmit/schreibmit_symfony.jpg" | absolute_url }})
 
 Nachdem der Nutzer diese Daten übermittelt hat, wird mittels der oben
-beschriebenen Umkreissuche für Pflegeheime das nächstegelegene teilnehmende
+beschriebenen Umkreissuche für Pflegeheime das nächstgelegene teilnehmende
 Pflegeheim ermittelt und dem Nutzer per E-Mail mitgeteilt.
 Danach kann sich der Nutzer auch schon mit dem Schreiben anfangen.
 
