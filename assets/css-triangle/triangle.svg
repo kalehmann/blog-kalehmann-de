@@ -1,0 +1,24 @@
+<svg width="736.84" height="700.92" version="1.1" viewBox="0 0 175.46 166.91" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-17.684 -117.88)">
+  <path d="m94.613 135.84 75.225 130.29h-150.45z" fill="#64ffcb"/>
+  <g fill="none">
+   <rect x="19.388" y="135.84" width="150.45" height="130.29" ry=".32238" stroke="#2b0000" stroke-dasharray="2, 4" stroke-linejoin="round"/>
+   <g stroke="#000">
+    <path d="m94.613 132.8c0.02089-5.1027 37.613 0 37.613-5.1027 0 5.1027 37.634-1e-5 37.613 5.1027" stroke-width=".965"/>
+    <path d="m19.388 132.8c0.02089-5.1027 37.613 0 37.613-5.1027 0 5.1027 37.634-1e-5 37.613 5.1027" stroke-width=".965"/>
+    <path d="m172.45 135.84c9.6209 0 0 65.147 9.6209 65.147-9.6209-1e-5 0 65.147-9.6209 65.147" stroke-width="1.27"/>
+   </g>
+  </g>
+  <g fill="#000000" font-family="sans-serif" font-size="10.583px" letter-spacing="0px" stroke-width=".26458" word-spacing="0px">
+   <text x="101.56242" y="123.94299" fill-opacity=".94118" style="line-height:1.25" xml:space="preserve"><tspan x="101.56242" y="123.94299" fill="#000000" fill-opacity=".94118" font-family="'Source Code Pro'" font-size="8.4667px" stroke-width=".26458">border-right</tspan></text>
+   <text x="26.301502" y="124.15489" style="line-height:1.25" xml:space="preserve"><tspan x="26.301502" y="124.15489" fill="#000000" font-family="'Source Code Pro'" font-size="8.4667px" stroke-width=".26458">border-left</tspan></text>
+   <text transform="rotate(90)" x="168.42363" y="-187.11539" style="line-height:1.25" xml:space="preserve"><tspan x="168.42363" y="-187.11539" font-family="'Source Code Pro'" font-size="8.4667px" stroke-width=".26458">border-bottom</tspan></text>
+  </g>
+  <path d="m94.613 135.84 75.225 130.29v-130.29h-75.225" fill="#ff64a7"/>
+  <path d="m19.388 135.84h75.225l-75.225 130.29z" fill="#ffa764"/>
+  <path d="m169.84 267.33c0 9.6209-75.225 0-75.225 9.6209 1.2e-5 -9.6209-75.225 0-75.225-9.6209" fill="none" stroke="#000" stroke-width="1.3647"/>
+  <path d="m19.388 266.13c-8.3435-4.7902 37.455-65.238 29.111-70.028 8.3435 4.7903 37.455-65.238 45.798-60.448" fill="none" stroke="#000" stroke-width="1.3647"/>
+  <text x="91.391251" y="284.65271" fill="#000000" font-family="sans-serif" font-size="10.583px" letter-spacing="0px" stroke-width=".26458" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="91.391251" y="284.65271" fill="#000000" font-family="'Source Code Pro'" font-size="11.289px" font-weight="bold" stroke-width=".26458">a</tspan></text>
+  <text transform="rotate(-51.051)" x="-125.43047" y="158.6774" fill="#000000" font-family="sans-serif" font-size="10.583px" letter-spacing="0px" stroke-width=".26458" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="-125.43047" y="158.6774" fill="#000000" font-family="'Source Code Pro'" font-size="11.289px" font-weight="bold" stroke-width=".26458">a</tspan></text>
+ </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg width="727.2" height="648.7" version="1.1" viewBox="0 0 173.16 154.47" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-18.888 -135.34)">
+  <path d="m94.554 135.39 75.225 130.29-150.45-1e-5z" fill="#64ffcb"/>
+  <rect x="19.388" y="135.84" width="150.45" height="130.29" ry=".32238" fill="none" stroke="#2b0000" stroke-dasharray="2, 4" stroke-linejoin="round"/>
+  <path d="m94.613 135.84 75.225 130.29v-130.29h-75.225" fill="#ff64a7"/>
+  <path d="m19.388 135.84h75.225l-75.225 130.29z" fill="#ffa764"/>
+  <path d="m19.388 266.13 75.225-43.431" fill="none" stroke="#000" stroke-linecap="round" stroke-width=".9"/>
+  <path d="m46.814 250.3c4.9991 7.1462 4.9888 7.149 4.3058 15.834" fill="none" stroke="#000" stroke-width=".9"/>
+  <text x="32.41029" y="264.58929" fill="#000000" font-family="'Source Code Pro'" font-size="9.525px" letter-spacing="0px" stroke-width=".23812" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="32.41029" y="264.58929" font-family="'Source Code Pro'" stroke-width=".23812">30°</tspan></text>
+  <path d="m94.613 267.26c0 9.6207-37.613 0-37.613 9.6207 5e-6 -9.6207-37.613 0-37.613-9.6207" fill="none" stroke="#000" stroke-width=".96498"/>
+  <path d="m94.613 222.7v43.431" fill="none" stroke="#000" stroke-width=".9"/>
+  <text x="87.502258" y="222.34659" fill="#000000" font-family="'Source Code Pro'" font-size="9.525px" font-style="italic" letter-spacing="0px" stroke-width=".23812" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="87.502258" y="222.34659" font-family="'Source Code Pro'" font-style="italic" stroke-width=".23812">I</tspan></text>
+  <path d="m94.613 202.89c-0.93546 0-1.134 1.1874-1.7955 0.52589-0.66147-0.66148 0.52589-0.86004 0.52589-1.7955 1e-6 -0.93547-1.1874-1.134-0.52589-1.7955s0.86003 0.52589 1.7955 0.52589 1.134-1.1874 1.7955-0.52589c0.66147 0.66147-0.52589 0.86003-0.52589 1.7955 0 0.93546 1.1874 1.134 0.52589 1.7955-0.66147 0.66147-0.86003-0.52589-1.7955-0.52589z" fill-opacity=".94118"/>
+  <text x="95.585197" y="199.69939" fill="#000000" font-family="'Source Code Pro'" font-size="9.525px" font-style="italic" letter-spacing="0px" stroke-width=".23812" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="95.585197" y="199.69939" font-family="'Source Code Pro'" font-style="italic" stroke-width=".23812">C</tspan></text>
+  <text x="48.422352" y="287.77679" fill="#000000" font-family="sans-serif" font-size="9.525px" letter-spacing="0px" stroke-width=".23812" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="48.422352" y="287.77679" stroke-width=".23812"><tspan baseline-shift="super" font-size="10.16px">a</tspan>/<tspan baseline-shift="sub" font-size="10.16px">2</tspan></tspan></text>
+  <path d="m96.205 222.7c9.6207 0 0 21.716 9.6207 21.716-9.6207 0 0 21.716-9.6207 21.716" fill="none" stroke="#000" stroke-width=".73323"/>
+  <text x="107.64928" y="247.75894" fill="#000000" font-family="sans-serif" font-size="9.525px" letter-spacing="0px" stroke-width=".23812" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="107.64928" y="247.75894" font-family="sans-serif" font-style="italic" stroke-width=".23812">h<tspan baseline-shift="sub" font-family="sans-serif" font-size="65%" font-style="italic">c</tspan></tspan></text>
+  <path d="m171.26 201.62c9.6207 0 0 32.254 9.6207 32.254-9.6207-1e-5 0 32.254-9.6207 32.254" fill="none" stroke="#000" stroke-width=".8936"/>
+  <text transform="rotate(90)" x="200.35115" y="-183.21445" fill="#000000" font-family="sans-serif" font-size="9.525px" letter-spacing="0px" stroke-width=".23812" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="200.35115" y="-183.21445" stroke-width=".23812"><tspan baseline-shift="super" font-size="7.62px">border-bottom</tspan> / <tspan baseline-shift="sub" font-size="7.62px">2</tspan></tspan></text>
+ </g>
+</svg>
