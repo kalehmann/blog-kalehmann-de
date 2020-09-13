@@ -1,13 +1,19 @@
 ---
-layout:       post
-title:        Der vernetzte Bierkasten
-date:         2015-04-20 13:12:29 +0200
-lang:         de
-categories:   blog
+categories:       blog
+date:             2015-04-20 13:12:29 +0200
+description:  >-
+  Der vernetzte Bierkasten erkennt welche Flasche noch voll und welche schon
+  leer ist. Im Internet der Dinge (IOT) darf auch ein Bierkasten nicht fehlen.
+  Mittels einem Raspberry Pi wird der Bierkasten der Marke Sternburg um smarte
+  Funktionen erweitert.
+lang:             de
+last_modified_at: 2020-09-13 21:13:00 +0200
+layout:           post
 tags:
-  - Make
   - Coding
+  - Make
   - RaspberryPi
+title:            Der vernetzte Bierkasten
 ---
 
 Um es gleich vorwegzunehmen: Ja, dieser Bierkasten erkennt tatsächlich, welche
