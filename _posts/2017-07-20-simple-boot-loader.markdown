@@ -1,12 +1,17 @@
 ---
-layout:       post
-title:        A Simple BootLoader
-date:         2017-07-20 14:14:21 +0200
-lang:         en
-categories:   blog
+categories:       blog
+date:             2017-07-20 14:14:21 +0200
+description:  >-
+  Writing a simple x86 bootloader from scratch in assembly. Use BIOS calls in
+  assembly to load more than 512 bytes from a drive during the boot process on
+  the x86 platform.
+lang:             en
+last_modified_at: 2020-09-13 21:20:00 +0200
+layout:           post
 tags:
   - Coding
   - OsDev
+title:            A Simple Bootloader
 ---
 
 ## SiBoLo - Writing a simple bootloader
