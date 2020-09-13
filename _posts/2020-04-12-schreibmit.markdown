@@ -1,12 +1,16 @@
 ---
-layout:       post
-title:        'SchreibMit! - Ostern in der Isolation'   
-date:         2020-04-12 13:23:27 +0100
-last_modified_at: 2020-04-13 14:40:53 +0100
-lang:         de
-categories:   blog
+categories:       blog
+date:             2020-04-12 13:23:27 +0100
+description:  >-
+  Hintergrundinformationen zur Aktion Schreib Mit! des Jugenrotkreuz Sachsen.
+  Details zur technischen Umsetzung und der Entfernungsermittlung anhand der
+  Postleitzahl in PHP und Symfony.
+lang:             de
+last_modified_at: 2020-09-13 21:00:00 +0200
+layout:           post
 tags:
   - Coding
+title:            'SchreibMit! - Ostern in der Isolation'   
 ---
 
 ## SchreibMit!
