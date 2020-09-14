@@ -1,12 +1,17 @@
 ---
-layout:       post
-title:        Save Your Master
-date:         2013-05-06 14:28:57 +0200
-lang:         de
-categories:   blog
+categories:       blog
+date:             2013-05-06 14:28:57 +0200
+description: >-
+  Mein erstes richtiges Computerspiel. Ein Egoshooter basierend auf der Blender
+  Game Engine mit primitiver Steuerung, simpler Grafik und einem einfachem
+  Spielprinzip.
+lang:             de
+last_modified_at: 2020-09-15 00:24:30 +0200
+layout:           post
 tags:
   - Coding
   - Games
+title:            Save Your Master
 ---
 {% comment %}
   Die für gewählte Uhrzeit der Veröffentlichung entspricht der
@@ -25,15 +30,10 @@ tags:
   Übrigens sind alle zyklischen Zahlen durch 9 teilbar.
 {% endcomment %}
 
-# Save Your Master
+**Die Inhalte dieses Beitrages und des beschriebenen Spiels sollen schockieren
+und unterhalten jedoch nicht die Meinungsbildung beeinflussen oder zu realen
+Handlungen anregen.**
 
-## Vorwort
-
-Die Inhalte dieses Beitrages und des beschriebenen Spiels sollen schockieren und
-unterhalten jedoch nicht die Meinungsbildung beeinflussen oder zu realen
-Handlungen anregen.
-
-## Spielprinzip
 
 Mein erstes Computerspiel, fertiggestellt Mitte 2013. Damals war ich gerade
 einmal 15 Jahre alt. Zu diesem Zeitpunkt befand sich die Masterarbeit meines
@@ -47,6 +47,8 @@ Diese sollen mit grauen Haaren und Brille Professoren repräsentieren und
 springen von rotierenden Plattformen auf das Spielfeld, welches über einem
 Lavasee schwebt. In der Mitte des Spielfeldes wird die Masterarbeit durch ein
 aufgeschlagenes Buch auf einem Podest symbolisiert.
+
+![Blender Modell des Professors]( {{ "assets/save-your-master/prof.jpg" | absolute_url }})
 
 Das Spiel gilt als verloren, sobald drei Professoren das Podest erreicht haben.
 Das Ziel des Spielers ist es dies zu verhindern. Als Werkzeug dazu dient ihm
@@ -73,6 +75,10 @@ Ravenholm" aus dem Spiel Half Life 2.
   Your browser does not support the video tag.
 </video>
 
+Weiterhin ist die Steuerung an den Klassiker Doom aus dem Jahre 1993 angelehnt.
+Aufgrund mangelnder Programmierkenntnisse meinerseits lässt sich das Blickfeld
+der Spielfigur nicht mit der Maus, sondern lediglich mit den Pfeiltasten Links
+und Rechts beeinflussen.
 
 ## Technischer Hintergrund
 
@@ -105,15 +111,3 @@ Das *.blend* File und die Texturen für das Spiel sind auf GitLab in dem
 Repository
 [kalehmann/SaveYourMaster](https://gitlab.com/kalehmann/saveyourmaster)
 einsehbar.
-
-## Trivia
-
-- die für die Entwicklung verwendeten Blenderversionen sind 2.65 (Release
-  Dezember 2012) und 2.66 (Release Februar 2013)
-- auf meinem zweiten Blog wurde das Spiel in einem auf den 06.05.2013
-  datierten Blog vorgestellt.
-- am 11.07.2013 wurde das Spiel von mir an meinem Gymnasium in einem Workshop
-  zum Thema Blender vorgestellt.
-
-Schlussendlich habe ich mich entschieden, dass Veröffentlichungsdatum von
-meinem ehemaligen Blog zu übernehmen.
