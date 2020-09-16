@@ -1,12 +1,16 @@
 ---
-layout:           post
-title:            Creating a centered equilateral triangle using CSS and a single element
-date:             2020-09-10 02:26:30 +0100
-last_modified_at: 2020-09-10 02:26:30 +0100
-lang:             en
 categories:       blog
+date:             2020-09-10 02:26:30 +0100
+description: >-
+  Creating an equilateral triangle using the CSS border properties and center it
+  in its containing HTML element. Explaining in depth how the internal angles of
+  a CSS border triangle are manipulated.
+lang:             en
+last_modified_at: 2020-09-16 23:44:32 +0200
+layout:           post
 tags:
   - Coding
+title:            Creating a centered equilateral triangle using CSS and a single element
 ---
 
 {% assign color1 = "#64ffcb" %}
