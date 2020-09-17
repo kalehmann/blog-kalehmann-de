@@ -16,11 +16,23 @@ video {
   width: 100%;
 }
 
-/* .tag {
-  display: none;
-}
+@media screen and (min-width: 800px) {
 
-.tag:target {
-  display: block;
+  %image {
+    display: inline;
+    margin: auto;
+    max-width: 49%
+  }
+
+  .image {
+    &-left {
+      @extend %image;
+      padding-right: 5px;
+    }
+
+    &-right {
+      @extend %image;
+      padding-left: 5px;
+    }
+  }
 }
-*/
