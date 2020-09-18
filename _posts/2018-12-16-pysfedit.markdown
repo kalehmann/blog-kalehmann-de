@@ -1,12 +1,16 @@
 ---
-layout:       post
-title:        PySFedit - An editor for PC Screen Fonts written in Python
-date:         2018-12-28 10:13:12 +0200
-lang:         en
-categories:   blog
+categories:       blog
+date:             2018-12-28 10:13:12 +0200
+description:  >-
+  PySFedit is a graphical editor for PC Screen Fonts written in Python3 using
+  the Gtk+-binding pygobject.
+lang:             en
+last_modified_at: 2020-09-18 23:15:00 +0200
+layout:           post
 tags:
   - Coding
   - OsDev
+title:            'PySFedit - An editor for PC Screen Fonts written in Python'
 ---
 
 PySFedit is a graphical editor for PC Screen Fonts written in Python3 using the
