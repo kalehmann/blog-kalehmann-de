@@ -1,13 +1,14 @@
 ---
-layout:       post
-title:        Kristall Ledstreifen
-date:         2019-02-19 23:13:12 +0200
-lang:         de
-categories:   blog
+categories:       blog
+date:             2019-02-19 23:13:12 +0200
+lang:             de
+last_modified_at: 2020-09-30 20:47:00 +0200
+layout:           post
 tags:
   - Make
   - Coding
   - Arduino
+title:            Kristall Ledstreifen
 ---
 
 ![Vier leuchtende Salz Kristalle auf einem Schreibtisch]({{ "assets/salz-led-strip/leuchtende_salz_kristalle.jpg" | absolute_url }})
@@ -46,7 +47,7 @@ eingestellt werden.
 
 ### Knight Rider
 
-<video autoplay loop>
+<video autoplay loop muted>
   <source src="{{ "assets/salz-led-strip/KnightRider.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -55,7 +56,7 @@ eingestellt werden.
 
 ### Rainbow
 
-<video autoplay loop>
+<video autoplay loop muted>
   <source src="{{ "assets/salz-led-strip/Rainbow.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
@@ -64,7 +65,7 @@ eingestellt werden.
 
 ### Pulsate
 
-<video autoplay loop>
+<video autoplay loop muted>
   <source src="{{ "assets/salz-led-strip/Pulsate.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>

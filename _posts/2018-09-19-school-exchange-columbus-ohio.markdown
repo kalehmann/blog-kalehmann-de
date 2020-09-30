@@ -1,11 +1,12 @@
 ---
-layout:       post
-title:        School exchange to Columbus, Ohio
-date:         2018-09-19 23:18:42 +0200
-lang:         en
-categories:   blog
+categories:       blog
+date:             2018-09-19 23:18:42 +0200
+lang:             en
+last_modified_at: 2020-09-30 20:47:00 +0200
+layout:           post
 tags:
   - Travel
+title:            School exchange to Columbus, Ohio
 ---
 
 # Preface
@@ -75,7 +76,7 @@ Since it was a school trip, we had an educational mission. Therefore we visited
 the Columbus State Community College and the Ohio State University. There we had
 a nice tour from one of the students and seen some experiments.
 
-<video autoplay loop>
+<video autoplay loop muted>
   <source src="{{ "assets/18-columbus-ohio-exchange/fire_in_the_hole.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>

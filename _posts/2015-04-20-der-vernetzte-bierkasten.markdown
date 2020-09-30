@@ -7,7 +7,7 @@ description:  >-
   Mittels einem Raspberry Pi wird der Bierkasten der Marke Sternburg um smarte
   Funktionen erweitert.
 lang:             de
-last_modified_at: 2020-09-30 20:39:00 +0200
+last_modified_at: 2020-09-30 20:47:00 +0200
 layout:           post
 tags:
   - Coding
@@ -63,12 +63,12 @@ Ein Taster besteht jeweils aus 3 Elementen:
 Je nach dem Gewicht der Bierflasche wird über das bewegliche Element und die
 Grundplatte ein Stromkreis geschlossen oder nicht.
 
-<video autoplay loop class="image-left">
+<video autoplay loop muted class="image-left">
   <source src="{{ "assets/der-vernetzte-bierkasten/flaschensensor.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
-<video autoplay loop class="image-right">
+<video autoplay loop muted class="image-right">
   <source src="{{ "assets/der-vernetzte-bierkasten/bierdose-boden.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
