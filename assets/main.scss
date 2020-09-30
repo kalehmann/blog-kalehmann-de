@@ -19,7 +19,7 @@ video {
 @media screen and (min-width: 800px) {
 
   %image {
-    display: inline;
+    display: inline-block;
     margin: auto;
     max-width: 49%
   }
