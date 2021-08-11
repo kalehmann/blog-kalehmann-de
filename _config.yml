@@ -50,7 +50,7 @@ exclude:
  - scripts
  - Gemfile
  - Gemfile.lock
- - Readme.md
+ - Readme.markdown
 
 # Set the image for the Open Graph Protocol
 image:
