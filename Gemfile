@@ -11,3 +11,5 @@ gem "jekyll", "~> 4.0"
 gem "minima", "~> 2.5"
 
 gem "jekyll-sitemap", "~> 1.3"
+
+gem "webrick", "~> 1.7"
