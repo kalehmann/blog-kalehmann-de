@@ -3,6 +3,16 @@
 
 @import "{{ site.theme }}";
 
+details {
+    font-style: italic;
+    margin-bottom: 1em;
+
+    & > summary {
+	font-size: 1.2rem;
+	font-weight: bold;
+    }
+}
+
 .post_tag, .post_tag:hover, .post_tag:visited {
   margin: 0 .3em 0 .3em;
   border-radius: 5px;

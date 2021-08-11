@@ -1,0 +1,270 @@
+'0x01':
+  'set1': 'Esc'
+  'set2': 'F9'
+'0x02':
+  'set1': '1'
+  'set2': ~
+'0x03':
+  'set1': '2'
+  'set2': 'F5'
+'0x04':
+  'set1': '3'
+  'set2': 'F3'
+'0x05':
+  'set1': '4'
+  'set2': 'F1'
+'0x06':
+  'set1': '5'
+  'set2': 'F2'
+'0x07':
+  'set1': '6'
+  'set2': 'F12'
+'0x08':
+  'set1': '7'
+  'set2': ~
+'0x09':
+  'set1': '8'
+  'set2': 'F10'
+'0x0A':
+  'set1': '9'
+  'set2': 'F8'
+'0x0B':
+  'set1': '0'
+  'set2': 'F6'
+'0x0C':
+  'set1': '-'
+  'set2': 'F4'
+'0x0D':
+  'set1': '='
+  'set2': 'Tab'
+'0x0E':
+  'set1': 'Backspace'
+  'set2': "\_`"
+'0x0F':
+  'set1': 'Tab'
+  'set2': ~
+'0x10':
+  'set1': 'q'
+  'set2': ~
+'0x11':
+  'set1': 'w'
+  'set2': 'Left Alt'
+'0x12':
+  'set1': 'e'
+  'set2': 'Left Shift'
+'0x13':
+  'set1': 'r'
+  'set2': ~
+'0x14':
+  'set1': 't'
+  'set2': 'Left Ctrl'
+'0x15':
+  'set1': 'y'
+  'set2': 'q'
+'0x16':
+  'set1': 'u'
+  'set2': '1'
+'0x17':
+  'set1': 'i'
+  'set2': ~
+'0x18':
+  'set1': 'o'
+  'set2': ~
+'0x19':
+  'set1': 'p'
+  'set2': ~
+'0x1A':
+  'set1': '['
+  'set2': 'z'
+'0x1B':
+  'set1': ']'
+  'set2': 's'
+'0x1C':
+  'set1': 'Enter'
+  'set2': 'a'
+'0x1D':
+  'set1': 'Left Ctrl'
+  'set2': 'w'
+'0x1E':
+  'set1': 'a'
+  'set2': '2'
+'0x1F':
+  'set1': 's'
+  'set2': ~
+'0x20':
+  'set1': 'd'
+  'set2': ~
+'0x21':
+  'set1': 'f'
+  'set2': 'c'
+'0x22':
+  'set1': 'g'
+  'set2': 'x'
+'0x23':
+  'set1': 'h'
+  'set2': 'd'
+'0x24':
+  'set1': 'j'
+  'set2': 'e'
+'0x25':
+  'set1': 'k'
+  'set2': '4'
+'0x26':
+  'set1': 'l'
+  'set2': '3'
+'0x27':
+  'set1': ';'
+  'set2': ~
+'0x28':
+  'set1': ''''
+  'set2': ~
+'0x29':
+  'set1': "\_`"
+  'set2': 'Spacebar'
+'0x2A':
+  'set1': 'Left Shift'
+  'set2': 'v'
+'0x2B':
+  'set1': '\'
+  'set2': 'f'
+'0x2C':
+  'set1': 'z'
+  'set2': 't'
+'0x2D':
+  'set1': 'x'
+  'set2': 'r'
+'0x2E':
+  'set1': 'c'
+  'set2': '5'
+'0x2F':
+  'set1': 'v'
+  'set2': ~
+'0x30':
+  'set1': 'b'
+  'set2': ~
+'0x31':
+  'set1': 'n'
+  'set2': 'n'
+'0x32':
+  'set1': 'm'
+  'set2': 'b'
+'0x33':
+  'set1': ','
+  'set2': 'h'
+'0x34':
+  'set1': '.'
+  'set2': 'g'
+'0x35':
+  'set1': '/'
+  'set2': 'y'
+'0x36':
+  'set1': 'Right Shift'
+  'set2': '6'
+'0x39':
+  'set1': 'Spacebar'
+  'set2': ~
+'0x3A':
+  'set1': 'Caps Lock'
+  'set2': 'm'
+'0x3B':
+  'set1': 'F1'
+  'set2': 'j'
+'0x3C':
+  'set1': 'F2'
+  'set2': 'u'
+'0x3D':
+  'set1': 'F3'
+  'set2': '7'
+'0x3E':
+  'set1': 'F4'
+  'set2': '8'
+'0x3F':
+  'set1': 'F5'
+  'set2': ~
+'0x40':
+  'set1': 'F6'
+  'set2': ~
+'0x41':
+  'set1': 'F7'
+  'set2': ','
+'0x42':
+  'set1': 'F8'
+  'set2': 'k'
+'0x43':
+  'set1': 'F9'
+  'set2': 'i'
+'0x44':
+  'set1': 'F10'
+  'set2': 'o'
+'0x45':
+  'set1': 'Num Lock'
+  'set2': '0'
+'0x46':
+  'set1': 'Scroll Lock'
+  'set2': '9'
+'0x49':
+  'set1': 'Keypad 9'
+  'set2': '.'
+'0x4A':
+  'set1': 'Keypad -'
+  'set2': '/'
+'0x4B':
+  'set1': 'Keypad 4'
+  'set2': 'l'
+'0x4C':
+  'set1': 'Keypad 5'
+  'set2': ';'
+'0x4D':
+  'set1': 'Keypad 6'
+  'set2': 'p'
+'0x4E':
+  'set1': 'Keypad +'
+  'set2': '-'
+'0x54':
+  'set1': ~
+  'set2': '['
+'0x55':
+  'set1': ~
+  'set2': '='
+'0x57':
+  'set1': 'F11'
+  'set2': ~
+'0x58':
+  'set1': 'F12'
+  'set2': 'Caps Lock'
+'0x5A':
+  'set1': ~
+  'set2': 'Enter'
+'0x5B':
+  'set1': ~
+  'set2': ']'
+'0x5D':
+  'set1': ~
+  'set2': '\'
+'0x66':
+  'set1': ~
+  'set2': 'Backspace'
+'0x76':
+  'set1': ~
+  'set2': 'Esc'
+'0xE0 0x48':
+  'set1': 'Up Arrow'
+  'set2': ~
+'0xE0 0x49':
+  'set1': 'Page Up'
+  'set2': ~
+'0xE0 0x4B':
+  'set1': 'Left Arrow'
+  'set2': ~
+'0xE0 0x4D':
+  'set1': 'Right Arrow'
+  'set2': ~
+'0xE0 0x6B':
+  'set1': ~
+  'set2': 'Left Arrow'
+'0xE0 0x74':
+  'set1': ~
+  'set2': 'Right Arrow'
+'0xE0 0x75':
+  'set1': ~
+  'set2': 'Up Arrow'
