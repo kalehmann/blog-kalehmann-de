@@ -3,6 +3,10 @@
 
 @import "{{ site.theme }}";
 
+body, html {
+    scroll-behavior: smooth;
+}
+
 details {
     font-style: italic;
     margin-bottom: 1em;
