@@ -309,7 +309,7 @@ Direktkandidaten möglich sind.
 </style>
 
 <figure>
-    {% include_relative assets/btw_erststimmen/brd.svg %}
+    {% include_relative embedded/btw_erststimmen/brd.svg %}
     <figcaption>
         <a href="https://commons.wikimedia.org/wiki/File:Karte_Deutsche_Bundesl%C3%A4nder_(nummeriert).svg">Karte der Bundesrepublik</a>,
         <a href="https://commons.wikimedia.org/wiki/User:David_Liuzzo">David Liuzzo</a>,

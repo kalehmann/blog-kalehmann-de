@@ -45,6 +45,7 @@ timezone: Europe/Berlin
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
+ - _posts/embedded/*
  - assets/*/RAW_ASSETS/*
  - assets/*/raw/*
  - scripts
@@ -57,3 +58,4 @@ image:
   path: /assets/favicons/android-chrome-192x192.png
   height: 192
   width: 192
+
