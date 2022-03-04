@@ -5,7 +5,7 @@ description:  >-
   Setup Arch Linux with custom secure boot keys and automated kernel signing on
   a Super Micro X11SCL-IF motherboard.
 lang:             en
-last_modified_at: 2022-02-20 17:55:00 +0100
+last_modified_at: 2022-03-04 18:24:00 +0100
 layout:           post
 tags:
   - Homelab
@@ -239,7 +239,7 @@ Now create a floppy image with the netboot UEFI application:
 
 ```
 mkfs.fat -C netboot.img 1440
-mount /neetboot.img /mnt
+mount netboot.img /mnt
 mkdir -p /mnt/EFI/BOOT
 cp ipxe-arch.16e24bec1a7c.efi /mnt/EFI/BOOT/BOOTX64.EFI
 ```
