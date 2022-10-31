@@ -529,7 +529,15 @@ mkdir /tmp/{out_dir,profile_dir,work_dir}
 cp -r /usr/share/archiso/configs/releng/* /tmp/profile_dir/
 ```
 
-Then create a pacman hook that triggers after an installation of the kernel:
+Then edit the profile and change the bootmode to systemd-boot, since that
+bootloader is the easiest to sign in a pacman hook.
+Do so by editing `/tmp/profile_dir/profiledef.sh` and replace the bootmodes with
+```
+bootmodes=('uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito')
+```
+
+After that create the pacman hook that triggers after an installation of the
+kernel and signs the kernel as well as the systemd-boot bootloader:
 
 ```
 cat << EOF > /tmp/profile_dir/airootfs/etc/pacman.d/hooks/99-sign.hook
