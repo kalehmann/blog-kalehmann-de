@@ -5,7 +5,7 @@ description:  >-
   Setup Arch Linux with custom secure boot keys and automated kernel signing on
   a Super Micro X11SCL-IF motherboard.
 lang:             en
-last_modified_at: 2022-03-04 18:24:00 +0100
+last_modified_at: 2022-10-31 16:40:00 +0100
 layout:           post
 tags:
   - Homelab
@@ -226,7 +226,7 @@ with `Save`.
 [![Configuring NTP servers in the web interface of a Super Micro BMC][8]][8]
 
 I choose the time server of the [Physikalisch-Technische Bundesanstalt][9] as
-primary server and of of [Google's time servers][10] as secondary server.
+primary server and one of [Google's time servers][10] as secondary server.
 
 ### Booting a live system ...
 
@@ -334,7 +334,7 @@ ssh -o 'StrictHostKeyChecking=no' -o "UserKnownHostsFile=/dev/null" root@<ip-add
 Inside the live system install the packages **efitools** and **sbsigntools**:
 
 ```
-pacman -Sy
+pacman -Syu
 pacman -S efitools sbsigntools
 ```
 
