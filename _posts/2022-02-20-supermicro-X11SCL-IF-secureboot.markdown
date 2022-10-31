@@ -286,12 +286,22 @@ check the samba log. If there is
 
 > ntlm_password_check: LM password and LMv2 failed for user <user>, and NT MD4 password in LM field not permitted
 
-then temporary add
+then temporarily add
 ```
 ntlm auth = Yes
 client ntlmv2 auth = Yes
 ```
 to the samba configuration and reload the service with `systemctl reload smb`.
+
+In case the operation fails with
+
+> No protocol supported !
+
+in the samba log file, then lower the minimum protocol version by adding
+```
+min protocol = NT1
+```
+to the sambda configuration.
 
 ### Enrolling the keys
 
