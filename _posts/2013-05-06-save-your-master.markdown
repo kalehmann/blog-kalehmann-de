@@ -6,29 +6,13 @@ description: >-
   Game Engine mit primitiver Steuerung, simpler Grafik und einem einfachem
   Spielprinzip.
 lang:             de
-last_modified_at: 2020-09-15 00:24:30 +0200
+last_modified_at: 2024-05-15 20:20:00 +0200
 layout:           post
 tags:
   - Coding
   - Games
 title:            Save Your Master
 ---
-{% comment %}
-  Die für gewählte Uhrzeit der Veröffentlichung entspricht der
-  kleinsten nicht trivialen zyklischen Zahl, 142857.
-  .
-  Das besondere an zyklischen Zahlen ist, dass diese mit einer natürlichen Zahl
-  von 1 bis n multipliziert die selben Ziffern wie die Ausgangszahl erhält in
-  der selben Reihenfolgen enthält, nur eben verschoben.
-  .
-  142857 * 2 = 285714
-  142857 * 3 = 428571
-  142857 * 4 = 571428
-  142857 * 5 = 714285
-  714285 * 6 = 857142  
-  .
-  Übrigens sind alle zyklischen Zahlen durch 9 teilbar.
-{% endcomment %}
 
 **Die Inhalte dieses Beitrages und des beschriebenen Spiels sollen schockieren
 und unterhalten jedoch nicht die Meinungsbildung beeinflussen oder zu realen

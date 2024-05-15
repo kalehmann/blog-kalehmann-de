@@ -5,7 +5,7 @@ description:  >-
   The famous game Pong as boot code written in assembly using only BIOS calls
   and further experiments in assembly.
 lang:             en
-last_modified_at: 2020-09-13 20:54:00 +0100
+last_modified_at: 2024-05-15 20:20:00 +0200
 layout:           post
 tags:
   - Coding
@@ -77,7 +77,7 @@ BITS 16
 	mov 	ah, 0eh
 loop:
 	;; Load byte from [ds:si] into al and increment si.
-	lodsb               
+	lodsb
 	int 	10h
 	;; Check for end of string
 	test 	al, al
@@ -87,7 +87,7 @@ loop:
 	jmp 	$
 msg_h:	db "Hello, world!", 0
 	;; Fill the rest of the file with zeros.
-	times 510-($-$$) db 0    
+	times 510-($-$$) db 0
 	dw 0xaa55
 {% endhighlight %}
 

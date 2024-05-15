@@ -1,29 +1,14 @@
 ---
-layout:       post
-title:        PyInvaders2 - Space Invaders in Pygame
-date:         2015-07-27 11:23:58 +0200
-lang:         de
-categories:   blog
+layout:           post
+title:            PyInvaders2 - Space Invaders in Pygame
+date:             2015-07-27 11:23:58 +0200
+lang:             de
+last_modified_at: 2024-05-15 20:20:00 +0200
+categories:       blog
 tags:
   - Coding
   - Games
 ---
-
-{% comment %}
-  Leider lässt sich die Entwicklung von Veröffentlichung dieses Projektes nicht
-  mehr genau Datieren.
-  .
-  Folgende Fakten ermöglichen zumindest ein grobe Datierung:
-   - das Vorgängerprojekt wurde im Jahr 2014 im Juli in einem Workshop verwendet
-   - dieses Projekt wurde Mitte 2015 in einem Workshop verwendet
-   - der erste Commit auf GitHub ist auf den 08.10,2014 datiert
-  .
-   Das Datum wurde daraufhin zufallsbasiert auf einen Zeitraum nach dem Workshop
-   festgelegt.
-   .
-   Die Uhrzeit der Veröffentlichung entspricht dem Anfang der Fibonacci Folge:
-   1, 1, 2, 3, 5, 8, ...   
-{% endcomment %}
 
 # PyInvaders2
 
@@ -37,7 +22,7 @@ weitere Konfiguration notwendig. Wenn die Ressource als einzelne Datei vorliegt,
 wird diese als statische Textur verwendet. Wenn eine Ordner mit dem Namen der
 Ressource existiert und durchnummerierten Bildern enthält werden diese als
 animierte Textur verwendet. Andernfalls wird eine entsprechende Fehlermeldung
-ausgegeben.  
+ausgegeben.
 
 Das Spiel und dessen Quellcode kann [auf GitLab heruntergeladen werden](https://gitlab.com/kalehmann/PyInvaders2).
 
@@ -76,9 +61,10 @@ Auf den Wunsch einiger Teilnehmer wurde jedoch auch die Erstellung von
 Audiodateien mit einbezogen.
 
 Danach wurden noch die einzelnen Level bearbeitet, sprich die Anordnung der
-Invaders auf dem Spielfeld. Die einzelnen Levels werden durch Textdateien
-abgebildet. Diese bestehen aus jeweils 5 Zeilen zu 19 Zeichen. Dabei bildet eine
-"**0**" einen leeren Platz und ein "**#**" einen Invader ab.
+Invaders auf dem Spielfeld.
+Die einzelnen Levels werden durch Textdateien abgebildet.
+Diese bestehen aus jeweils 5 Zeilen zu 19 Zeichen.
+Dabei bildet eine "**0**" einen leeren Platz und ein "**#**" einen Invader ab.
 
 Zur Erstellung dieser Dateien existiert ein Levelcreator, welcher dem Spiel
 beiliegt.
@@ -88,14 +74,6 @@ beiliegt.
   Your browser does not support the video tag.
 </video>
 
-Am Ende folgte die Präsentation der entstandenen Werke. Die Vielfalt reichte von
-einigen Space Invader klonen zu kreativen Ausreißern wie dem Kuchen der in der
-Küche die Fruchtfliegen abschießt.
-
-# Trivia
-
-- bereits im Sommer 2014 fand ein Workshop mit der Vorgängerversion dieses Spiels
-statt. PyInvaders war mein erstes Programmierprojekt. Es wurde ebenfalls in
-Python geschrieben, allerdings komplett funktional ohne eine einzige Klasse.
-- PyInvaders2 wurde direkt im Anschluss an den ersten Workshop entwickelt und im
-Oktober 2014 auf GitHub veröffentlicht.
+Am Ende folgte die Präsentation der entstandenen Werke.
+Die Vielfalt reichte von einigen Space Invader klonen zu kreativen Ausreißern
+wie dem Kuchen der in der Küche die Fruchtfliegen abschießt.

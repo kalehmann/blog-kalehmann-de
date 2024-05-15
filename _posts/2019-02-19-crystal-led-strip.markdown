@@ -2,7 +2,7 @@
 categories:       blog
 date:             2019-02-19 23:13:12 +0200
 lang:             de
-last_modified_at: 2020-09-30 20:47:00 +0200
+last_modified_at: 2024-05-15 20:20:00 +0200
 layout:           post
 tags:
   - Make
@@ -13,21 +13,23 @@ title:            Kristall Ledstreifen
 
 ![Vier leuchtende Salz Kristalle auf einem Schreibtisch]({{ "assets/salz-led-strip/leuchtende_salz_kristalle.jpg" | absolute_url }})
 
-Ich mag Dinge die bunt sind und blinken. Deswegen faszinieren mich schon länger
-frei programmierbare LED Streifen. Außerdem habe ich bereits vor einiger Zeit ein
-paar Salzkristalle aus einem deutschen Steinsalzbergwerk erhalten.
+Menschen lieben Dinge die bunt sind und blinken.
+Deswegen faszinieren mich schon länger frei programmierbare LED Streifen.
+Außerdem habe ich bereits vor einiger Zeit ein paar Salzkristalle aus einem
+deutschen Steinsalzbergwerk erhalten.
 
 Anstatt mir nun einen fertigen LED Streifen zu kaufen habe ich beschlossen mir
-selbst einen zu basteln um die Salzkristalle zu beleuchten. Dabei werden
-4 RGB LEDs von einem Arduino angesteuert und können über eine Anwendung über USB
-programmiert werden.
+selbst einen zu basteln um die Salzkristalle zu beleuchten.
+Dabei werden 4 RGB LEDs von einem Arduino angesteuert und können über eine
+Anwendung über USB programmiert werden.
 
 ## Die Software
 
 Die entsprechende Software zum Ansteuern des LED Streifens habe ich in Qt
-geschrieben. Das Design habe ich dabei durchgehend mit QML umgesetzt, einzig
-zur Kommunikation mit dem Arduino über die serielle Schnittstelle habe ich
-eine C++ Erweiterung geschrieben.
+geschrieben.
+Das Design habe ich dabei durchgehend mit QML umgesetzt, einzig zur Kommunikation
+mit dem Arduino über die serielle Schnittstelle habe ich eine C++ Erweiterung
+geschrieben.
 
 Der Quellcode ist auf GitLab in dem Repository
 [kalehmann/led_strip](https://gitlab.com/kalehmann/crystal_led_strip)

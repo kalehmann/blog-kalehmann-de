@@ -14,9 +14,7 @@ tags:
 title:            A Simple Bootloader
 ---
 
-## SiBoLo - Writing a simple bootloader
-
-### How it started
+## How it started
 
 Writing bootcode using only the bios functions can be quite funny. Implementing
 programs without loading additional data using only 512 bytes is a nice
@@ -49,13 +47,13 @@ bootloader is enough to meet these requirements.
 The whole code was written during my first apprenticeship, most of it originated
 during the daily train trips to school.
 
-### The layout of a FAT12 formatted drive
+## The layout of a FAT12 formatted drive
 
 Lets start with a little excursion about the layout of a FAT12 formatted
 drive. A FAT12 formatted drive begins with the boot record. The boot record has
 a fixed size of 512 bytes.
 
-#### The Bios Parameter Block
+### The Bios Parameter Block
 
 The BPB is a structure in the boot record describing the drive and the file
 system. The bootloader contains a DOS 4.0 Extended BPB with the following
@@ -89,7 +87,7 @@ FileSystem:		db "FAT12   "
 The data in the BPB is essential information for loading additional code and
 data from a drive.
 
-#### The File Allocation Table
+### The File Allocation Table
 
 The boot record is followed by one or more file allocation tables. The file
 allocation table describes the distribution of the files on the drive. The
@@ -108,7 +106,7 @@ indicating the end of a cluster chain.
 The **12** in FAT**12** describes the size of each entry in the file allocation
 table, 12 bytes.
 
-#### The root directory table
+### The root directory table
 
 Directories are organized as tables on a FAT12 partition. All those tables are
 organized as files on the drive except the root directory table. It starts right
@@ -135,7 +133,7 @@ first cluster                    | 2 bytes
 file size                        | 4 bytes
 ```
 
-### Implementing the bootloader
+## Implementing the bootloader
 
 The bootloader has to complete several tasks to load and execute a program from
 the drive:
@@ -150,7 +148,7 @@ into memory.
 - A nice extra would be preserving the drive number of the boot drive and
 passing it to the loaded program.
 
-#### Relocation the program
+### Relocation the program
 
 The relocation is a pretty simple task. There is the **rep** instruction in x86
 assembly. It repeats a string operation until the **cx** register equals zero.
@@ -177,7 +175,7 @@ segment **cs**.
 go_on:
 {% endhighlight %}
 
-#### Loading actual data from a drive
+### Loading actual data from a drive
 
 This is not quite so simple. The BIOS handles drives still as floppy like
 devices.
@@ -419,7 +417,7 @@ my bootloader.
 In the end my problem was that I had not increased the pointer to the buffer for
 the file to load by the size of one cluster, but by a single byte.
 
-#### Load the root directory table
+## Load the root directory table
 
 To process the root directory table, it first needs to be loaded into the
 memory. To load the root directory table into memory, its location has to be
@@ -437,7 +435,7 @@ The formula for the first sector of the root directory table is:
 
 ![RootSize = (NumberOfRootDirEntrys * EntrySize) / SectorSize]({{ "assets/sibolo/root_dir_size.svg" | absolute_url }})
 
-#### Processing a root directory table entry
+### Processing a root directory table entry
 
 Each entry starts with the filename in the 8.3 format. That means 8 bytes for
 the name and 3 bytes for the file extension. If the name is shorter than 8
@@ -484,23 +482,23 @@ At this point the task of the bootloader is done. The full source code with all
 the given pieces put together is available in the GitLab repository
 [kalehmann/SiBoLo](https://gitlab.com/kalehmann/SiBoLo).
 
-### Installation on a drive
+## Installation on a drive
 
 The bootloader comes with a little C program for the installation on a drive.
 
-### Example usage
+## Example usage
 
 Setting up the bootloader to load a program, such as my
 [Pong from scratch]({% post_url 2016-07-13-pong %})
 is pretty straightforward.
 
-#### Building the project
+### Building the project
 
 First the bootloader and its installer have to be build. This can be done using
 the makefile of the project. Note that **nasm** and **gcc** have to be installed
 to build te project.
 
-#### Creating an floppy image
+### Creating an floppy image
 
 Creating a floppy image can be done using the _mkfs.fat_ utility. The following
 command creates a new FAT12 image named _floppy.flp_ with a size of 1.44 MB.
@@ -523,7 +521,7 @@ cp PONG.BIN /mnt/
 umount /mnt
 ```
 
-#### Using the installer
+### Using the installer
 
 The bootloader gets written on the floppy image with the supplied installer.
 The installer takes 3 arguments in the following order:
@@ -541,7 +539,7 @@ upper case.
 ./sibolo-install bootloader.bin floppy.flp PONG.BIN
 ```
 
-#### Test with qemu
+### Test with qemu
 
 The QEMU PC System emulator can be used to test the created floppy. The `-fda`
 option tells qemu to use the following file as floppy.

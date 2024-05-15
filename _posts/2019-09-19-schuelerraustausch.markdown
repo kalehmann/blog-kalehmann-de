@@ -1,10 +1,10 @@
 ---
-layout:       post
-title:        Schuelerraustausch - Hosting American exchange students in Dresden
-date:         2019-09-19 12:34:56 +0200
-last_modified_at: 2019-10-10 20:48:00 +0200
-lang:         en
-categories:   blog
+layout:           post
+title:            Schuelerraustausch - Hosting American exchange students in Dresden
+date:             2019-09-19 12:34:56 +0200
+last_modified_at: 2024-05-15 20:20:00 +0200
+lang:             en
+categories:       blog
 tags:
   - Travel
 ---
@@ -12,7 +12,7 @@ tags:
 In the autumn of 2018, I traveled together with 9 other students and two
 teachers from our school – the BSZET in Dresden – to Columbus, Ohio.
 This was an amazing trip for me, I also wrote about it here on my blog, see
-[School exchange to Columbus, Ohio]({% post_url 2018-09-19-school-exchange-columbus-ohio %}).  
+[School exchange to Columbus, Ohio]({% post_url 2018-09-19-school-exchange-columbus-ohio %}).
 Now, a year later I still like remember this trip every once in a while
 and I in retrospect I think I can still write that this experience and all the
 lasting memories to it helped me to grow as a person and left me positively
@@ -73,7 +73,7 @@ to package a piece of candy by our self according to a template.
 On our second Thursday we visited our fourth and final company - this time BMW
 in Leipzig. While the tour was mostly an advertisement on how eco friendly BMW is
 now (only green energy used, parts of the manufactoring side are made out of
-wood, no welding used...) the tour was nevertheless really worhtwhile, in
+vwood, no welding used...) the tour was nevertheless really worhtwhile, in
 particular seeing the high level automation there.
 
 Last year in Columbus we visited to city hall hoping for a change to present
