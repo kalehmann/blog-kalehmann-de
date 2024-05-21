@@ -26,7 +26,7 @@ details {
   padding: 5px 10px;
 }
 
-video {
+img, video {
   width: 100%;
 }
 
@@ -35,7 +35,8 @@ video {
   %image {
     display: inline-block;
     margin: auto;
-    max-width: 49%
+    max-width: 49%;
+    width: 50%;
   }
 
   .image {
