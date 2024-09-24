@@ -30,13 +30,56 @@ img, video {
   width: 100%;
 }
 
-@media screen and (min-width: 800px) {
+.image {
+    &-left {
+	display: block;
+        margin-bottom: $spacing-unit * 0.5;
+    }
 
+    &-right {
+	display: block;
+        margin-bottom: $spacing-unit * 0.5;
+    }
+}
+
+.float {
+    &-left {
+	display: block;
+        margin-bottom: $spacing-unit * 0.5;
+    }
+
+    &-right {
+	display: block;
+        margin-bottom: $spacing-unit * 0.5;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
   %image {
     display: inline-block;
     margin: auto;
     max-width: 49%;
     width: 50%;
+  }
+
+  *:has(> .float-left, > .float-right)::after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+
+  .float {
+    &-left {
+      @extend %image;
+      float: left;
+      margin-right: 2%;
+    }
+    &-right {
+      @extend %image;
+      float: right;
+      margin-left: 2%;
+    }
   }
 
   .image {
