@@ -89,7 +89,7 @@ Thanks for that, travelling the European Union without restrictions was nice
 while it lasted.
 
 
-[architecture_01]: {{ "assets/24-netherlands-trip/architecture_01.avif" | absolute_url }}
+  [architecture_01]: {{ "assets/24-netherlands-trip/architecture_01.avif" | absolute_url }}
   [architecture_02]: {{ "assets/24-netherlands-trip/architecture_02.avif" | absolute_url }}
   [epica_01]: {{ "assets/24-netherlands-trip/epica_01.avif" | absolute_url }}
   [epica_02]: {{ "assets/24-netherlands-trip/epica_02.avif" | absolute_url }}
