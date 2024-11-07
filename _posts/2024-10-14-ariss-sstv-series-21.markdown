@@ -5,7 +5,7 @@ description:  >-
   Receiving a SSTV transmission from the International Space Station in
   celebration of the 67th anniversary of the Sputnik mission.
 lang:             en
-last_modified_at: 2024-10-14 21:08:00 +0200
+last_modified_at: 2024-11-07 21:19:00 +0200
 layout:           post
 tags:
   - Radio
@@ -151,6 +151,17 @@ Here come the images:
 </audio>
 
 
+### QSL Card
+
+It is possible to obtain a QSL card for receiving images from the ARISS SSTV
+event.
+Further details on how to do so are liste on the [ARISS homepage][qsl_details].
+My QSL card arrived in the post at the beginning of November.
+
+[![A QSL card depicting the ISS][qsl_card]][qsl_card]
+
+
+
   [dipole_mobile]: {{ "assets/2024-10-ariss-sstv/v_dipole_mobile.avif" | absolute_url }}
   [dipole_roof]: {{ "assets/2024-10-ariss-sstv/v_dipole_roof.avif" | absolute_url }}
   [look4sat]: https://github.com/rt-bishop/Look4Sat
@@ -159,6 +170,8 @@ Here come the images:
   [picture_10]: {{ "assets/2024-10-ariss-sstv/2024-10-14UTC105037-10.avif" | absolute_url }}
   [picture_11]: {{ "assets/2024-10-ariss-sstv/2024-10-14UTC091605-11.avif" | absolute_url }}
   [picture_12]: {{ "assets/2024-10-ariss-sstv/2024-10-13UTC100342-12.avif" | absolute_url }}
+  [qsl_card]: {{ "assets/2024-10-ariss-sstv/qsl_card.avif" | absolute_url }}
+  [qsl_details]: https://www.ariss.org/qsl-cards.html
   [reddit_announcement]: https://old.reddit.com/user/ARISS_Intl/comments/1fv8p1v/how_about_some_sstv_were_planning_a_slow_scan/
   [robot36]: https://github.com/xdsopl/robot36
   [sdr]: {{ "assets/2024-10-ariss-sstv/sdr.avif" | absolute_url }}
