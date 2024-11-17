@@ -54,6 +54,14 @@ audio, img, video {
     }
 }
 
+form {
+    & label > input {
+	display: block;
+	width: 100%;
+        margin-bottom: $spacing-unit * 0.5;
+    }
+}
+
 
 @media screen and (min-width: 800px) {
   %image {

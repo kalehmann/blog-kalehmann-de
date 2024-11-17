@@ -1,0 +1,27 @@
+<svg
+   width="100%"
+   height="100%"
+   viewBox="0 -60 109.5 120"
+   version="1.1"
+   id="yagi_svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g
+     id="text"
+     style="font-size:3px;font-family:Sans;stroke-width:0.264583"
+  >
+    <text xml:space="preserve" x="61.6" y="-48" id="label_director_1">1st director</text>
+    <text xml:space="preserve" x="91.6" y="-47.5" id="label_director_2">2nd director</text>
+    <text xml:space="preserve" x="30.9" y="-51.5" id="label_driven_element">Driven element</text>
+    <text xml:space="preserve" x="4" y="-53.5" id="label_reflector">Reflector</text>
+  </g>
+  <g
+      id="wires"
+      style="fill:none;stroke:#000100;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+  >
+    <rect id="reflector" width="2" height="104" x="9" y="-52" />
+    <rect id="driven_element" width="2" height="100" x="40" y="-50" />
+    <rect id="director_1" width="2" height="93" x="68" y="-46.5" />
+    <rect id="director_2" width="2" height="92" x="98.5" y="-46" />
+  </g>
+</svg>
