@@ -73,8 +73,67 @@ Der Distanz zwischen zwei Längengrade variiert jedoch in Abhängigkeit vom
 Breitengrad.
 Am Äquator, mit dem Erdradius r<sub>0</sub> berechnet sich die Distanz zwischen
 zwei Längengraden D<sub>0</sub> mit
-
-![d0 = 40075/360 = 111.3]({{ "assets/schreibmit/d0.svg" | absolute_url }})
+<math>
+  <mtable>
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>D</mi>
+          <mn>0</mn>
+        </msub>
+      </mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mfrac>
+          <mrow>
+            <msub>
+              <mi>r</mi>
+              <mn>0</mn>
+            </msub>
+            <mo>⋅</mo>
+            <mn>2</mn>
+            <mo>⋅</mo>
+            <mi>π</mi>
+          </mrow>
+          <mn>360</mn>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mfrac>
+          <mrow>
+            <mn>6378</mn>
+            <mi>Km</mi>
+            <mo>⋅</mo>
+            <mn>2</mn>
+            <mo>⋅</mo>
+            <mi>π</mi>
+          </mrow>
+          <mn>360</mn>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mo>≈</mo>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mn>111,3</mn>
+          <mi>Km</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
 
 Allerdings nähert sich die Distanz zwischen zwei Längengraden zu den Polen hin
 immer mehr dem Wert 0 an.
@@ -82,14 +141,103 @@ Um die Distanz in Abhängigkeit von der geografischen Breite φ zu bestimmen,
 benötigt man den Radius des Breitengrades.
 
 Dieser Radius, r<sub>φ</sub> berechnet sich
-
-![rφ = cos(φ) * r0]({{ "assets/schreibmit/rphi.svg" | absolute_url }})
+<math>
+  <mrow>
+    <msub>
+      <mi>r</mi>
+      <mi>φ</mi>
+    </msub>
+    <mo>=</mo>
+    <mo>cos</mo>
+    <mo>(</mo>
+    <mi>φ</mi>
+    <mo>)</mo>
+    <mo>⋅</mo>
+    <msub>
+      <mi>r</mi>
+      <mn>0</mn>
+    </msub>
+  </mrow>
+</math>
 
 Zusammen mit der Formel für die Distanz zwischen zwei Längengraden am Äquator
 lässt sich die Berechnung von D<sub>φ</sub> zusammenfassen auf
 
-![Dφ = cos(φ) * D0]({{ "assets/schreibmit/dphi.svg" | absolute_url }})
-
+<math>
+  <mtable>
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>D</mi>
+          <mi>φ</mi>
+        </msub>
+      </mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mfrac>
+          <mrow>
+            <msub>
+              <mi>r</mi>
+              <mi>φ</mi>
+            </msub>
+            <mo>⋅</mo>
+            <mn>2</mn>
+            <mo>⋅</mo>
+            <mi>π</mi>
+          </mrow>
+          <mn>360</mn>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mfrac>
+          <mrow>
+            <mo>cos</mo>
+            <mo>(</mo>
+            <mi>φ</mi>
+            <mo>)</mo>
+            <mo>⋅</mo>
+            <msub>
+              <mi>r</mi>
+              <mn>0</mn>
+            </msub>
+            <mo>⋅</mo>
+            <mn>2</mn>
+            <mo>⋅</mo>
+            <mi>π</mi>
+          </mrow>
+          <mn>360</mn>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mo>cos</mo>
+          <mo>(</mo>
+          <mi>φ</mi>
+          <mo>)</mo>
+          <mo>⋅</mo>
+          <msub>
+            <mi>D</mi>
+            <mn>0</mn>
+          </msub>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
 
 ![]({{ "assets/schreibmit/earth_longitude.png" | absolute_url }})
 
@@ -98,8 +246,45 @@ angenommen.
 Diese Koordinaten entsprechen in etwa dem Pirnaischen Platz.
 Für diesen Breitengrad kann man einen Abstand zwischen zwei Längengraden von
 70 Km annehmen
-
-![DDresden = cos(51°) * 111.3Km = 70Km]({{ "assets/schreibmit/ddresden.svg" | absolute_url }})
+<math>
+  <mtable>
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>D</mi>
+          <mi>Dresden</mi>
+        </msub>
+      </mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mo>cos</mo>
+          <mo>(</mo>
+          <mn>51</mn>
+          <mi>°</mi>
+          <mo>)</mo>
+          <mo>⋅</mo>
+          <mn>111,3</mn>
+          <mi>Km</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mo>≈</mo>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mn>70</mn>
+          <mi>Km</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
 
 Mit diesen Informationen kann der Abstand zwischen zwei Koordinaten berechnet
 werden.
@@ -107,9 +292,49 @@ Angenommen man hat zwei Punkte P<sub>1</sub> und P<sub>2</sub>.
 Deren Koordinaten werden mit den Breitengraden φ<sub>1</sub> und φ<sub>2</sub>
 sowie den Längengraden λ<sub>1</sub> und λ<sub>2</sub> beschrieben.
 Die Distanz zwischen diesen beiden Punkten wird wie folgt berechnet
-
-![Dφ = cos(φ) * D0]({{ "assets/schreibmit/distance.svg" | absolute_url }})
-
+<math>
+  <mrow>
+    <mi>D</mi>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup>
+          <mrow>
+            <mo>(</mo>
+            <msub>
+              <mi>φ</mi>
+              <mn>2</mn>
+            </msub>
+            <mo>-</mo>
+            <msub>
+              <mi>φ</mi>
+              <mn>1</mn>
+            </msub>
+            <mo>)</mo>
+          </mrow>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <msup>
+          <mrow>
+            <mo>(</mo>
+            <msub>
+              <mi>λ</mi>
+              <mn>2</mn>
+            </msub>
+            <mo>-</mo>
+            <msub>
+              <mi>λ</mi>
+              <mn>1</mn>
+            </msub>
+            <mo>)</mo>
+          </mrow>
+          <mn>2</mn>
+        </msup>
+      </mrow>
+    </msqrt>
+  </mrow>
+</math>
 
 ### Die Webanwendung
 

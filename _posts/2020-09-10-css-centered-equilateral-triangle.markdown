@@ -186,7 +186,109 @@ Since **border-left** and **border-right** are equal, they are both akin
 **border-bottom** can be calculated from **a** using the Pythagorean theorem
 with:
 
-![sqrt(3) * a / 2 = border-bottom][borders]
+<math>
+  <mtable>
+    <mtr>
+      <mtd>
+        <msup>
+          <mi>a</mi>
+          <mn>2</mn>
+        </msup>
+      </mtd>
+      <mtd>=</mtd>
+      <mtd>
+        <mrow>
+          <msup>
+            <mrow>
+              <mo>(</mo>
+              <mfrac>
+                <mi>a</mi>
+                <mn>2</mn>
+              </mfrac>
+              <mo>)</mo>
+            </mrow>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <msup>
+            <mi>border-bottom</mi>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>=</mtd>
+      <mtd>
+        <mrow>
+          <mfrac>
+            <msup>
+              <mi>a</mi>
+              <mn>2</mn>
+            </msup>
+            <mn>4</mn>
+          </mfrac>
+          <mo>+</mo>
+          <msup>
+            <mi>border-bottom</mi>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mrow>
+          <mfrac>
+            <mn>3</mn>
+            <mn>4</mn>
+          </mfrac>
+          <msup>
+            <mi>a</mi>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+      </mtd>
+      <mtd>=</mtd>
+      <mtd>
+        <msup>
+          <mi>border-bottom</mi>
+          <mn>2</mn>
+        </msup>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mrow>
+          <mfrac>
+            <msqrt>
+              <mn>3</mn>
+            </msqrt>
+            <mn>2</mn>
+          </mfrac>
+          <mi>a</mi>
+        </mrow>
+      </mtd>
+      <mtd>=</mtd>
+      <mtd>
+        <mi>border-bottom</mi>
+      </mtd>
+    </mtr>
+     <mtr>
+      <mtd>
+        <mrow>
+          <mn>0,866</mn>
+          <mi>a</mi>
+        </mrow>
+      </mtd>
+      <mtd>≈</mtd>
+      <mtd>
+        <mi>border-bottom</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
 
 Using this formula an equilateral triangle can be rendered with the following
 CSS:
@@ -232,7 +334,79 @@ calculated using the tangent in the triangle between the baseline, the angle
 bisector of the triangles bottom left corner and the altitude on the triangles
 baseline.
 
-![][incenter]
+<math>
+  <mtable>
+    <mtr>
+      <mtd>
+        <mfrac>
+          <msub>
+            <mi>h</mi>
+            <mi>c</mi>
+          </msub>
+          <mfrac>
+            <mi>a</mi>
+            <mn>2</mn>
+          </mfrac>
+        </mfrac>
+      </mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mo>tan</mo>
+          <mo>(</mo>
+          <mn>30</mn>
+          <mi>°</mi>
+          <mo>)</mo>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>h</mi>
+          <mi>c</mi>
+        </msub>
+      </mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mo>tan</mo>
+              <mo>(</mo>
+              <mn>30</mn>
+              <mi>°</mi>
+              <mo>)</mo>
+            </mrow>
+            <mn>2</mn>
+          </mfrac>
+          <mi>a</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>h</mi>
+          <mi>c</mi>
+        </msub>
+      </mtd>
+      <mtd>
+        <mo>≈</mo>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mn>0,2887</mn>
+          <mi>a</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
 
 Finally the offset from the current center *C* to the incenter *I* can be
 calculated with <sup>**border-bottom**</sup>/<sub>2</sub> - *h*<sub>*c*</sub>.
@@ -274,9 +448,7 @@ Last but not least the triangle is then created with the
 </div>
 
   [after]: https://developer.mozilla.org/en-US/docs/Web/CSS/::after
-  [borders]: {{ "assets/css-triangle/borders.svg" | absolute_url }}
   [center]: {{ "assets/css-triangle/center.svg" | absolute_url }}
-  [incenter]: {{ "assets/css-triangle/incenter.svg" | absolute_url }}
   [media-controls]: {{ "assets/css-triangle/firefox-mobile-media-controls.jpg" | absolute_url }}
   [triangle]: {{ "assets/css-triangle/triangle.svg" | absolute_url }}
   [video-el]: https://developer.mozilla.org/en/docs/Web/HTML/Element/video

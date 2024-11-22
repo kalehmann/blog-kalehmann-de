@@ -1,0 +1,11 @@
+math {
+    font-size: calc(1.5 * $base-font-size);
+    line-height: $base-line-height;
+    width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+    math {
+	font-size: calc(2 * $base-font-size);
+    }
+}

@@ -60,18 +60,207 @@ werden 2 ohmsche Widerstände mit 3.3 KOhm und 10 KOhm verwenden.
 
 Das Teilungsverhältnis t für diesen Spannungsteiler errechnet sich
 folgendermaßen:
-![t = R2 / (R1 + R2) = 3.3 KOhm / (10 KOhm + 3.3 KOhm) = 0.25]({{ "assets/ursamar-rk44-temperaturerfassung/spannungsteiler_verhaeltnis.svg" | absolute_url }})
+<math>
+  <mrow>
+    <mi>t</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msub>
+        <mi>R</mi>
+        <mn>2</mn>
+      </msub>
+      <mrow>
+        <msub>
+          <mi>R</mi>
+          <mn>1</mn>
+        </msub>
+        <mo>+</mo>
+        <msub>
+          <mi>R</mi>
+          <mn>2</mn>
+        </msub>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mn>3,3</mn>
+        <mi>KΩ</mi>
+      </mrow>
+      <mrow>
+        <mrow>
+          <mn>10</mn>
+          <mi>KΩ</mi>
+        </mrow>
+        <mo>+</mo>
+        <mrow>
+          <mn>3,3</mn>
+          <mi>KΩ</mi>
+        </mrow>
+      </mrow>
+    </mfrac>
+    <mo>≈</mo>
+    <mn>0,25</mn>
+  </mrow>
+</math>
 
 Zur optimalen Erfassung von Werten wird der Messbereich des ADC auf -4,096 V bis
 +4,096 V eingestellt.
 
 Somit lässt sich die Messauflösung R des ADC wie folgt ermitteln:
-![R = (Umax - Umin) / 2^16 = (4.096 V - (-4.096V)) / 2^16 ≈ 120 µV]({{ "assets/ursamar-rk44-temperaturerfassung/adc_schrittweite.svg" | absolute_url }})
+<math>
+  <mtable>
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>R</mi>
+          <mi>ADC</mi>
+        </msub>
+      </mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mfrac>
+          <mrow>
+            <msub>
+              <mi>U</mi>
+              <mi>Max</mi>
+            </msub>
+            <mo>-</mo>
+            <msub>
+              <mi>U</mi>
+              <mi>Min</mi>
+            </msub>
+          </mrow>
+          <msup>
+            <mn>2</mn>
+            <mn>16</mn>
+          </msup>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mfrac>
+          <mrow>
+            <mn>4,096</mn>
+            <mi>V</mi>
+            <mo>-</mo>
+            <mo>(</mo>
+            <mo>-</mo>
+            <mn>-4,096</mn>
+            <mi>V</mi>
+            <mo>)</mo>
+          </mrow>
+          <msup>
+            <mn>2</mn>
+            <mn>16</mn>
+          </msup>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>8,192</mn>
+            <mi>V</mi>
+          </mrow>
+          <msup>
+            <mn>2</mn>
+            <mn>16</mn>
+          </msup>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mo>≈</mo>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mn>120</mn>
+          <mi>μV</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
 
 Daraus ergibt sich folgende Formel zu Berechnung der Spannung am
 Temperaturregler aus dem Messwert des ADCs:
-
-![Ux = Messwert * 1/t * R ≈ Messwert/2000]({{ "assets/ursamar-rk44-temperaturerfassung/ux_formel.svg" | absolute_url }})
+<math>
+  <mtable>
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>U</mi>
+          <mi>x</mi>
+        </msub>
+      </mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mi>Messwert</mi>
+          <mo>⋅</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mi>t</mi>
+          </mfrac>
+          <mo>⋅</mo>
+          <msub>
+            <mi>R</mi>
+            <mi>ADC</mi>
+          </msub>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mi>Messwert</mi>
+          <mo>⋅</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mn>0,25</mn>
+          </mfrac>
+          <mo>⋅</mo>
+          <mfrac>
+            <mrow>
+              <mn>8,192</mn>
+              <mi>V</mi>
+            </mrow>
+            <msup>
+              <mn>2</mn>
+              <mn>16</mn>
+            </msup>
+          </mfrac>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mo>≈</mo>
+      </mtd>
+      <mtd>
+        <mfrac>
+          <mi>Messwert</mi>
+          <mn>2000</mn>
+        </mfrac>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
 
 Nun lässt sich mit folgendem Code die Spannung an dem Temperaturregler lesen.
 
