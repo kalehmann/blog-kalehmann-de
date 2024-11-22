@@ -2,6 +2,7 @@
 ---
 
 @import "{{ site.theme }}";
+@import "gallery";
 
 body, html {
     scroll-behavior: smooth;
