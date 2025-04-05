@@ -23,6 +23,7 @@ math {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-bottom: $spacing-unit * 0.5;
 }
 
 .post_tag, .post_tag:hover, .post_tag:visited {
