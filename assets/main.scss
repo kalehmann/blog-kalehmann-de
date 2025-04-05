@@ -19,6 +19,12 @@ details {
     }
 }
 
+math {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .post_tag, .post_tag:hover, .post_tag:visited {
   margin: 0 .3em 0 .3em;
   border-radius: 5px;
