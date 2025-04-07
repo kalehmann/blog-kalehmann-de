@@ -149,6 +149,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.4)
   jekyll-sitemap (~> 1.4)
+  json (~> 2.10)
   minima (~> 2.5)
 
 BUNDLED WITH
