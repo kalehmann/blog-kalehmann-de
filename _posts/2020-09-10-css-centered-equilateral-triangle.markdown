@@ -6,7 +6,7 @@ description: >-
   in its containing HTML element. Explaining in depth how the internal angles of
   a CSS border triangle are manipulated.
 lang:             en
-last_modified_at: 2020-09-16 23:44:32 +0200
+last_modified_at: 2025-04-08 21:05:00 +0200
 layout:           post
 tags:
   - Coding
@@ -186,7 +186,7 @@ Since **border-left** and **border-right** are equal, they are both akin
 **border-bottom** can be calculated from **a** using the Pythagorean theorem
 with:
 
-<math>
+<math display="block">
   <mtable>
     <mtr>
       <mtd>
@@ -334,7 +334,7 @@ calculated using the tangent in the triangle between the baseline, the angle
 bisector of the triangles bottom left corner and the altitude on the triangles
 baseline.
 
-<math>
+<math display="block">
   <mtable>
     <mtr>
       <mtd>

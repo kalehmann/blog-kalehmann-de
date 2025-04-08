@@ -1,13 +1,14 @@
 ---
-layout:       post
-title:        Automatische Temperaturerfassung mit einem Ursamar RK44 Temperaturregler
+categories:   blog
 date:         2018-07-30 13:12:29 +0200
 lang:         de
-categories:   blog
+last_modified_at: 2025-04-08 21:05:00 +0200
+layout:       post
 tags:
   - Make
   - Coding
   - RaspberryPi
+title:        Automatische Temperaturerfassung mit einem Ursamar RK44 Temperaturregler
 ---
 
 ## Die Ausgangssituation
@@ -60,7 +61,8 @@ werden 2 ohmsche Widerstände mit 3.3 KOhm und 10 KOhm verwenden.
 
 Das Teilungsverhältnis t für diesen Spannungsteiler errechnet sich
 folgendermaßen:
-<math>
+
+<math display="block">
   <mrow>
     <mi>t</mi>
     <mo>=</mo>
@@ -108,7 +110,8 @@ Zur optimalen Erfassung von Werten wird der Messbereich des ADC auf -4,096 V bis
 +4,096 V eingestellt.
 
 Somit lässt sich die Messauflösung R des ADC wie folgt ermitteln:
-<math>
+
+<math display="block">
   <mtable>
     <mtr>
       <mtd>
@@ -192,7 +195,8 @@ Somit lässt sich die Messauflösung R des ADC wie folgt ermitteln:
 
 Daraus ergibt sich folgende Formel zu Berechnung der Spannung am
 Temperaturregler aus dem Messwert des ADCs:
-<math>
+
+<math display="block">
   <mtable>
     <mtr>
       <mtd>

@@ -6,11 +6,11 @@ description:  >-
   Details zur technischen Umsetzung und der Entfernungsermittlung anhand der
   Postleitzahl in PHP und Symfony.
 lang:             de
-last_modified_at: 2020-09-13 21:00:00 +0200
+last_modified_at: 2025-04-08 21:05:00 +0200
 layout:           post
 tags:
   - Coding
-title:            'SchreibMit! - Ostern in der Isolation'   
+title:            'SchreibMit! - Ostern in der Isolation'
 ---
 
 ## SchreibMit!
@@ -73,7 +73,8 @@ Der Distanz zwischen zwei Längengrade variiert jedoch in Abhängigkeit vom
 Breitengrad.
 Am Äquator, mit dem Erdradius r<sub>0</sub> berechnet sich die Distanz zwischen
 zwei Längengraden D<sub>0</sub> mit
-<math>
+
+<math display="block">
   <mtable>
     <mtr>
       <mtd>
@@ -141,7 +142,8 @@ Um die Distanz in Abhängigkeit von der geografischen Breite φ zu bestimmen,
 benötigt man den Radius des Breitengrades.
 
 Dieser Radius, r<sub>φ</sub> berechnet sich
-<math>
+
+<math display="block">
   <mrow>
     <msub>
       <mi>r</mi>
@@ -163,7 +165,7 @@ Dieser Radius, r<sub>φ</sub> berechnet sich
 Zusammen mit der Formel für die Distanz zwischen zwei Längengraden am Äquator
 lässt sich die Berechnung von D<sub>φ</sub> zusammenfassen auf
 
-<math>
+<math display="block">
   <mtable>
     <mtr>
       <mtd>
@@ -246,7 +248,8 @@ angenommen.
 Diese Koordinaten entsprechen in etwa dem Pirnaischen Platz.
 Für diesen Breitengrad kann man einen Abstand zwischen zwei Längengraden von
 70 Km annehmen
-<math>
+
+<math display="block">
   <mtable>
     <mtr>
       <mtd>
@@ -292,7 +295,7 @@ Angenommen man hat zwei Punkte P<sub>1</sub> und P<sub>2</sub>.
 Deren Koordinaten werden mit den Breitengraden φ<sub>1</sub> und φ<sub>2</sub>
 sowie den Längengraden λ<sub>1</sub> und λ<sub>2</sub> beschrieben.
 Die Distanz zwischen diesen beiden Punkten wird wie folgt berechnet
-<math>
+<math display="block">
   <mrow>
     <mi>D</mi>
     <mo>=</mo>

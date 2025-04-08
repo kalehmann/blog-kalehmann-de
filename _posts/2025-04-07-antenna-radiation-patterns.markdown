@@ -5,7 +5,7 @@ description:  >-
   Building and testing a tool to plot the radiation patter of directional
   radio antennas.
 lang:             en
-last_modified_at: 2025-04-07 20:05:00 +0200
+last_modified_at: 2025-04-08 21:05:00 +0200
 layout:           post
 tags:
   - Radio
@@ -20,7 +20,7 @@ Now I would like to extend that antenna for the 70-cm band.
 The formula for free space propagation loss (FSPL) - ignoring antenna
 directivity - is 
 
-<math>
+<math display="block">
     <mrow>
         <mi>FSPL</mi>
         <mo>=</mo>
@@ -56,7 +56,7 @@ While the dimensions of the four individual elements for the previous antenna we
 largely determined by trial and error, this would be impractical for more than 4
 elements.
 
-## Simulation and Optimization in XNEC2C
+## Simulation and optimization in XNEC2C
 
 This is were - once again - [xnec2c][xnec2c] comes into play.
 The program is great for simulating antenna characteristics such as gain and SWR.
