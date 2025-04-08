@@ -1,11 +1,15 @@
-math {
-    font-size: calc(1.5 * $base-font-size);
-    line-height: $base-line-height;
-    width: 100%;
+$base-font-size: 16px;
+$spacing-unit: 30px;
+
+math[display="block"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: $spacing-unit * 0.5;
 }
 
 @media screen and (min-width: 800px) {
-    math {
-	font-size: calc(2 * $base-font-size);
+    math[display="block"] {
+	font-size: 20pt;
     }
 }

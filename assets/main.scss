@@ -19,13 +19,6 @@ details {
     }
 }
 
-math[display="block"] {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: $spacing-unit * 0.5;
-}
-
 .post_tag, .post_tag:hover, .post_tag:visited {
   margin: 0 .3em 0 .3em;
   border-radius: 5px;
