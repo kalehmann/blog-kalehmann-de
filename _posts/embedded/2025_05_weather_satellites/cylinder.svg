@@ -1,0 +1,44 @@
+<svg width="100%" height="100%" version="1.1" viewBox="0 0 150.29 170.08" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="a" overflow="visible" markerHeight="1" markerWidth="1" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 1 1">
+   <path transform="scale(.5)" d="m5.77 0-8.65 5v-10z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/>
+  </marker>
+  <marker id="b" overflow="visible" markerHeight="1" markerWidth="1" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 1 1">
+   <path transform="scale(.7)" d="m-0.21115-4.1056 6.4223 3.2111a1 1 90 0 1 0 1.7889l-6.4223 3.2111a1.2361 1.2361 31.717 0 1-1.7889-1.1056v-6a1.2361 1.2361 148.28 0 1 1.7889-1.1056z" fill="context-stroke" fill-rule="evenodd"/>
+  </marker>
+ </defs>
+ <g transform="translate(-7.9417 -46.85)">
+  <g fill="none" stroke="#000" stroke-width=".26458px">
+   <path d="m10 60h10"/>
+   <path d="m10 160h10"/>
+   <path d="m11.906 160v-100"/>
+   <path d="m45.772 182.56v30.427"/>
+   <path d="m89.669 182.56 0.03685 30.427"/>
+   <path d="m45.772 210.34h43.931"/>
+  </g>
+  <text transform="matrix(.26458 0 0 .26458 4.8514 .52917)" font-family="sans-serif" font-size="24px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;shape-inside:url(#rect11);white-space:pre" xml:space="preserve"><tspan x="10" y="405.496">h</tspan></text>
+  <text transform="matrix(.26458 0 0 .26458 19.181 -3.4091)" font-family="sans-serif" font-size="24px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;shape-inside:url(#rect12);white-space:pre" xml:space="preserve"><tspan x="120" y="832.2">⌀ = ω ⋅ h</tspan></text>
+  <g fill="none">
+   <path d="m46.654 182.56 42.088-1.6e-4" stroke="#a3662e" stroke-linecap="round" stroke-width="2"/>
+   <g stroke="#000" stroke-width=".26458px">
+    <path d="m20.108 60v-11.042"/>
+    <path d="m89.838 60.06v-11.042"/>
+    <path d="m20.108 51.594 69.73 6e-3"/>
+   </g>
+   <path d="m89.694 80.59a20 20 0 0 1-11.499-3.6361" stroke="#010100" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text transform="matrix(.26458 0 0 .26458 15.732 66.753)" font-family="sans-serif" font-size="21.333px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;shape-inside:url(#rect15);white-space:pre" xml:space="preserve"><tspan x="99.984375" y="-59.799901">0.5 ⋅ ⌀ ⋅ π</tspan></text>
+  <text x="83.263313" y="76.84771" font-family="sans-serif" font-size="6.35px" stroke-width=".26458" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="83.263313" y="76.84771" font-family="sans-serif" font-size="6.35px" stroke-width=".26458" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">α</tspan></text>
+  <path d="m89.838 60.518v99.026" fill="none" stroke="#010100" stroke-dasharray="1.6,3.2" stroke-linecap="round" stroke-linejoin="round" stroke-width=".8"/>
+  <text transform="matrix(.16255 -.20876 .20876 .16255 -144.01 -7.9998)" font-family="sans-serif" font-size="24px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;shape-inside:url(#rect2);white-space:pre" xml:space="preserve"><tspan x="120" y="830.496">s</tspan></text>
+  <g fill="none">
+   <path d="m21.009 159.18 68.007-98.16" stroke="#a3662e" stroke-linecap="round" stroke-width="2"/>
+   <path d="m89.165 159.01 67.998-97.896" stroke="#a3662e" stroke-linecap="round" stroke-width="2"/>
+   <g stroke="#000">
+    <circle cx="67.772" cy="182" r="21.753" stroke-linecap="square"/>
+    <rect x="20.496" y="60.496" width="137.24" height="99.009" stroke-linecap="square"/>
+    <path d="m24.474 140.23 51.594-74.083" marker-end="url(#b)" marker-start="url(#a)" stroke-linecap="round" stroke-width=".265"/>
+   </g>
+  </g>
+ </g>
+</svg>

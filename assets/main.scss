@@ -54,13 +54,21 @@ audio, img, video {
 	display: block;
         margin-bottom: $spacing-unit * 0.5;
     }
+
+    &-small {
+	margin: auto;
+	width: 66%;
+    }
 }
 
+
 form {
-    & label > input {
-	display: block;
-	width: 100%;
-        margin-bottom: $spacing-unit * 0.5;
+    & label  {
+	& > input, select {
+	    display: block;
+	    width: 100%;
+            margin-bottom: $spacing-unit * 0.5;
+	}
     }
 }
 
@@ -89,6 +97,10 @@ form {
       @extend %image;
       float: right;
       margin-left: 2%;
+    }
+
+    &-small.float-left, &-small.float-right {
+	width: 33%;
     }
   }
 
