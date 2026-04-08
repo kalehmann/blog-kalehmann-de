@@ -6,8 +6,8 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "jekyll", "~> 4.4"
 
-gem "minima", "~> 2.5"
-
 gem "jekyll-sitemap", "~> 1.4"
 
 gem "json", "~> 2.10"
+
+gem "minima", "~> 2.5"
