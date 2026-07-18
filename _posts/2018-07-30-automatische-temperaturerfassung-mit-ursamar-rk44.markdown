@@ -2,7 +2,7 @@
 categories:   blog
 date:         2018-07-30 13:12:29 +0200
 lang:         de
-last_modified_at: 2025-04-08 21:05:00 +0200
+last_modified_at: 2026-07-18 15:23:00 +0200
 layout:       post
 tags:
   - Make
@@ -48,19 +48,18 @@ Diese Spannung - Ux - lässt sich mit einem Raspberry Pi und einem Analog
 Digital Converter (ADC) auslesen und als Grundlage für die Berechnung der
 Temperatur nehmen.
 
-
 ### Erfassen der Spannung an dem Temperaturregler
 
 Zum Messen der Spannung wird der 16-bit ADC ads1115 verwendet. Dieser wird
 direkt an den Raspberry Pi angeschlossen. Damit liegt seine maximale
-Eingangsspannung bei 3.3 V. Allerdings variiert die an dem Ursamar RK44 zu
+Eingangsspannung bei 3,3 V. Allerdings variiert die an dem Ursamar RK44 zu
 messende Spannung Ux zwischen 0 und 10 V.
 
 Diese Differenz lässt sich mit einem einfachen Spannungsteiler umgehen. Dafür
-werden 2 ohmsche Widerstände mit 3.3 KOhm und 10 KOhm verwenden.
+werden zwei Widerstände von 3,3 KΩ und 10 KΩ verwenden.
 
-Das Teilungsverhältnis t für diesen Spannungsteiler errechnet sich
-folgendermaßen:
+Das Teilungsverhältnis <math><mi>t</mi></math> für diesen Spannungsteiler
+errechnet sich folgendermaßen:
 
 <math display="block">
   <mrow>
@@ -109,7 +108,9 @@ folgendermaßen:
 Zur optimalen Erfassung von Werten wird der Messbereich des ADC auf -4,096 V bis
 +4,096 V eingestellt.
 
-Somit lässt sich die Messauflösung R des ADC wie folgt ermitteln:
+Somit lässt sich die
+Messauflösung <math><msub><mi>R</mi><mi>ADC</mi></msub></math> des
+ADC wie folgt ermitteln:
 
 <math display="block">
   <mtable>
@@ -293,12 +294,12 @@ bestellt und an einem ruhigen Samstag zusammengefrickelt.
 
 ### Das Gehäuse
 
-Die Überlegung Grundlage ich für das Gehäuse nehmen soll hat mich einige
-Zeit gekostet. Schließlich habe ich mich für Videokassette entschieden, genauer
-deren Chassis.
+Die Überlegung, welche Grundlage ich für das Gehäuse nehmen soll hat mich einige
+Zeit gekostet.
+Schließlich habe ich mich für Videokassette entschieden, genauer deren Chassis.
 Die Abmessungen sind perfekt um eine Raspberry Pi mit einer zusätzlichen Platine
-für Display, Taster und ADC zu beherbergen. Außerdem lassen sich Videokassetten
-mittlerweile kostenlos bekommen.  
+für Display, Taster und ADC zu beherbergen.
+Außerdem lassen sich Videokassetten mittlerweile kostenlos bekommen.
 
 ### Das Display
 
@@ -311,17 +312,17 @@ Die Anforderungen an das Display sind ziemlich einfach gehalten:
 Schlussendlich habe ich mich für eine monochromes OLED Display mit einer
 Auflösung von 128 x 64 Bildpunkten entschieden. Das Display besitzt einen
 SSD1306 Controller, welcher über die I²C Schnittstelle angesprochen wird.
-Für die Arbeit mit diesem Controller existieren bereits in den gängisten
+Für die Arbeit mit diesem Controller existieren bereits in den gängigsten
 Programmiersprachen entsprechende Bibliotheken.
 
-Derartige Displays sind bereits unter für weniger als 5€ zu haben.
+Derartige Displays sind bereits unter für weniger als 5 € zu haben.
 
 ### Die Schaltung
 
 ![Der Schaltplan des Messprojektes]({{ "assets/ursamar-rk44-temperaturerfassung/messprojekt_steckplatine.png" | absolute_url }})
 
 An den Raspberry Pi werden 6 Taster zur Steuerung angeschlossen. Die Taster
-nutzten die internen Pull Up Widerstände des Raspberry Pis, es müssen keine
+nutzen die internen Pull Up Widerstände des Raspberry Pis, es müssen keine
 zusätzlichen Teile verbaut werden.
 
 Alle vier Eingänge des ADCs werden mit Spannungsteilern versehen. Allerdings
@@ -329,7 +330,7 @@ werden aus fehlendem Bedarf nur zwei davon tatsächlich nach außen geführt.
 Die Eingänge sind von außen über Cinch Anschlüsse erreichbar, da diese günstig
 und robust sind.
 
-### Das fertige Konstrukt.
+### Das fertige Konstrukt
 
 ![]({{ "assets/ursamar-rk44-temperaturerfassung/messprojekt.jpg" | absolute_url }})
 
@@ -364,11 +365,13 @@ aktuelle Messreihe.
 ihnen interagiert werden. Somit lassen sich Aktionen wie zum Beispiel das
 Herunterfahren des Raspberry Pis oder der Start einer Messung triggern.
 
-Die Messdaten werden mit der Pythonbibliothek openpyxl auf einem USB-Stick
-gespeichert.
+Die Messdaten werden mit der Pythonbibliothek [_openpyxl_][openpyxl] auf einem
+USB-Stick gespeichert.
 Dabei werden allerdings die Rohdaten des ADCs anstatt der Spannung gespeichert.
 In der Auswertung können die Rohdaten dann in Excel in Temperaturen umgerechnet
 und grafisch dargestellt werden.
 
 Der Quellcode des ganzen ist auf [gitlab.com:kalehmann/messprojekt](https://gitlab.com/kalehmann/messprojekt)
 verfügbar.
+
+  [openpyxl]: https://openpyxl.readthedocs.io/en/stable/
