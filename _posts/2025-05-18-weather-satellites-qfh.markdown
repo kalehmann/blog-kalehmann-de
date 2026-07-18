@@ -6,7 +6,7 @@ description:  >-
   satellites, as well as a detailed explanation how to setup SDR++ and SatDump
   to receive and decode images from NOAA-15, NOAA-18, NOAA-19 and Meteor-M N2-4.
 lang:             en
-last_modified_at: 2025-05-18 10:05:00 +0200
+last_modified_at: 2026-07-18 08:17:00 +0200
 layout:           post
 tags:
   - Make
@@ -41,7 +41,7 @@ channel at 4 kilometers per pixel.
 In short, that means the longer you receive the signal from the satellite that
 passes over you, the more vertical lines the resulting image will have.
 If you could follow the satellite, you would receive a continuous image of our
-Earth like a the skin of a peeled apple.
+Earth like the skin of a peeled apple.
 Unfortunately, the satellites' velocity of around 7.5 km/s poses a grave
 obstacle to actually following them on the ground.
 
@@ -80,7 +80,7 @@ known as the QFH antenna.
     </p>
     <p>
       Given the length <math><mi>l</mi></math> of each loop, how can the
-      diameter calculate and helix length of the antenna be calculated?
+      diameter and helix length of the antenna be calculated?
     </p>
     <p>
       First, there is one problem: The corners are probably going to be rounded,
@@ -104,7 +104,7 @@ known as the QFH antenna.
               <mi>r</mi>
               <mi>b</mi>
             </msub>
-          </mrow> 
+          </mrow>
           <mn>2</mn>
         </mfrac>
         <mo>+</mo>
@@ -119,7 +119,7 @@ known as the QFH antenna.
     </p>
     <p>
       The diameter-to-height ratio of the cylinder is chosen to be 0.44 as
-      <a href="http://www.kunstmanen.net/WKfiles/Techdocs/RQHA/RQHA1999-1eng.pdf">described in</a>
+      <a href="http://www.kunstmanen.net/WKfiles/Techdocs/RQHA/RQHA1999-1eng.pdf">described</a>
       in <a href=" https://www.jcoppens.com/ant/qfh/index.en.php">different publications</a> online.
       However, decreasing the ratio may result in a better coverage at the
       horizon.
@@ -139,7 +139,7 @@ known as the QFH antenna.
       height and helix length can be calculated.
       Imagine a cylinder around the smaller and the larger loops of the antenna.
       The horizontal elements correspond to the  cylinder's diameters, while the
-      vertical elements are curved around the its surface.
+      vertical elements are curved around its surface.
     </p>
     <p>
       Let the diameter-to-height ratio be
@@ -569,7 +569,7 @@ Next, in the module manager, two radios need to be configured to have two
 independent VFOs.
 Additionally, each radio also needs its own recorder.
 
-[![Frequency manager of SDR++ with the frequencies and bandwiths of the three NOAA satellites][sdrpp_frequencies]][sdrpp_frequencies]{:.image-left}
+[![Frequency manager of SDR++ with the frequencies and bandwidths of the three NOAA satellites][sdrpp_frequencies]][sdrpp_frequencies]{:.image-left}
 [![Adding a new radio module in the module manager of SDR++][sdrpp_radio_recorder_modules]][sdrpp_radio_recorder_modules]{:.image-right}
 
 After that, enable the additional noise reduction filter for NOAA APT in each radio module.
@@ -593,7 +593,7 @@ With a sampling rate of <math displaystyle>
 and a decimation of 2, there is still enough bandwidth left to receive all
 three NOAA satellites simultaneously.
 
-[![SDR++ with an RTL-SDR as source receiving NOAA-18 and NOAA-19 simultanuously][sdrpp_source_setup]][sdrpp_source_setup]
+[![SDR++ with an RTL-SDR as source receiving NOAA-18 and NOAA-19 simultaneously][sdrpp_source_setup]][sdrpp_source_setup]
 
 Now each of the three NOAA satellites carries an advanced very-high-resolution
 radiometer (AVHRR/3), which scans the Earth in [six channels][avhrr_description].
@@ -602,7 +602,7 @@ one of the infrared spectrum between 10.3 and 11.3 micrometers and one from eith
 near-visible infrared between 0.725 and 1 micrometers or mid-wave infrared between
 3.55 - 3.93 micrometers, depending whether it's daytime or nighttime.
 
-[![Two black and white raw images of central europe from NOAA-19 with telemetry lines next to them][noaa19_raw]][noaa19_raw]
+[![Two black and white raw images of central Europe from NOAA-19 with telemetry lines next to them][noaa19_raw]][noaa19_raw]
 
 The vertical bars next to each image contain synchronization and telemetry
 information.
@@ -612,10 +612,10 @@ A description of these enhancements can be found in the
 [WXtoIMG manual][wxtoimg_manual].
 
 See the two images below for examples.
-The first images shows cold cloud top temperatures indicating heavy rainfall
-in the first image (clouptop enhancement), and the second image shows greatly
-increased IR contrast with cloud coloring (NO enhancement).
- 
+The first image shows cold cloud top temperatures indicating heavy rainfall
+(clouptop enhancement), and the second image shows greatly increased IR contrast
+with cloud coloring (NO enhancement).
+
 [![Black and white image of central Europe with cloud tops highligthed in color][noaa19_cloudtop]][noaa19_cloudtop]{:.image-left}
 [![Grayscale image of central Europe with multiple color enhancements][noaa19_no]][noaa19_no]{:.image-right}
 
@@ -632,18 +632,18 @@ And voilà!
 Here is the result.
 It's still a bit blurry at the top and bottom since it's an analog transmission.
 
-[![False color composite image of central europe with blury lines at the bottom and top][noaa_1819_composite_msa]][noaa_1819_composite_msa]
+[![False color composite image of central Europe with blurry lines at the bottom and top][noaa_1819_composite_msa]][noaa_1819_composite_msa]
 
 ## Side note to Meteor-M N2-4
 
 Aside from the 3 NOAA satellites, there is also a Russian weather satellite
 Meteor-M N2-4 transmitting around 137 MHz.
 Instead of the analog APT, it uses digital low rate picture transmission (LRPT)
-with quadrature phase shift keying modulation,  so recording an audio file to
+with quadrature phase shift keying modulation, so recording an audio file to
 decode it later won't work here.
 Instead directly record the baseband in SatDump.
 Go to the **Recording** tab, select **Meteor M2-x LRPT 72k**, choose the primary
-frequency for 137.9 MHz click **Start** and when the signal can be seen in the
+frequency for 137.9 MHz, click **Start** and when the signal can be seen in the
 waterfall or the demodulator in the bottom shows four green dots, start the
 recording.
 
@@ -662,12 +662,11 @@ images from the NOAA satellites:
 
 [![Noiseless color-image of central Europe][meteor_m2_4_image]][meteor_m2_4_image]
 
-  
 ## End of service for NOAA satellites
 
 Unfortunately in April 2025, NOAA [announced the end of service][end_of_service]
 for June 16, 2025 for the three satellites from the POES constellation.
-In practice however, this should no be as tragic as it sounds.
+In practice however, this should not be as tragic as it sounds.
 The satellites will not be suddenly turned off, but no efforts will be taken to
 resolve any issues.
 So hopefully, they will continue transmitting for many more years.
