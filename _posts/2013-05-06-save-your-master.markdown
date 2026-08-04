@@ -6,7 +6,7 @@ description: >-
   Game Engine mit primitiver Steuerung, simpler Grafik und einem einfachem
   Spielprinzip.
 lang:             de
-last_modified_at: 2024-05-15 20:20:00 +0200
+last_modified_at: 2026-08-04 22:55:00 +0200
 layout:           post
 tags:
   - Coding
@@ -15,13 +15,13 @@ title:            Save Your Master
 ---
 
 **Die Inhalte dieses Beitrages und des beschriebenen Spiels sollen schockieren
-und unterhalten jedoch nicht die Meinungsbildung beeinflussen oder zu realen
+und unterhalten jedoch, nicht die Meinungsbildung beeinflussen oder zu realen
 Handlungen anregen.**
 
-
-Mein erstes Computerspiel, fertiggestellt Mitte 2013. Damals war ich gerade
-einmal 15 Jahre alt. Zu diesem Zeitpunkt befand sich die Masterarbeit meines
-Bruders gerade in der Endphase, die Verteidigung stand unmittelbar bevor.
+Mein erstes Computerspiel, fertiggestellt Mitte 2013.
+Damals war ich gerade einmal 15 Jahre alt.
+Zu diesem Zeitpunkt befand sich die Masterarbeit meines Bruders gerade in der
+Endphase und deren Verteidigung stand unmittelbar bevor.
 
 Und genau um dieses Kolloquium dreht sich das Spiel. Die Verteidigung der
 Arbeit wird wortwörtlich genommen und ironisch überspitzt dargestellt. Die
@@ -34,10 +34,11 @@ aufgeschlagenes Buch auf einem Podest symbolisiert.
 
 ![Blender Modell des Professors]( {{ "assets/save-your-master/prof.jpg" | absolute_url }})
 
-Das Spiel gilt als verloren, sobald drei Professoren das Podest erreicht haben.
+Das Spiel gilt dann als verloren, sobald drei Professoren das Podest erreicht
+haben.
 Das Ziel des Spielers ist es dies zu verhindern. Als Werkzeug dazu dient ihm
-natürlich ein Flammenwerfern. Mit diesem können die Angreifer in Brand gesetzt
-werden.
+natürlich ein Flammenwerfer.
+Mit diesem können die Angreifer in Brand gesetzt werden.
 
 Zusätzlich befinden sich auf dem Spielfeld noch zwei Hindernisse in Form von
 frei rotierenden Zahnrädern.
@@ -67,12 +68,12 @@ und Rechts beeinflussen.
 ## Technischer Hintergrund
 
 Das Spiel läuft in der in Blender integrierten Game Engine.
-Die Modells wurden alle in Blender modelliert und die Texturen mittels Gimp
+Die Modelle wurden alle in Blender modelliert und die Texturen mittels Gimp
 generiert. Allerdings hätte es Paint wohl auch getan.
 
 Die Spiellogik wurde komplett mit dem Logic Editor von Blender umgesetzt.
 
-Im Logiceditor werden **Sensoren** über **Controller** mit **Actuatoren**
+Im Logiceditor werden **Sensoren** über **Controller** mit **Aktuatoren**
 verbunden. Damit lassen sich zum einen einfache Zusammenhänge abbilden, wie
 Bluttropfen berührt den Boden (*Collision*) und verschwindet
 (*End Object*) und hinterlässt einen Blutsfleck (*Add Object*).
@@ -93,5 +94,5 @@ alle Leben verbraucht sind.
 
 Das *.blend* File und die Texturen für das Spiel sind auf GitLab in dem
 Repository
-[kalehmann/SaveYourMaster](https://gitlab.com/kalehmann/saveyourmaster)
+[`kalehmann/SaveYourMaster`](https://gitlab.com/kalehmann/saveyourmaster)
 einsehbar.
