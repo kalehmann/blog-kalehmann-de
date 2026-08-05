@@ -47,7 +47,6 @@ exclude:
  - _posts/embedded/*
  - assets/*/RAW_ASSETS/*
  - assets/*/raw/*
- - scripts
  - Gemfile
  - Gemfile.lock
  - Readme.markdown
