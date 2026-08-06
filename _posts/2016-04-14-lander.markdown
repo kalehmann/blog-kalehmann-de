@@ -1,25 +1,30 @@
 ---
-layout:       post
-title:        Lander - Meine komplexe Leistung
-date:         2016-04-14 16:02:17 +0200
-lang:         de
-categories:   blog
+categories:       blog
+date:             2016-04-14 16:02:17 +0200
+description:  >-
+  Ein in Python geschriebener Klon des Klassikers Lunar Lander, welcher die
+  Grundlage meiner komplexen Leistung in der Oberstufe darstellt.
+lang:             de
+last_modified_at: 2026-08-05 17:35:00 +0200
+layout:           post
 tags:
   - Coding
   - Games
+title:            Lander - Meine komplexe Leistung in der Oberstufe
 ---
 
-## Lander - Meine komplexe Leistung
+_Lander_ wurde im Jahr 1969 erstmals unter dem Namen *Lunar Lander*
+veröffentlicht.
+Das Spielprinzip ist simpel:
+Man steuert ein Raumschiff mit einem begrenzten Treibstoffvorrat und versucht
+so viele sichere Landungen wie möglich auf einem fremden Himmelskörper zu
+erzielen.
 
-Lander, zuerst veröffentlicht im Jahr 1969 unter dem Namen *Lunar Lander*. Das
-Spielprinzip ist relativ simpel. Man steuert ein Raumschiff, hat einen
-begrenzten Treibstoffvorrat und muss damit sooft wie möglich sicher auf einem
-fremden Himmelskörper landen.
+### Der Begriff „komplexe Leistung“
 
-### Der Begriff komplexe Leistung
-
-Dieses Grundlage für meine komplexe Leistung in der gymnasialen Oberstufe. Was
-ist diese komplexe Leistung überhaupt? - das sächsiche Staatsministerium für
+Dieses Spiel bildet die Grundlage für meine komplexe Leistung in der gymnasialen
+Oberstufe.
+Was ist eine komplexe Leistung überhaupt? - das sächsische Staatsministerium für
 Kultus sagt dazu:
 
 > [U]nter Komplexer Leistung [sind] Formen der Leistungsermittlung und
@@ -28,79 +33,82 @@ fachlich-inhaltlichen, methodisch-strategischen, sozial-kommunikativen und
 personalen Leistungen ausgehen.
 <sup style="font-style: normal;">[[1]](#quelle-1)</sup>
 
-Gesundheit.
+Gesundheit!
 
-Zusammengefasst kann man sagen, in einer komplexe Leistung kombiniert der
-Schüler erworbene theoretische Kenntnisse mit praktischen Fertigkeiten
-und erstellt selbstständig ein Projekt mit entsprechender Dokumentation.
+Zusammengefasst kann man sagen:
+In einer komplexen Leistung kombiniert der Schüler erworbene theoretische
+Kenntnisse mit praktischen Fertigkeiten und erstellt selbstständig ein Projekt
+mit entsprechender Dokumentation.
 
 ### Die Erstellung meiner komplexen Leistung
 
-In meiner komplexen Leistung habe ich ein Spiel in Python und PyGame
-programmiert, welches sich grob an *Lunar Lander* orientiert. Dazu habe ich noch
-ein paar Seiten Text geschrieben, in denen ich den Entwicklungsprozess
-zusammenfasse, die Historie des Spiels beschreibe und noch etwas zur
-Programmiersprache Python erzähle. Immerhin anderthalb Jahre habe ich an meinem
-Werk gearbeitet und die Abgabe erfolgte pünktlich zwei Wochen vor dem letzten
-Schultag in der 12. Klasse. Dafür erhielt ich als Bewertung 14 von 15 möglichen
-Notenpunkten (Note 1) mit einem Notenpunkt Abzug für formale Fehler im
-beigelegten Text. Diesen findet man im
-[GitLab Repository zu meinem Projekt](https://gitlab.com/kalehmann/Lander/blob/master/dokumentation.pdf).   
+Im Rahmen der komplexen Leistung habe ich zuerst ein Spiel, welches grob
+*Lunar Lander* nachempfunden ist, programmiert.
+Danach schrieb ich in Ergänzung die begleitende Dokumentation, welche den
+Entwicklungsprozess, die Historie des Spiels und eine Einordnung der
+Programmiersprache Python enthält.
+Immerhin anderthalb Jahre habe ich an meinem Werk gearbeitet und die Abgabe
+erfolgte pünktlich zwei Wochen vor dem letzten Schultag in der 12. Klasse.
+Dafür erhielt ich als Bewertung 14 von 15 möglichen Notenpunkten (Note 1) mit
+einem Notenpunkt Abzug für formale Fehler in der Dokumentation.
+Das finale Werk befindet sich im
+[GitLab Repository zu meinem Projekt](https://gitlab.com/kalehmann/Lander/blob/master/dokumentation.pdf).
 
 ### Die Physik des Spiels
 
-Die Kernkomponente ist die Steuerung der Raumsonde. Die Raumsonde selbst ist
-entfernt an das *LM-5 (Lunar Module 5)* der ersten Mondlandung im Rahmen der
-Apollo 11 Mission angelehnt.
+Die Kernkomponente ist die Steuerung der Raumsonde.
+Die Raumsonde selbst ist lose am *LM-5 (Lunar Module 5)* der ersten Mondlandung
+im Rahmen der Apollo-11-Mission angelehnt.
 
 ![Bild des Lunar Modules im Spiel]({{ "assets/lander/lunarmodule.png" | absolute_url }})
 
-Die Physik des Raumschiffes ist sehr stark vereinfacht. Es wird mit einer Masse
-der Landefähre von 4 Tonnen gerechnet. Diese liegt deutlich unter der
-Gesamtmasse der betankten Landefähre (14,7 Tonnen) und leicht unter der Masse
-der betankten Aufstiegsstufe (4,7 Tonnen).<sup>[[2]](#quelle-2)</sup>
+Die Physik des Raumschiffs ist sehr stark vereinfacht.
+Es wird mit einer Masse der Landefähre von 4 Tonnen gerechnet.
+Diese liegt deutlich unter der Gesamtmasse der betankten Landefähre (14,7 Tonnen)
+und leicht unter der Masse der betankten Aufstiegsstufe
+(4,7 Tonnen).<sup>[[2]](#quelle-2)</sup>
 
-Der maximale Schub des Lunar Modules im Spiel beträgt 16 KN und ist in 5 Stufen
-regelbar. Dies entspricht in etwa dem Schub der Aufstiegsstufe (15,6 KN),
-allerdings war dieser nicht regelbar.
+Der maximale Schub des Lunar Modules im Spiel beträgt 16 kN und ist in 5 Stufen
+regelbar. Dies entspricht in etwa dem Schub der Aufstiegsstufe (15,6 kN),
+allerdings war dieser während der Mondlandung nicht regelbar.
 
 Das Spiel rechnet mit einer Gravitationsbeschleunigung von
 1,62 <sup>m</sup>/<sub>s<sup>2</sup></sub>, was ungefähr der
 Gravitationsbeschleunigung des Mondes entspricht.
 
-Bei der Berechnung des Schubes ist im Spiel leider sehr Stark vereinfacht,
-diese hängt davon ab, wie oft sich das Spiel pro Sekunde
-aktualisiert (Frames per Second). Dem entsprechend wird der verbleibende
-Treibstoff auch
-ungenau berechnet, wobei die Tankfüllung an das Spiel angepasst ist und keine
-historische Grundlage hat.
+Die Berechnung des Schubs selbst ist im Spiel sehr stark vereinfacht und hängt
+davon ab, wie oft sich das Spiel pro Sekunde aktualisiert (Frames per Second).
+Dementsprechend wird der verbleibende Treibstoff auch ungenau berechnet, wobei
+die Tankfüllung an das Spiel angepasst ist und keinem historischen Vorbild folgt.
 
-Die Drehung des Lunar Modules hat im Spiel keine Auswirkung auf dem
-Treibstoffvorrat und folgt keiner Physik.
+Die Drehung des Lunar Modules hat im Spiel keine Auswirkung auf den
+Treibstoffvorrat und folgt keiner physikalischen Grundlage.
 
 ### Das Spielprinzip
 
-Das Lunar Module startet in einer geringen Höhe über der Mondobefläche.
+Das Lunar Module startet in einer geringen Höhe über der Mondoberfläche.
 Die Geschwindigkeit, Höhe über der Mondoberfläche und Richtung, mit der es sich
-bewegt können dabei am rechten oberen Bildschirmrand eingesehen werden.
+bewegt, können dabei am rechten oberen Bildschirmrand eingesehen werden.
 
 ![Bild des Lunar Modules kurz nach Spielstart]({{ "assets/lander/lander_gameplay.jpg" | absolute_url }})
 
 Dabei muss man den Steinen auf dem Boden ausweichen und sooft wie möglich
 landen, um Proben zu entnehmen.
 
-Eine erfolgreiche Landung unterliegt dabei mehreren Beschränkungen. Die Neigung
-des Lunar Modules darf bei der Landung 30° nicht überschreiten, außerdem muss
-die Aufprallgeschwindigkeit unter 6 <sup>m</sup>/<sub>s</sub> liegen.
-Zu guter letzt muss ein Mindestabstand zu den anderen Ländeplätzen gegeben sein.
+Eine erfolgreiche Landung unterliegt dabei mehreren Beschränkungen.
+Die Neigung des Lunar Modules darf bei der Landung 30° nicht überschreiten.
+Weiterhin muss die Aufprallgeschwindigkeit unter 6 <sup>m</sup>/<sub>s</sub>
+liegen und schließlich ein Mindestabstand zu den anderen Landeplätzen gegeben
+sein.
 
 Die Stelle einer erfolgreichen Landung wird dabei von der
 [Flagge der Erde nach Oskar Pernefeldt](https://www.flagofplanetearth.com/) markiert.
 
 ![Bild des Lunar Modules kurz nach Spielstart]({{ "assets/lander/landingzone.jpg" | absolute_url }})
 
-Für jede erfolgreiche Landung erhält man einen Punkt. Die Zahl der erreichten
-Punkte wird in der linken oberen Ecke des Fensters angezeit.
+Für jede erfolgreiche Landung erhält man einen Punkt.
+Die Zahl der erreichten Punkte wird in der linken oberen Ecke des Fensters
+angezeigt.
 
 Insgesamt dauert ein Spiel bis maximal 3 Minuten.
 
@@ -111,29 +119,30 @@ Insgesamt dauert ein Spiel bis maximal 3 Minuten.
 
 ### Die Grafiken
 
-Die meisten Grafiken des Spiels wurden mit Blender 3D gerendert.
-Dabei wurden zuerst 3D Modelle der Steine, Mondoberfläche und des Lunar Modules
+Die meisten Grafiken des Spiels wurden mit Blender 3D erstellt.
+Dabei wurden zuerst 3D-Modelle der Steine, Mondoberfläche und des Lunar Modules
 modelliert und anschließend gerendert.
 Aber auch für die Erstellung der animierten Flammen der Triebwerke des Lunar
-Moduls ist Blender durch seine Smoke Simulation perfekt geeignet.
+Moduls ist Blender durch seine Smoke-Simulation perfekt geeignet.
 
-Allerdings wurden auch einge Grafiken mit Gimp gezeichnet. Zum Beispiel die
-Elemente des Nutzerinterfaces oder der Sternenhimmel im Hintergrund.
+Einige wenige Grafiken - wie zum Beispiel die Elemente des Nutzerinterfaces oder
+der Sternenhimmel im Hintergrund, sind hingegen mit GIMP gezeichnet.
 
 ### Der Sound
 
 Die meisten Töne im Spiel sind Aufnahmen aus dem Haushalt, welche mit Audacity
-nachbearbeitet wurden. Die Triebwerksgeräusche entstammen Beispielsweise einer
-Sprühflasche und der nach verlorenem Spiel zu hörende Track geht aus einer
-Aufnahme von Rauschen aus dem Radio mit einem Echo-Effekt hervor.
+nachbearbeitet wurden.
+Die Triebwerksgeräusche entstammen beispielsweise einer Sprühflasche und der
+nach verlorenem Spiel zu hörende Track geht aus einer Aufnahme von Rauschen aus
+dem Radio mit einem Echo-Effekt hervor.
 
-Der Soundtrack im Hintergrund hingegen ist einer meiner primitiven Versuche mit
+Der Soundtrack im Hintergrund hingegen ist einer meiner ersten Versuche mit
 LMMS Musik zu erstellen.
 
 # Quellen:
 
 1. <small><a id="quelle-1"></a>
-Freistaat Sachsen - Staatsministerium für Kultus: Handreichung Qualitätskriterien für die  
+Freistaat Sachsen - Staatsministerium für Kultus: Handreichung Qualitätskriterien für die
 Komplexe Leistung: [https://www.schule.sachsen.de/download/download_smk/hr_komplexe_leistung_09.pdf](https://www.schule.sachsen.de/download/download_smk/hr_komplexe_leistung_09.pdf) (abgerufen am 17.10.2018)</small>
 
 2. <small><a id="quelle-2"></a> NASA, LUNAR MODULE - QUICK REFERENCE DATA: [https://www.hq.nasa.gov/alsj/LM04_Lunar_Module_ppLV1-17.pdf](https://www.hq.nasa.gov/alsj/LM04_Lunar_Module_ppLV1-17.pdf) (abgerufen am 14.11.2018)</small>
