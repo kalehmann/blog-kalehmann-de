@@ -5,34 +5,34 @@ description:  >-
   The famous game Pong as boot code written in assembly using only BIOS calls
   and further experiments in assembly.
 lang:             en
-last_modified_at: 2024-05-15 20:20:00 +0200
+last_modified_at: 2026-08-07 13:46:00 +0200
 layout:           post
 tags:
   - Coding
   - OsDev
-title:            Pong from scratch or my first steps in assembly
+title:            "Pong from scratch: My first steps in assembly"
 ---
 
-## Pong from scratch
-
-I really did write pong from scratch using only the functions provided by the
-bios. You could write the game onto an USB stick, boot from it and then play it.
-![Screenshot of the game pong running on a real PC]({{ "assets/pong/pong_real_pc.jpg" | absolute_url }})
+I really did write Pong from scratch using only the functions provided by the
+BIOS.
+You could write the game to a USB stick, boot from it and then play it.
+![Screenshot of the game Pong running on a real PC]({{ "assets/pong/pong_real_pc.jpg" | absolute_url }})
 
 ### My first assembly projects
 
-At the end of the year 2015 I started learning assembly for fun. I still
-remember how I studied assembly and the corresponding C code during my Latin
-lessons at high school.
+At the end of the year 2015 I started learning assembly for fun.
+I still remember how I studied assembly and the corresponding C code during my
+Latin lessons at high school.
 
-I started with translating the programming exercises from
-_C PROGRAMMING A Modern Approach_ By K. N. King into assembly and some own
-projects, such as a
+I started by translating the programming exercises from
+_C PROGRAMMING A Modern Approach_
+By K. N. King<sup style="font-style: normal;">[[1]](#ref-1)</sup>
+into assembly and a few of my own projects, such as a
 [little demonstration for a return address exploit](https://gitlab.com/kalehmann/x86_64_assembly_stuff/tree/master/ReturnAddressExploit)
 or a program that prints the
 [Finnish translation of the numbers from 0 to 99](https://gitlab.com/kalehmann/x86_64_assembly_stuff/tree/master/SuomenLuvut).
-At this point I still used the functions from the C standard library such as
-_printf_ or _scanf_.
+At that point I still relied on the functions provided by the C standard library
+such as _printf_ or _scanf_.
 
 All the projects can be found in the repository
 [kalehmann/x86_64_assembly_stuff](https://gitlab.com/kalehmann/x86_64_assembly_stuff)
@@ -42,169 +42,186 @@ on GitLab.
 
 Soon after building my first simple programs for Linux, I started getting
 interested in writing software without using any of the functions from the
-C standard library or even the Linux syscall.
+C standard library or even the Linux syscalls.
 
-Of course this brings some new challenges. The bios only loads the first 512
-bytes into memory. Additionally you need to do some initialization and the last
-two bytes should contain a boot signature, which leaves even less space for the
-real program.
+Therefore I started to target bootable code.
+Of course this brings some new challenges.
+The BIOS only loads the first 512 bytes into memory.
+Additionally you need to do some initialization and the last two bytes should
+contain the boot signature `0xAA55`, which leaves even less space for the real
+program.
 
-You could either use some functions provided by the bios to load more of your
-program or stick to this. I haven chosen the latter.
+You could either use some of the functions provided by the BIOS to load more of
+your program or stick to 512 bytes and try to fit your code into that.
+I have chosen to do the latter.
 
-### Writing bootcode
+### Writing boot code
 
 Some people would call such software a bootloader. However, since my program
-does not load any additional stuff, I prefer the term _bootcode_.
+does not load any additional stuff, I prefer the term _boot code_.
 
 It all started simple with things like printing _"Hello, world!"_ on the screen
-using the bios functions provided by the interrupt *0x10*. A great resource of
-information about the interrupt codes of the bios is the famous interrupt list
-of Ralph Brown.
+using the BIOS functions provided by the interrupt
+[`0x10`](https://en.wikipedia.org/wiki/INT_10H).
+A great source of information about the interrupt codes of the BIOS is the
+famous interrupt list of Ralph
+Brown<sup style="font-style: normal;">[[2]](#ref-2)</sup>.
 
 Such a program looks like this:
 
 {% highlight nasm %}
 BITS 16
-	mov 	ax, 07C0h
-	mov 	ds, ax		
-	;; Set video mode 0, 40x25 B/W text
-	xor 	ax,ax
-	int 	10h
+    mov     ax, 07C0h
+    mov     ds, ax
+    ;; Set video mode 0, 40x25 B/W text
+    xor     ax,ax
+    int     10h
 
-	mov 	si, msg_h
-	;; int 10,e - teletype mode
-	mov 	ah, 0eh
+    mov     si, msg_h
+    ;; int 10,e - teletype mode
+    mov     ah, 0eh
 loop:
-	;; Load byte from [ds:si] into al and increment si.
-	lodsb
-	int 	10h
-	;; Check for end of string
-	test 	al, al
-	jnz	loop
-	;; $ refers to the address of the beginning of the line
-	;; Therefore this is an infinite loop
-	jmp 	$
-msg_h:	db "Hello, world!", 0
-	;; Fill the rest of the file with zeros.
-	times 510-($-$$) db 0
-	dw 0xaa55
+    ;; Load byte from [ds:si] into al and increment si.
+    lodsb
+    int     10h
+    ;; Check for end of string
+    test    al, al
+    jnz loop
+    ;; $ refers to the address of the beginning of the line
+    ;; Therefore this is an infinite loop
+    jmp     $
+msg_h:  db "Hello, world!", 0
+    ;; Fill the rest of the file with zeros.
+    times 510-($-$$) db 0
+    dw 0xaa55
 {% endhighlight %}
 
-This file can be compiled using
+This file can be assembled with NASM by executing
 ```
 nasm -f bin -o bootcode.bin bootloader.asm
 ```
-and then tested with qemu using
+and then tested with QEMU using
 ```
 qemu-system-i386 -fda bootloader.bin
 ```
 
 ![Screenshot of the hello world bootloader running in qemu]({{ "assets/pong/bootcode.png" | absolute_url }})
 
-One the I decide to write a game. With all those limits I face while writing
-bootcode, my decision felt to pong, because it is really simple.
+Then one day, I decided to write a game.
+With all those limits I knew I would face during the implementation of the
+boot code, I settled on Pong, because it is a fairly simple game.
 
-### Implementing the game pong
+### Implementing the game Pong
 
-The design of the code for the game is pretty simple. First comes the
-initialization the stack and the setup of the video mode.
+The design of the code for the game is pretty simple.
+First comes the initialization of the stack and the setup of the video mode.
 
-In _real mode_ the stack has its its own register, the stack register **ss**.
+x86 processors start up in
+_Real Mode_.<sup style="font-style: normal;">[[3]](#ref-3)</sup>
+For _Real Mode_ memory addressing, the effective address in memory depends on two
+registers - a segment register and an offset register.
+For the stack, these are the stack segment register **ss** and the stack pointer
+register **sp**.
 Since the stack grows downwards, the stack pointer **sp** and the base pointer
-**bp** have to be initialize with a high value, that the can shrink to zero.
+**bp** have to be initialized with a high value so that the stack has room to
+grow as needed.
 
 Setting up the stack may look like this:
 
 {% highlight nasm %}
-	;; The bootcode get loaded to 0x7C00 and is 0x200 bytes large.
-	;; The stack will be right after the bootcode, at 0x7E00.
-	;; The segments are 16 bytes apart. Therefore the value for the stack
-	;; segment is 0x7E00 / 0x10 = 0x7E0
-	mov ax, 0x7E0
-	mov ss, ax
-	;; Set the size of the stack to 4k
-	mov sp, 4096
-	mov bp, sp
+    ;; The boot code get loaded to 0x7C00 and is 0x200 bytes large.
+    ;; The stack will be right after the boot code, at 0x7E00.
+    ;; The segments are 16 bytes apart. Therefore the value for the stack
+    ;; segment is 0x7E00 / 0x10 = 0x7E0
+    mov ax, 0x7E0
+    mov ss, ax
+    ;; Set the size of the stack to 4k
+    mov sp, 4096
+    mov bp, sp
 {% endhighlight %}
 
-The video mode is set using the interrupt 0x10,0 provided by the bios.
-0x10,0 means calling the 16th interrupt of the bios with the **ah** register set
-to zero. This triggers the function for setting the video mode. The actual mode
-you want to set is passed in the **al** register.
-The code for setting the video mode looks like this:
+Next, the video mode is set using the interrupt `0x10,0` provided by the BIOS.
+`0x10,0` means calling the 16th interrupt of the BIOS with the **ah** register
+set to zero.
+This triggers the function for setting the video mode.
+The actual mode you want to set is then passed in the **al** register.
+Code for setting the video mode looks like this:
 
 {% highlight nasm %}
-	mov ah, 0
-	mov al, 0x13
-	int 0x10
+    mov ah, 0
+    mov al, 0x13
+    int 0x10
 {% endhighlight %}
 
-There are several modes available, I choose the mode 0x13. That mode basically
-means 320x200 pixels and 256 colors. I think that hits the nail for the game.
+There are several video modes available.
+I chose the mode `0x13`.
+That mode provides 256 colors and a resolution of 320 x 200 pixels.
+I think that fits the game perfectly.
 
-After this follows the main loop of the game. There are several things that
-needs to be done in main loop:
+After this follows the main loop of the game.
+There are several things that need to happen in the main loop:
 
-- sleeping a short time to limit the speed of the game
+- sleeping for a short time to limit the speed of the game
 - updating the position of the ball and the score when the ball hits the top or
 the bottom
 - handling the user input and updating the positions of the two players
 - redrawing the screen
 
-#### Sleeping
+#### Limiting the frames per second
 
-Fortunately the bios provides for sleeping a short time, the interrupt
-0x10,0x86 - wait for a given period. The period to wait is passed in **dx:cx**
-in microseconds.
+Fortunately, the BIOS provides a function for sleeping a short time.
+The interrupt `0x15,0x86` blocks execution for a given period of time.
+The period to wait is passed in **dx:cx** in microseconds.
 
-For example if the game should run at 30 frames per second, the waiting period
-should be a 30th of a second - 33333 microseconds. The code would look like
-this:
+For example, if the game should run at 30 frames per second, the waiting period
+should be one thirtieth of a second - 33333 microseconds.
+The code for sleeping that amount of time then looks like this:
 
 {% highlight nasm %}
-	mov ah, 86h
-	mov cx, 0
-	mov dx, 33333
-	int 15h
+    mov ah, 86h
+    mov cx, 0
+    mov dx, 33333
+    int 15h
 {% endhighlight %}
 
 #### Handling user input
 
-Of course the bios also provides functionality to get keyboard input.
-The interrupt 0x16,1 can be used to check if there is a keystroke in the
-keyboard buffer and 0x16,0 gets that keystroke and removes it from the keyboard
-buffer.
+Of course the BIOS also provides functionality for reading keyboard input.
+The interrupt `0x16,1` can be used to check if there is a keystroke in the
+keyboard buffer and `0x16,0` retrieves that keystroke and removes it from the
+keyboard buffer.
 
-The interrupt 0x16,1 sets the zero flag if no keystroke is available. When a
-keystroke is available, the interrupt 0x16,0 returns the bios scancode in **ah**
-and the ascii character in **al**.
+The interrupt `0x16,1` sets the zero flag if no keystroke is available. When a
+keystroke is available, the interrupt `0x16,0` returns the BIOS scancode in **ah**
+and the ASCII character in **al**.
 
 This code checks if the left arrow key has been pressed:
 
 {% highlight nasm %}
-	mov ah, 1
-	int 0x16
-	jz handle_input_done
+    mov ah, 1
+    int 0x16
+    jz handle_input_done
 
-	mov ah, 0
-	int 0x16
-	cmp ah, 0x4b
-	je arrow_left_pressed
+    mov ah, 0
+    int 0x16
+    cmp ah, 0x4b
+    je arrow_left_pressed
 {% endhighlight %}
 
-#### Draw everything on the screen
+#### Drawing on the screen
 
-The screen can be set all black using the set video mode code shown earlier.
+The screen can be filled with black using the code to set the video mode
+shown earlier.
 Drawing a rectangle on the screen is a bit trickier.
 
-One way would be using the interrupt 0x10,0xc to set every single pixel.
+One way to do so would be using the interrupt `0x10,0xC` to set every single
+pixel.
 This interrupt takes the following arguments:
 
-- the color of the pixel in **al**
-- the number of the page to draw the pixel on in **bh**
-- the x position of the pixel on the screen in **cx**
-- the y position of the pixel on the screen in **dx**
+- the color of the pixel in the **al** register
+- the number of the page to draw the pixel on in the **bh** register
+- the x position of the pixel on the screen in the **cx** register
+- the y position of the pixel on the screen in the **dx** register
 
 A function for drawing a rectangle on the screen using this interrupt looks like
 this:
@@ -218,37 +235,38 @@ this:
 ;; - the width in dx
 ;; - the height in si
 draw_rectangle:
-	push bp
+    push bp
 
-	mov bp, bx
-	add si, cx
-	mov di, bx
-	add di, dx
-	mov ah, 0xc
-	xor bh, bh
+    mov bp, bx
+    add si, cx
+    mov di, bx
+    add di, dx
+    mov ah, 0xc
+    xor bh, bh
 
-	mov dx, cx
+    mov dx, cx
 .row_loop:
-	mov cx, bp
-	cmp dx, si
-	je .done
+    mov cx, bp
+    cmp dx, si
+    je .done
 
 .column_loop:
-	int 0x10
-	inc cx
-	cmp cx, di
-	jb .column_loop
-	inc dx
-	jmp .row_loop
+    int 0x10
+    inc cx
+    cmp cx, di
+    jb .column_loop
+    inc dx
+    jmp .row_loop
 
 .done:
-	pop bp
-	ret
+    pop bp
+    ret
 {% endhighlight %}
 
-The alternative is writing directly into the video memory. The video memory is
-mapped to the RAM beginning at the address 0xA0000. In the video mode 0x13
-the screen is mapped line wise into the video memory with one byte per pixel.
+The alternative is writing directly into the video memory.
+The video memory is mapped to the RAM beginning at the address `0xA0000`.
+In the video mode `0x13`, the screen is mapped line by line into the video
+memory with one byte per pixel.
 The value of the byte determines the color of the pixel.
 
 A function for drawing a rectangle directly into the video memory looks like
@@ -263,71 +281,78 @@ this:
 ;; - the height in si
 ;; - the color in al
 draw_rectangle:
-	push bp
-	mov bp, sp
-	sub sp, 8
+    push bp
+    mov bp, sp
+    sub sp, 8
 
-	mov [bp-6], al
-	mov [bp-4], dx
-	mov [bp-2], si
+    mov [bp-6], al
+    mov [bp-4], dx
+    mov [bp-2], si
 
-	;; Calculate the offset of the next line
-	mov ax, 320
-	sub ax, dx
-	mov [bp-8], ax
+    ;; Calculate the offset of the next line
+    mov ax, 320
+    sub ax, dx
+    mov [bp-8], ax
 
-	mov ax, 320
-	mul cx
-	add ax, bx
-	;; Save the offset of the first pixel
-	mov si, ax
+    mov ax, 320
+    mul cx
+    add ax, bx
+    ;; Save the offset of the first pixel
+    mov si, ax
 
-	;; Prepare the extra segment for writing into the video
-	;; memory.
-	mov dx, 0xA000
-	mov es, dx
+    ;; Prepare the extra segment for writing into the video
+    ;; memory.
+    mov dx, 0xA000
+    mov es, dx
 
-	mov al, [bp-6]
-	mov cx, [bp-2]
+    mov al, [bp-6]
+    mov cx, [bp-2]
 .row_loop:
-	mov bx, [bp-4]
+    mov bx, [bp-4]
 .col_loop:
-	mov [es:si], al
-	inc si
-	dec bx
-	jnz .col_loop
-	add si, [bp-8]
-	loop .row_loop
+    mov [es:si], al
+    inc si
+    dec bx
+    jnz .col_loop
+    add si, [bp-8]
+    loop .row_loop
 
-	add sp, 8
-	pop bp
-	ret
+    add sp, 8
+    pop bp
+    ret
 {% endhighlight %}
 
 #### Printing on the screen
 
-The scores of the two players gets printed on the screen during the game. To
-save memory, the score is not printed numeric. After 9 come the characters
-from a to z.
+The scores of the two players are printed on the screen during the game.
+To save memory, the scores are not printed numerically.
+After 9, the characters from a to z are used instead.
 
-Printing on the screen can be done using the interrupt 0x10,0xe as already shown
+Printing on the screen can be done using the interrupt `0x10,0xE` as already shown
 in the first example.
 
 ### Putting it all together
 
-With all this combined, the game pong can be implemented:
+With all this combined, the game Pong can be implemented:
 
 <video controls>
   <source src="{{ "assets/pong/gameplay.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
-The game flickers a little bit. This brought me to nearly vomit at one point
-during the developing process.
+The game flickers a little bit.
+After staring at it long enough, this flickering almost made me sick during
+development.
 
-The whole source of the game can been seen at the GitLab repository
-[kalehmann/pong](https://gitlab.com/kalehmann/pong).
+The complete source code of the game can be found in the repository
+[kalehmann/pong](https://gitlab.com/kalehmann/pong) on GitLab.
 
-Note that the game can be run on real hardware, it may not always succeed.
-Some BIOS require a valid Bios Parameter Block, but pong does not have one as it
-takes too much memory.
+Note that the game can be run on real hardware, but it may not always succeed.
+Some BIOS implementations require a valid BIOS Parameter Block, but Pong does
+not include one, because it would take up too much memory.
+
+## Further reading
+
+1. C Programming A Modern Approach 2nd Edition on<small><a id="ref-1"></a> [archive.org](https://archive.org/details/c-programming-a-modern-approach-2nd-ed-c-89-c-99-king-by)</small>
+2. The x86 Interrupt List aka "Ralf Brown's Interrupt List", "RBIL" on <small><a id="ref-2"></a> [cs.cmu.edu](https://www.cs.cmu.edu/~ralf/files.html)</small>
+3. Real Mode - OSDev Wiki on <small><a id="ref-3"></a> [wiki.osdev.org](https://wiki.osdev.org/Real_Mode)</small>
