@@ -1,51 +1,63 @@
 ---
-layout:       post
-title:        Trip to Dublin
-date:         2018-03-15 20:01:36 +0200
-lang:         en
-categories:   blog
+categories:       blog
+date:             2018-03-15 20:01:36 +0200
+description:  >-
+    Visiting Ireland and exploring the city of Dublin as well as the nearby
+    countryside.
+lang:             en
+last_modified_at: 2026-08-08 20:48:00 +0200
+layout:           post
 tags:
   - Travel
+title:            Trip to Dublin
 ---
 
-# Let's go to Ireland
+In March of 2018, I made a last-minute decision to visit my cousin in the Irish
+capital for a short four-day holiday.
+Due to the short notice, I booked my flight just four days before I left
+and had to include a short layover in Cologne before I left the European
+mainland for Ireland.
 
-In the march of 2018 I spontaneous decided to travel for four days to Dublin,
-Ireland and visit my cousin there.
+Here is what the view out of the plane looking back at Cologne from the sky
+looked like:
+[![A photo of Cologne out of an airplane with the wing of the plane][plane_over_cologne]][plane_over_cologne]
 
-Since the tight planning, I booked my flight 4 days before I left. I started in
-Dresden, had a short layover in Cologne and then flew directly to Dublin.
+On the day of my arrival, I just walked around the city, chatted with some
+friendly locals, explored Dublin's nightlife and pubs, and met up with my cousin
+in the evening.
 
-Cologne out of the plane:
-![A photo of cologne out of an airplane with the wing of the plane]({{ "assets/18-dublin-trip/cologne_above_airplane.jpg" | absolute_url }})
+[![A picture of Dublin with the Liffey river][dublin_liffey]][dublin_liffey]
 
-On the day of the arrival I just walked a little bit around the city, talked
-to some nice people and explored the nightlife and pubs of Dublin.
+The next day, we travelled together to Howth, which is located north of Dublin.
+Although it was a little bit foggy and rainy, it was nevertheless a nice trip.
 
-![A picture of Dublin with the Liffey river]({{ "assets/18-dublin-trip/dublin_liffey.jpg" | absolute_url }})
+[![The lighthouse of Howth][dublin_howth_lighthouse]][dublin_howth_lighthouse]{:.image-left}
+[![Me at the shore of Howth][dublin_howth_shore]][dublin_howth_shore]{:.image-right}
 
-On the next day we traveled together to Howth in the north of Dublin. It was a
-little bit foggy and rainy but nevertheless a nice trip.
+[![A picture of the cliffs of Howth][dublin_howth_cliffs_1]][dublin_howth_cliffs_1]{:.image-left}
+[![Yet another picture of the cliffs of Howth][dublin_howth_cliffs_2]][dublin_howth_cliffs_2]{:.image-right}
 
-![The lighthouse of Howth]({{ "assets/18-dublin-trip/dublin_howth_lighthouse_foggy.jpg" | absolute_url }})
+On the third day, we took a short trip to Greystones, a seaside town in the
+south of Dublin.
+From there, we then wandered back to Dublin.
 
-![Karsten Lehmann at the shore of Howth]({{ "assets/18-dublin-trip/dublin_howth_shore_stormy.jpg" | absolute_url }})
+On our way, we also came across Bray Head Hill:
+[![The cross on Bray Head][dublin_bray]][dublin_bray]
 
-![A picture of the cliffs of Howth]({{ "assets/18-dublin-trip/dublin_howth_1.jpg" | absolute_url }})
+Having lunch and dinner in a pub every day was a nice experience - I totally see
+myself getting used to that.
 
-![Yet another picture of the cliffs of Howth]({{ "assets/18-dublin-trip/dublin_howth_2.jpg" | absolute_url }})
+On my last day in Dublin, I explored the city again before leaving in the
+evening.
+Just as on the outbound flight, I had a layover in Cologne.
 
-At the third day we made a small trip to the sea front of Greystones in the
-south of Dublin. From there we wandered back to Dublin.
+[![Dusk over Dublin out of an airplane][plane_over_dublin]][plane_over_dublin]
 
-On our way we also came across the Bray Head hill.
-
-![The cross of the Bray Head]({{ "assets/18-dublin-trip/dublin_bray_head_cross.jpg" | absolute_url }})
-
-Dinner and Lunch have been nice experiences everyday, since we always visted a
-pub.
-
-On my last day in Dublin I explored the city again and left in the evening.
-Just as on the outbound flight I had a layover in Cologne.
-
-![Dusk over Dublin out of an airplane]({{ "assets/18-dublin-trip/airplane_dusk_dublin.jpg" | absolute_url }})
+  [dublin_bray]: {{ "assets/2018-03-dublin/dublin_bray_head_cross.jpg" | absolute_url }}
+  [dublin_howth_cliffs_1]: {{ "assets/2018-03-dublin/dublin_howth_1.jpg" | absolute_url }}
+  [dublin_howth_cliffs_2]: {{ "assets/2018-03-dublin/dublin_howth_2.jpg" | absolute_url }}
+  [dublin_howth_lighthouse]: {{ "assets/2018-03-dublin/dublin_howth_lighthouse_foggy.jpg" | absolute_url }}
+  [dublin_howth_shore]: {{ "assets/2018-03-dublin/dublin_howth_shore_stormy.jpg" | absolute_url }}
+  [dublin_liffey]: {{ "assets/2018-03-dublin/dublin_liffey.jpg" | absolute_url }}
+  [plane_over_cologne]: {{ "assets/2018-03-dublin/cologne_above_airplane.jpg" | absolute_url }}
+  [plane_over_dublin]: {{ "assets/2018-03-dublin/airplane_dusk_dublin.jpg" | absolute_url }}
