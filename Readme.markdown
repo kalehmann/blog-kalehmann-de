@@ -59,6 +59,25 @@ new post also has this file extension.
 
 If the post contains any assets, they belong in a folder `assets/{year-month-title}`.
 
+#### Embedding images
+
+Images are preferred to be clickable links, that means the `<img>` tag is
+embedded in an `<a>`, which references the image.
+This allows the user to click on the image to view it in its full size and
+easily zoom in and out.
+
+To create this construct, images should be added to posts like this:
+
+```markdown
+
+[![A description of the image][my_image]][my_image]
+
+...
+
+  [my_image]: {{ "assets/{year}-{month}-{post}/image.jpg" | absolute_url }}
+
+
+```
 
 
   [bundler]: https://bundler.io/
