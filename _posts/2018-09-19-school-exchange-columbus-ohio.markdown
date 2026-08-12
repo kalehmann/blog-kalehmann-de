@@ -1,165 +1,201 @@
 ---
 categories:       blog
 date:             2018-09-19 23:18:42 +0200
+description:  >-
+    Joining a school exchange to Columbus, Ohio and visiting the USA for the
+    first time in my life.
 lang:             en
-last_modified_at: 2020-09-30 20:47:00 +0200
+last_modified_at: 2026-08-12 23:24:00 +0200
 layout:           post
 tags:
   - Travel
 title:            School exchange to Columbus, Ohio
 ---
 
-# Preface
+In September 2018, I got a one-of-a-kind chance to join a weeks-long school
+exchange to the USA.
+I cannot properly describe all the impressions that the trip left me with in
+words, but at least I have some pictures to share here.
 
-Unfortunately I do not have the linguistic skills to create an adequate
-reflection of the trip with this post. It will be just a recreation from all the
-pictures I took.
+# How I ended up going to the USA?
 
-But some experiences from the journey could be captured on photographs and
-therefore cannot be written down here.
+In 2017, my first year at vocational school
+([Berufsschulzentrum für Elektrotechnik Dresden](https://www.bszet.de/)), our
+English teacher told us about a planned school exchange to Columbus, Ohio - a
+sister city of Dresden.
+Later in April 2018, the students for the trip were nominated and selected.
+I was selected as a substitute candidate, which meant I could join the trip if
+another student dropped out.
+Still, this was just a side note to me - who could possibly drop out of such an
+opportunity?
 
-Apart from every sentence in the next few paragraphs, the most important lesson
-I learned is the insignificance of all geographical distance and cultural
-differences between people.
+From that moment I did not hear anything else about the planned exchange...
+Except that, three weeks before its start, my English teacher called me at the
+office and asked if I did have a passport and wanted to go to America.
+Of course I did!
+And luckily, I still got my passport from my [trip to Moscow][moscow_post] the
+year before.
 
-The other thing that will certainly come up too short in this post is the
-kindness the majority of people had with us and how much effort was put into
-giving us the chance to see the country and gain a small insight in the American
-lifestyle.
-
-# How to join a school exchange to Columbus, Ohio?
-
-In  2017, my first year at the vocational school
-([Berufsschulzentrum für Elektrotechnik Dresden](https://www.bszet.de/)) our
-English teacher told us about a planned school exchange to Columbus, a sister
-city of Dresden.
-Later in the April 2018 the students for the trip were nominated and selected.
-I got elected as a substitute candidate. That means I can travel to America if
-another candidate drops out.
-
-From that moment I did not here anything else from the trip until 3 weeks
-before the start. My English teacher called me at the office and asked if I do
-have a passport and want to go to America. Of course I do!
-
-The trip started on the fifth September 2018 at 2 pm at the Dresden
-airport with ten students and two teachers.
 
 # Welcome to the Columbus airport
 
-We arrived at midnight at the Columbus airport.
+The journey started on September 5, 2018, at 2 PM at the Dresden airport with ten
+students and two teachers.
+We arrived at midnight local time at Columbus airport.
 
-![The letters Columbus at the Columbus airport]({{ "assets/18-columbus-ohio-exchange/columbus_airport.jpg" | absolute_url }})
+[![The letters Columbus at the Columbus airport][columbus_airport]][columbus_airport]
 
-# Walking around downtown
+# Exploring downtown
 
-Altough we had a full program, we found time each day to explore the city.
+Although we had a full schedule, we still found time to explore the city each day.
 
-![Columbus downtown]({{ "assets/18-columbus-ohio-exchange/columbus_downtown_1.jpg" | absolute_url }})
+[![Columbus downtown][columbus_downtown_1]][columbus_downtown_1]{:.image-left}
+[![Columbus downtown][columbus_downtown_2]][columbus_downtown_2]{:.image-right}
 
-![Columbus downtown]({{ "assets/18-columbus-ohio-exchange/columbus_downtown_2.jpg" | absolute_url }})
+[![Street in Columbus][columbus_street]][columbus_street]{:.image-left}
+[![A tower near the Columbus Convention Center][columbus_convention_center]][columbus_convention_center]{:.image-right}
 
-![Street in Columbus]({{ "assets/18-columbus-ohio-exchange/columbus_street_1.jpg" | absolute_url }})
-
-![A tower near the Columbus Convention Center]({{ "assets/18-columbus-ohio-exchange/tower_columbus_convention_center.jpg" | absolute_url }})
-
-![Scioto river]({{ "assets/18-columbus-ohio-exchange/scioto_river_columbus_ohio.jpg" | absolute_url }})
+[![Scioto river][scioto_river]][scioto_river]
 
 # Visiting the Ohio State house
 
-![Ohio state house]({{ "assets/18-columbus-ohio-exchange/columbus_ohio_state_house.jpg" | absolute_url }})
+[![Ohio state house][ohio_state_house]][ohio_state_house]
 
-![Showcase in a museum "The war to end all wars"]({{ "assets/18-columbus-ohio-exchange/ohio_state_house_the_war_to_end_all_wars.jpg" | absolute_url }})
+[![Showcase in a museum "The war to end all wars"][war_to_end_all_wars]][war_to_end_all_wars]
 
 # Tour at the Ohio State University
 
-Since it was a school trip, we had an educational mission. Therefore we visited
-the Columbus State Community College and the Ohio State University. There we had
-a nice tour from one of the students and seen some experiments.
+Since this was still a school trip, we also had an educational mission.
+Therefore we visited the Ohio State University and later Columbus State
+Community College.
+Inside OSU, we had a detailed tour from one of the students and we were shown
+some experiments.
 
 <video autoplay loop muted>
-  <source src="{{ "assets/18-columbus-ohio-exchange/fire_in_the_hole.webm" | absolute_url }}" type="video/webm">
+  <source src="{{ "assets/2018-09-columbus-ohio/fire_in_the_hole.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
 
-![]({{ "assets/18-columbus-ohio-exchange/ohio_state_welding.jpg" | absolute_url }})
+[![][osu_welding]][osu_welding]
 
-# The football match between the Ohio Buckeyes and the Rutgers
+# My first American football game
 
-One of the professors from the Ohio State University gifted us tickets to an
-Ohio Buckeyes game. It was the first football game in my entire life. So
-impressive and magnificent. No comparison of a German soccer game.
+One of the professors from the Columbus State Community College gifted us tickets to an
+Ohio Buckeyes game against the Rutgers, thanks Paul Carringer.
+It was the first football game in my entire life.
+So impressive and magnificent - no comparison of a German soccer game.
 
-![The Ohio stadium in Columbus]({{ "assets/18-columbus-ohio-exchange/ohio_stadium_columbus.jpg" | absolute_url }})
+[![The Ohio stadium in Columbus][stadium]][stadium]
 
-![The flag of the USA in Ohio Stadium]({{ "assets/18-columbus-ohio-exchange/ohio_stadium_usa_flag.jpg" | absolute_url }})
+[![The flag of the USA in Ohio Stadium][stadium_flag]][stadium_flag]
 
-![Football game in Ohio Stadium, the Buckeyes vs the Rutgers]({{ "assets/18-columbus-ohio-exchange/ohio_stadium_buckeyes_vs_rutgers.jpg" | absolute_url }})
+[![Football game in Ohio Stadium, the Buckeyes vs the Rutgers][stadium_game]][stadium_game]
 
-![Ohio State marching band in Ohio Stadium]({{ "assets/18-columbus-ohio-exchange/ohio_stadium_marching_band.jpg" | absolute_url }})
+[![Ohio State marching band in Ohio Stadium][stadium_marching_band]][stadium_marching_band]
 
-# Visiting the Columbus State Community Collage
+# Visiting the Columbus State Community College
 
 Visiting the Columbus State Community College on multiple occasions was an
-important part of our trip, since it is the closed school type to our vocational
-school.
+important part of our trip, since it is the closest type of school to our
+vocational school in Germany.
 
-It was an interesting experience, since it has courses and material we can only
+It was an interesting experience, since it has courses and materials we can only
 dream of in Germany.
 
-For example game development in school...
-![A game development course at the Columbus State Community College]({{ "assets/18-columbus-ohio-exchange/columbus_state_community_college_game_development.jpg" | absolute_url }})
+For example, game development in school...
+[![A game development course at the Columbus State Community College][cscc_gamedev]][cscc_gamedev]
 
-... or the robotics lab
-![A robot at the Columbus State Community College]({{ "assets/18-columbus-ohio-exchange/columbus_state_community_college_robot.jpg" | absolute_url }})
+... or the robotics lab.
 
-![Labs at the Columbus State Community College]({{ "assets/18-columbus-ohio-exchange/columbus_state_community_college_labs.jpg" | absolute_url }})
+[![A robot at the Columbus State Community College][cscc_robot]][cscc_robot]
 
-![Electro labs at the Columbus State Community College]({{ "assets/18-columbus-ohio-exchange/columbus_state_community_college_electro.jpg" | absolute_url }})
+[![Labs at the Columbus State Community College][cscc_labs]][cscc_labs]
 
-# Ohio Amish Country
+[![Electro labs at the Columbus State Community College][cscc_electro]][cscc_electro]
 
-![Ohio Amish country]({{ "assets/18-columbus-ohio-exchange/ohio_amish_country.jpg" | absolute_url }})
+# Exploring Ohio Amish Country
 
-![A house in the Ohio Amish country]({{ "assets/18-columbus-ohio-exchange/ohio_amish_country_house.jpg" | absolute_url }})
+[![Ohio Amish country][amish_country]][amish_country]
 
-![A garden in the Ohio Amish country]({{ "assets/18-columbus-ohio-exchange/ohio_amish_garden.jpg" | absolute_url }})
+[![A house in the Ohio Amish country][amish_house]][amish_house]{:.image-left}
+[![A garden in the Ohio Amish country][amish_garden]][amish_garden]{:.image-right}
 
-# Trip to German village
+# Experiencing Germany in the USA
 
-What an irony, traveling to America to see German culture and visit traditional
-German restaurants.
+We also visited the German Village of Columbus.
+What an irony! - traveling to America to see German culture and visit
+traditional German restaurants.
 
 A German tradition. Everybody knows the famous Weiner Schnitzel ;)
-![A weiner schnitzel in the menu of a german restaurant]({{ "assets/18-columbus-ohio-exchange/weiner_schnitzel.jpg" | absolute_url }})
+[![A weiner schnitzel in the menu of a german restaurant][weiner_schnitzel]][weiner_schnitzel]
 
-The book loft in the German village of Columbus. A bookstore with 32 rooms.
-![The book loft in the german village.]({{ "assets/18-columbus-ohio-exchange/the_book_loft_of_german_village_columbus_ohio.jpg" | absolute_url }})
+The book loft in the German Village of Columbus.
+A bookstore with 32 rooms.
+[![The book loft in the German Village.][book_loft]][book_loft]
 
 # US suburbs
 
-A really weird experience, it seems so familiar from all the tv shows and
+A really weird experience, it seems so familiar from all the TV shows and
 movies.
 
-![A suburb]({{ "assets/18-columbus-ohio-exchange/usa_suburb_1.jpg" | absolute_url }})
-
-![Another suburb]({{ "assets/18-columbus-ohio-exchange/usa_suburb_2.jpg" | absolute_url }})
+[![A suburb][suburb_1]][suburb_1]{:.image-left}
+[![Another suburb][suburb_2]][suburb_2]{:.image-right}
 
 # Visiting the Columbus Idea Foundry
-![Makerspace in the Columbus Idea Foundry]({{ "assets/18-columbus-ohio-exchange/columbus_idea_foundry.jpg" | absolute_url }})
+[![Makerspace in the Columbus Idea Foundry][idea_foundry_1]][idea_foundry_1]{:.image-left}
+[![Makerspace in the Columbus Idea Foundry][idea_foundry_2]][idea_foundry_2]{:.image-right}
 
-![Makerspace in the Columbus Idea Foundry]({{ "assets/18-columbus-ohio-exchange/columbus_idea_foundry_2.jpg" | absolute_url }})
+[![Makerspace in the Columbus Idea Foundry][idea_foundry_3]][idea_foundry_3]{:.image-left}
+[![A pinboard with the question "What is a maker" answer: "A savage"][idea_foundry_maker]][idea_foundry_maker]{:.image-right}
 
-![Makerspace in the Columbus Idea Foundry]({{ "assets/18-columbus-ohio-exchange/columbus_idea_foundry_3.jpg" | absolute_url }})
+[![View over Columbus from a skyscraper][skyscraper_view]][skyscraper_view]
 
-![A pinboard with the question "What is a maker" answer: "A savage"]({{ "assets/18-columbus-ohio-exchange/columbus_idea_foundry_what_is_a_maker.jpg" | absolute_url }})
+# Heading home again
 
-![View over Columbus from a skyscrapper]({{ "assets/18-columbus-ohio-exchange/columbus_view_from_skyscraper.jpg" | absolute_url }})
-
-# The flight back
-
-We started at around 6:30 pm local time in Columbus, had layovers in Detroit
-and Amsterdam and arrived at 13:30 in Dresden.
+We started at around 6:30 PM local time in Columbus, had a layover in Detroit
+as well as in Amsterdam and finally arrived at 01:30 PM in Dresden.
 This photograph shows the view out of the airplane on the flight from Columbus
 to Detroit.
-![View out of an airplane on the flight back to Detroit]({{ "assets/18-columbus-ohio-exchange/flight_to_detroit.jpg" | absolute_url }})
+[![View out of an airplane on the flight back to Detroit][flight_back]][flight_back]
+
+Apart from every sentence written here, the most important lesson I learned is
+the insignificance of all geographical distance and cultural differences between
+people.
+
+The other thing that certainly came up too short in this post is the kindness
+the majority of people had with us and how much effort was put into giving us
+the chance to see the country and gain a small insight in the American
+lifestyle.
+
+  [amish_country]: {{ "assets/2018-09-columbus-ohio/ohio_amish_country.jpg" | absolute_url }}
+  [amish_garden]: {{ "assets/2018-09-columbus-ohio/ohio_amish_garden.jpg" | absolute_url }}
+  [amish_house]: {{ "assets/2018-09-columbus-ohio/ohio_amish_country_house.jpg" | absolute_url }}
+  [book_loft]: {{ "assets/2018-09-columbus-ohio/the_book_loft_of_german_village_columbus_ohio.jpg" | absolute_url }}
+  [columbus_airport]: {{ "assets/2018-09-columbus-ohio/columbus_airport.jpg" | absolute_url }}
+  [columbus_convention_center]: {{ "assets/2018-09-columbus-ohio/tower_columbus_convention_center.jpg" | absolute_url }}
+  [columbus_downtown_1]: {{ "assets/2018-09-columbus-ohio/columbus_downtown_1.jpg" | absolute_url }}
+  [columbus_downtown_2]: {{ "assets/2018-09-columbus-ohio/columbus_downtown_2.jpg" | absolute_url }}
+  [columbus_street]: {{ "assets/2018-09-columbus-ohio/columbus_street_1.jpg" | absolute_url }}
+  [cscc_electro]: {{ "assets/2018-09-columbus-ohio/columbus_state_community_college_electro.jpg" | absolute_url }}
+  [cscc_gamedev]: {{ "assets/2018-09-columbus-ohio/columbus_state_community_college_game_development.jpg" | absolute_url }}
+  [cscc_labs]: {{ "assets/2018-09-columbus-ohio/columbus_state_community_college_labs.jpg" | absolute_url }}
+  [cscc_robot]: {{ "assets/2018-09-columbus-ohio/columbus_state_community_college_robot.jpg" | absolute_url }}
+  [flight_back]: {{ "assets/2018-09-columbus-ohio/flight_to_detroit.jpg" | absolute_url }}
+  [idea_foundry_1]: {{ "assets/2018-09-columbus-ohio/columbus_idea_foundry.jpg" | absolute_url }}
+  [idea_foundry_2]: {{ "assets/2018-09-columbus-ohio/columbus_idea_foundry_2.jpg" | absolute_url }}
+  [idea_foundry_3]: {{ "assets/2018-09-columbus-ohio/columbus_idea_foundry_3.jpg" | absolute_url }}
+  [idea_foundry_maker]: {{ "assets/2018-09-columbus-ohio/columbus_idea_foundry_what_is_a_maker.jpg" | absolute_url }}
+  [moscow_post]: {% post_url 2017-08-13-trip-to-moscow %}
+  [ohio_state_house]: {{ "assets/2018-09-columbus-ohio/columbus_ohio_state_house.jpg" | absolute_url }}
+  [osu_welding]: {{ "assets/2018-09-columbus-ohio/ohio_state_welding.jpg" | absolute_url }}
+  [scioto_river]: {{ "assets/2018-09-columbus-ohio/scioto_river_columbus_ohio.jpg" | absolute_url }}
+  [skyscraper_view]: {{ "assets/2018-09-columbus-ohio/columbus_view_from_skyscraper.jpg" | absolute_url }}
+  [stadium]: {{ "assets/2018-09-columbus-ohio/ohio_stadium_columbus.jpg" | absolute_url }}
+  [stadium_flag]: {{ "assets/2018-09-columbus-ohio/ohio_stadium_usa_flag.jpg" | absolute_url }}
+  [stadium_game]: {{ "assets/2018-09-columbus-ohio/ohio_stadium_buckeyes_vs_rutgers.jpg" | absolute_url }}
+  [stadium_marching_band]: {{ "assets/2018-09-columbus-ohio/ohio_stadium_marching_band.jpg" | absolute_url }}
+  [suburb_1]: {{ "assets/2018-09-columbus-ohio/usa_suburb_1.jpg" | absolute_url }}
+  [suburb_2]: {{ "assets/2018-09-columbus-ohio/usa_suburb_2.jpg" | absolute_url }}
+  [war_to_end_all_wars]: {{ "assets/2018-09-columbus-ohio/ohio_state_house_the_war_to_end_all_wars.jpg" | absolute_url }}
+  [weiner_schnitzel]: {{ "assets/2018-09-columbus-ohio/weiner_schnitzel.jpg" | absolute_url }}
