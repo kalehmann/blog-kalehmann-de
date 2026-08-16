@@ -5,6 +5,10 @@
 @import "gallery";
 @import "math";
 
+audio, img, video {
+    width: 100%;
+}
+
 body, html {
     scroll-behavior: smooth;
 }
@@ -14,105 +18,103 @@ details {
     margin-bottom: 1em;
 
     & > summary {
-	font-size: 1.2rem;
-	font-weight: bold;
+        font-size: 1.2rem;
+        font-weight: bold;
     }
 }
 
-.post_tag, .post_tag:hover, .post_tag:visited {
-  margin: 0 .3em 0 .3em;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-  background-color: #629dea;
-  padding: 5px 10px;
+form {
+    & label  {
+        & > input, select {
+            display: block;
+            width: 100%;
+            margin-bottom: $spacing-unit * 0.5;
+        }
+    }
 }
 
-audio, img, video {
-  width: 100%;
-}
-
-.image {
-    &-left {
-	display: block;
-        margin-bottom: $spacing-unit * 0.5;
-    }
-
-    &-right {
-	display: block;
-        margin-bottom: $spacing-unit * 0.5;
-    }
+pre {
+    font-variant-ligatures: none;
 }
 
 .float {
     &-left {
-	display: block;
+        display: block;
         margin-bottom: $spacing-unit * 0.5;
     }
 
     &-right {
-	display: block;
+        display: block;
         margin-bottom: $spacing-unit * 0.5;
     }
 
     &-small {
-	margin: auto;
-	width: 66%;
+        margin: auto;
+        width: 66%;
     }
 }
 
+.image {
+    &-left {
+        display: block;
+        margin-bottom: $spacing-unit * 0.5;
+    }
 
-form {
-    & label  {
-	& > input, select {
-	    display: block;
-	    width: 100%;
-            margin-bottom: $spacing-unit * 0.5;
-	}
+    &-right {
+        display: block;
+        margin-bottom: $spacing-unit * 0.5;
     }
 }
 
+.post_tag, .post_tag:hover, .post_tag:visited {
+    margin: 0 .3em 0 .3em;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    background-color: #629dea;
+    padding: 5px 10px;
+}
 
 @media screen and (min-width: 800px) {
-  %image {
-    display: inline-block;
-    margin: auto;
-    max-width: 49%;
-    width: 50%;
-  }
+    .float {
+        &-left {
+            @extend %image;
+            float: left;
+            margin-right: 2%;
+        }
+        &-right {
+            @extend %image;
+            float: right;
+            margin-left: 2%;
+        }
 
-  *:has(> .float-left, > .float-right)::after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-
-  .float {
-    &-left {
-      @extend %image;
-      float: left;
-      margin-right: 2%;
-    }
-    &-right {
-      @extend %image;
-      float: right;
-      margin-left: 2%;
+        &-small.float-left, &-small.float-right {
+            width: 33%;
+        }
     }
 
-    &-small.float-left, &-small.float-right {
-	width: 33%;
-    }
-  }
-
-  .image {
-    &-left {
-      @extend %image;
-      padding-right: 5px;
+    *:has(> .float-left, > .float-right)::after {
+        content: " ";
+        display: block;
+        clear: both;
     }
 
-    &-right {
-      @extend %image;
-      padding-left: 5px;
+    %image {
+        display: inline-block;
+        margin: auto;
+        max-width: 49%;
+        width: 50%;
     }
-  }
+
+    .image {
+        &-left {
+            @extend %image;
+            padding-right: 5px;
+        }
+
+        &-right {
+            @extend %image;
+            padding-left: 5px;
+        }
+    }
 }
