@@ -1,50 +1,46 @@
 ---
-layout:       post
-title:        SleepDungeon - eine 48 Stunden GameJam
-date:         2018-11-11 17:48:01 +0200
-lang:         de
-categories:   blog
+categories:       blog
+date:             2018-11-11 17:48:01 +0200
+description:  >-
+   SleepDungeon ist ein kurzer Dungeon Crawler, der im Rahmen einer
+   GameJam an der TU Dresden entwickelt wurde.
+image:
+    path: assets/2018-11-sleepdungeon/og_image.png
+    width: 500
+    height: 500
+lang:             de
+last_modified_at: 2026-08-16 11:48:10 +0200
+layout:           post
 tags:
   - Coding
   - Games
-image:
-    path: assets/sleepdungeon/og_image.png
-    width: 500
-    height: 500
+title:            SleepDungeon - eine 48 Stunden GameJam
 ---
 
-## SleepDungeon
+Sleepdungeon ist ein in Python 3 und [Pygame][pygame] entwickeltes Computerspiel.
+Es wurde im Rahmen einer GameJam an der Technischen Universität Dresden
+innerhalb von 48 Stunden durch ein fünfköpfiges Team entwickelt.
 
-Sleepdungeon ist ein in Python3 und PyGame entwickeltes Computerspiel.
-Es wurde im Rahmen einer GameJam an der technischen Universität Dresden
-innerhalb von 48 Stunden von einem fünfköpfigen Team entwickelt.
+Der Name des Spiels leitet sich von dem Genre *Dungeon Crawler* und dem
+Namen, den unser Team während der Einführung gewählt hat - *Team Sleep* -
+ab.
+Als Inspiration für das Spiel dienten die ersten Spiele der
+*The Legend of Zelda*-Reihe sowie *The Binding of Isaac*.
 
-Als Inspiration für das Spiel dienten die ersten *The Legend of Zelda* Spiele
-und *The Binding of Isaac.*
-
-Der Name des Spiels ist von dem Genre des Games, *Dungeon Crawler* und dem
-Namen den unser Team während der Einführung gewählt hat, *Team Sleep*
-abgeleitet.
-
-Hier kommentiere ich das erste Level<sup>[[1]](#quelle-1)</sup>:
+Einen kurzen Einblick in das Spiel gibt das erste Level, welches gleichzeitig
+das Tutorial darstellt.
+Hier spiele ich das Tutorial durch<sup>[[1]](#quelle-1)</sup>:
 
 <video controls>
-  <source src="{{ "assets/sleepdungeon/sleepdungeon-lets_play_the_tutorial.webm" | absolute_url }}" type="video/webm">
+  <source src="{{ "assets/2018-11-sleepdungeon/sleepdungeon-lets_play_the_tutorial.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
 ## Die GameJam
 
 Bei der GameJam handelte es sich um die
-[2. GameJam der Fakultät Informatik Dresden](https://imld.de/gamejam/)
-
-Am ersten Abend fand eine kurze Einführung in die Veranstaltung statt, die
-Teams hatten sich zu diesem Zeitpunkt bereits fast alle gefunden.
-
-Danach verteilten sich die Teams auf die vorhandenen Räumlichkeiten und begannen
-sowohl die ersten Konzepte festzulegen und die Spiel zu implementieren.
-
-Wie man bereits der Website entnehmen kann waren die Vorgaben der GameJam sehr
+[2. GameJam der Fakultät Informatik Dresden][gamejam].
+Wie man der Website entnehmen kann, waren die Vorgaben der GameJam sehr
 lose gesetzt:
 
 > «Ihr habt 48h Zeit, um in Gruppen von 3-5 Personen spannende Spielideen in Form von interaktiven Prototypen umzusetzen»
@@ -53,92 +49,99 @@ lose gesetzt:
 
 > «Wir machen prinzipiell keine Vorgaben, welche Technologien ihr für die Erstellung eurer Spiele verwenden möchtet»
 
-Nachdem die erste GameJam im Jahr zuvor eher kompetitiv war, hat man sich im
-diesem Jahr dazu entschieden, auf dem Wettbewerbsaspekt zu verzichten. Daraus
-resultierte ein freundschaftlicheres Verhältnis zwischen den Teams.
+Die GameJam erstreckte sich über ein Wochenende von Freitag- bis Sonntagabend.
+Am ersten Abend fand eine kurze Einführung in die Veranstaltung statt.
+Zu diesem Zeitpunkt hatten sich bereits fast alle Teams gefunden.
+Nach der Einführung verteilten sich die Teams dann auf die vorhandenen
+Räumlichkeiten, finalisierten die Konzepte für die Spiele und unternahmen die
+ersten Schritte der Implementierung.
 
+Die erste GameJam in diesem Format im Jahr 2017 war eher kompetitiv.
+Nun haben sich die Veranstalter 2018 dazu entschieden, auf den
+Wettbewerbsaspekt zu verzichten.
+Daraus resultierte ein freundschaftlicheres Verhältnis zwischen den Teams.
 Wir vollzogen regelmäßig Rundgänge zu den anderen Teams, betrachteten deren
-Fortschritte und redeten mit ihnen über die verwendeten Technologien und deren
-Ideen welche realisiert werden sollten.
-Im Gegenzug dazu wurden wir auch des öfteren von anderen Teams besucht und
+Fortschritte und sprachen mit ihnen über die verwendeten Technologien und deren
+Ideen, welche realisiert werden sollten.
+Im Gegenzug dazu wurden wir auch des Öfteren von anderen Teams besucht und
 manchmal auch belästigt ;)
 
-Im Verlauf der zwei Tage versuchten wir so viel Zeit wie möglich in der Uni mit
-der Entwicklung zu verbringen. Verpflegt wurden wir dabei vom Studentencafé,
-dem Ascii.
-
+Im Verlauf der zwei Tage versuchten wir, so viel Zeit wie möglich in der Uni mit
+der Entwicklung zu verbringen.
+Verpflegt wurden wir dabei vom Studentencafé, dem Ascii.
 Als Arbeitsplatz stand uns ein eigener Raum zur Verfügung, den wir inklusive
-Tafel nutzen konnten. Dies war uns vor allem bei der Planung sehr hilfreich.
+Tafel nutzen konnten.
+Vor allem die Tafel erwies sich bei der Planung als sehr hilfreich.
 
-![Der Arbeitsplatz meines Teams]({{ "assets/sleepdungeon/team_workplace.jpg" | absolute_url }})
+[![Der Arbeitsplatz meines Teams][workplace]][workplace]
 
-Am Sonntag gegen 16:00 war es dann schließlich soweit. Alle Arbeiten wurden
-eingestellt (oder sollten es zumindest) und die Teams bereiteten sich auf die
-Präsentation vor. Obwohl sich zwischendurch einige Zweifel regten, ob wir denn
-fertig werden, sind wir in der kurzen Zeit doch zu einem vorzeigbaren Ergebnis
-gekommen, auf das man auch mal Stolz sein kann.
+Am Sonntag gegen 16:00 Uhr war es dann schließlich so weit -
+alle Arbeiten wurden eingestellt (oder sollten es zumindest werden) und die
+Teams bereiteten sich auf die Präsentation vor.
+Obwohl wir zwischendurch einige Male daran zweifelten, ob wir denn auch fertig
+werden, sind wir in der kurzen Zeit doch zu einem vorzeigbaren Ergebnis gekommen,
+auf das wir auch stolz sein können.
 
 Zur Präsentation bauten die Teams ihre PCs auf und ließen die anderen Teilnehmer
 und hinzugekommenen Zuschauer ihre Spiele testen.
 
-Hier spiele ich SleepDungeon zur Präsentation:
-![Ein Bild von mir, wie ich SleepDungeon mit einem Controller spiele]({{ "assets/sleepdungeon/playing_sleepdungeon.jpg" | absolute_url }})
+[![Ein Bild von mir, wie ich SleepDungeon mit einem Controller spiele][playing]][playing]
 
-Das Gameplay ist zum Zeitpunkt der Präsentation komplett implementiert. Alle
-grundlegenden Funktionen sind vorhanden, das Spiel lässt sich spielen ohne
-abzustürzen. Die Texturen sind dank durchgehend passionierter Arbeit unseres
-Designers, [Robert Ludwig](https://github.com/MinniFlo), alle fertig und
-sehen wahnsinnig gut aus.
-Dank der Arbeit von [Martin](https://github.com/MartinOehme) existieren auch
-zwei Ebenen. Davon stellt die erste das Tutorial mit einem einzigen Raum dar,
-während die zweite das eigentliche Spiel mit ganzen 30 Räumen enthält.
-Aufgrund des großen Aufwandes, diese Anzahl an Räumen allein aus dem Kopf zu
-erstellen hat er sich dabei auch Skizzen auf Papier erstellt:
+Das Gameplay war zum Zeitpunkt der Präsentation komplett implementiert.
+Alle grundlegenden Funktionen waren vorhanden, das Spiel ließ sich spielen und
+es gab keine Abstürze.
+Dank der durchgehend passionierten Arbeit unseres Designers,
+[Robert Ludwig](https://github.com/MinniFlo), waren alle Texturen fertig und sehen
+immer noch wahnsinnig gut aus.
 
-![Eine der initialen Skizzen der Karte des Spiels]({{ "assets/sleepdungeon/map_sketch.jpg" | absolute_url }})
+Außerdem umfasst das Spiel dank [Martin](https://github.com/MartinOehme)
+zwei Ebenen.
+Davon stellt die erste Ebene das Tutorial mit einem einzigen Raum dar und die
+zweite Ebene enthält das eigentliche Spiel mit ganzen 30 Räumen.
+Natürlich hat er diese Räume nicht nur im Kopf entworfen.
+Hier ist die Skizze der Räume auf der zweiten Ebene:
+
+[![Eine der initialen Skizzen der Karte des Spiels][map_sketch]][map_sketch]
 
 Der Stand zum Release lässt sich auf dem
-[original Branch des Repositories](https://github.com/robuf/sleepdungeon/tree/original)
-nachvollziehen.
-
+[`original`-Branch des Repositories][original_branch] nachvollziehen.
 
 ## Weiterentwicklung nach der GameJam
 
-Im Verlauf der letzten Woche sind noch einige Änderungen hinzugekommen.
-Zusammen mit [Robert](https://github.com/robuf) habe ich noch ein Hauptmenü
-implementiert. Dazu sind auch noch zwei weitere Schwierigkeitsgrade
+Im Verlauf der Woche nach dem Ende der GameJam sind noch einige Änderungen
 hinzugekommen.
+Zusammen mit [Robert](https://github.com/robuf) habe ich noch ein Hauptmenü
+implementiert.
+Außerdem hat [Lars](https://github.com/pixix4) noch die Pfadfindung der
+Gegner überarbeitet.
+Diese laufen nun auch umher, wenn sie den Spieler nicht erreichen können.
 
-Es hat sich nämlich herausgestellt, dass das Spiel für einige Spieler zu
-anspruchsvoll ist. Somit ist noch ein leichter Schwierigkeitsgrad hinzugekommen,
-in dem die Gegner signifikant mehr Herzen droppen und diese auch die doppelte
-Heilungskraft besitzen. In diesem Modus ist es einfach zum finalen Raum des
-Spiels zu gelangen.
-
-Außerdem gibt es nun noch einen Hardmode, in diesem droppen die Gegner keine
-Herzen mehr.
-
-Zusätzlich hat [Lars](https://github.com/pixix4) noch die Pfadfindung der
-Gegner überarbeitet, diese laufen nun auch noch umher, wenn sie den Spieler
-nicht erreichen können.
+Weiter haben wir noch zwei weitere Schwierigkeitsgrade implementiert.
+Denn es hat sich herausgestellt, dass das Spiel für einige Spieler zu
+anspruchsvoll ist.
+Somit ist zum einen ein leichter Schwierigkeitsgrad hinzugekommen, in dem die
+Gegner signifikant mehr Herzen droppen und diese auch die doppelte
+Heilungskraft besitzen.
+In diesem Modus ist es nun einfach, zum finalen Raum des Spiels zu gelangen.
+Zum anderen ist ein Hardmode hinzugekommen.
+In diesem droppen die Gegner hingegen gar keine Herzen mehr.
 
 ## Wo kann man das Zocken?
 
-Das Spiel kann prinzipiell auf allen Plattformen gezockt werden, auf denen
-Python3 und PyGame läuft. Dazu checkt man einfach das zur Entwicklung
-genutzte [Repository von Robert](https://github.com/robuf/sleepdungeon) aus und
-startet das Spiel mittels folgendem Befehl:
+Das Spiel kann prinzipiell auf allen Plattformen gespielt werden, auf denen
+Python 3 und Pygame laufen.
+Dazu checkt man einfach das zur Entwicklung genutzte
+[Repository von Robert](https://github.com/robuf/sleepdungeon) aus und startet
+das Spiel mittels folgendem Befehl:
 
 ```
 python3 bin/sleepdungeon
 ```
 
 Wer macOS oder Windows nutzt und wem das zu kompliziert ist, der kann sich
-auch eine fertig gebundelte Version des Spiels herunterladen.
-
+auch eine fertig kompilierte Version des Spiels herunterladen.
 Diese gibt es für beide Systeme auf der
 [Website des Spiels](https://sleepdungeon.de).
-
 
 ## Einzelnachweise
 
@@ -146,7 +149,14 @@ Diese gibt es für beide Systeme auf der
 1: <a id="quelle-1"></a>
 Der im Hintergrund laufende Soundtrack des Spiels ist eine modifizierte Version
 von [*La Calahorra*](http://freemusicarchive.org/music/Rolemusic/~/calahorra)
-des Künstlers [*Rolemusic*](http://rolemusic.sawsquarenoise.com/) und lizensiert
+des Künstlers [*Rolemusic*](http://rolemusic.sawsquarenoise.com/) und lizenziert
 unter
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 </small>
+
+  [gamejam]: https://imld.de/gamejam/
+  [map_sketch]: {{ "assets/2018-11-sleepdungeon/map_sketch.jpg" | absolute_url }}
+  [original_branch]: https://github.com/robuf/sleepdungeon/tree/original
+  [playing]: {{ "assets/2018-11-sleepdungeon/playing_sleepdungeon.jpg" | absolute_url }}
+  [pygame]: https://www.pygame.org/docs/
+  [workplace]: {{ "assets/2018-11-sleepdungeon/team_workplace.jpg" | absolute_url }}
