@@ -6,7 +6,7 @@ description: >-
   in its containing HTML element. Explaining in depth how the internal angles of
   a CSS border triangle are manipulated.
 lang:             en
-last_modified_at: 2025-04-08 21:05:00 +0200
+last_modified_at: 2026-08-22 23:02:06 +0200
 layout:           post
 tags:
   - Coding
@@ -137,12 +137,12 @@ from Firefox for Android as seen below.
 
 **This is just a screenshot, not a video ;)**
 
-![Screenshot of the media play of Firefox for Android (Fenix)][media-controls]
+[![Screenshot of the media play of Firefox for Android (Fenix)][media-controls]][media-controls]
 
 ## Creating triangles using CSS borders
 
-Lets shortly recapitulate how CSS borders work exactly.
-Starting with a single **div** with borders on three sides and take a look
+First, briefly recapitulate how CSS borders work exactly.
+Let's start with a single **div** with borders on three sides and take a look
 how those three borders meet each other.
 
 {% highlight css %}
@@ -153,7 +153,7 @@ how those three borders meet each other.
   <div class="border-demo-01"></div>
 </div>
 
-The border at the bottom is a isosceles trapezoid with both base angles 45°.
+The border at the bottom is an isosceles trapezoid with both base angles 45°.
 Assuming the **div** would shrink to a width of zero, this border would become
 a triangle.
 
@@ -176,12 +176,12 @@ But the objective is to create an equilateral triangle.
 A triangle is equilateral when all three internal angles are 60°.
 The internal angles of the CSS triangle can be manipulated by changing the width
 of the left and right border.
-But how is the border width for an equilateral triangle which the length of
-each side denoted as **a** calculated?
+But how can the border width for an equilateral triangle whose side length is
+denoted by **a** be calculated?
 
-![][triangle]
+{% include_relative embedded/2020-09-css-triangle/triangle.svg %}
 
-Since **border-left** and **border-right** are equal, they are both akin
+Since **border-left** and **border-right** are equal, they are both equal to
 <sup><strong>a</strong></sup>/<sub>2</sub>.
 **border-bottom** can be calculated from **a** using the Pythagorean theorem
 with:
@@ -308,8 +308,8 @@ What is the center of a triangle?
 There is a huge variety of triangle centers.
 For example the *incenter*, which is the intersection of all angle bisectors,
 the *centroid*, which is the intersection of all medians and also represents
-the *center of mass* or the *orthocenter*, which is the intersection of each
-sides altitude.
+the *center of mass* or the *orthocenter*, which is the intersection the
+triangle's altitudes.
 
 Fortunately these points are all the same for an equilateral triangle.
 But why is the center even important?
@@ -322,17 +322,17 @@ What is the center of the triangle if it is rendered as it is?
 </div>
 
 As you can see, its current "center" is just the center of the smallest
-rectangle, that can be rendered around the triangle.
+rectangle that can be rendered around the triangle.
 
-![][center]
+{% include_relative embedded/2020-09-css-triangle/center.svg %}
 
 The final bit of information needed to center the triangle is the distance from
 the current center *C* to the incenter *I* of the triangle.
 Both points are located on the altitude of the triangles base line.
 The altitude from the base line to *I* - denoted as *h*<sub>*c*</sub> here - is
-calculated using the tangent in the triangle between the baseline, the angle
-bisector of the triangles bottom left corner and the altitude on the triangles
-baseline.
+calculated using the tangent in the triangle between the base line, the angle
+bisector of the triangle's bottom left corner and the altitude on the triangle's
+base line.
 
 <math display="block">
   <mtable>
@@ -424,19 +424,19 @@ element.
   </div>
 </div>
 
-## Apply all together to an single element.
+## Put everything together in a single element
 
 Now everything can be put together.
-The objecte is still to recreate the play button from the Firefox for Android
+The objective is still to recreate the play button from the Firefox for Android
 media player.
 Furthermore only a single HTML element should be used.
 
-First this single HTML element is display as a circle with a **border-radius**
+First, the HTML element is rendered as a circle with a **border-radius**
 of `50%`.
-Then all it's content is centerent using `display: flex;`, `align-items: center`
-and `justify-content: center;`.
+Then all of its content is centered with `display: flex;`,
+`align-items: center` and `justify-content: center;`.
 
-Last but not least the triangle is then created with the
+Last but not least the triangle is then created using the
 [`::after` pseudo-element][after].
 
 {% highlight css %}
@@ -448,7 +448,5 @@ Last but not least the triangle is then created with the
 </div>
 
   [after]: https://developer.mozilla.org/en-US/docs/Web/CSS/::after
-  [center]: {{ "assets/css-triangle/center.svg" | absolute_url }}
-  [media-controls]: {{ "assets/css-triangle/firefox-mobile-media-controls.jpg" | absolute_url }}
-  [triangle]: {{ "assets/css-triangle/triangle.svg" | absolute_url }}
+  [media-controls]: {{ "assets/2020-09-css-triangle/firefox-mobile-media-controls.jpg" | absolute_url }}
   [video-el]: https://developer.mozilla.org/en/docs/Web/HTML/Element/video
