@@ -6,7 +6,7 @@ description:  >-
   Details zur technischen Umsetzung und der Entfernungsermittlung anhand der
   Postleitzahl in PHP und Symfony.
 lang:             de
-last_modified_at: 2025-04-08 21:05:00 +0200
+last_modified_at: 2026-08-22 22:21:22 +0200
 layout:           post
 tags:
   - Coding
@@ -19,19 +19,18 @@ Aufgrund der aktuell laufenden COVID-19-Pandemie müssen wir alle mit
 Einschränkungen leben.
 Alte Menschen sind davon besonders betroffen.
 Sie gehören zur Risikogruppe für schwere Verläufe der Erkrankung und
-bedürfen daher besonderen Schutz.
-Deswegen ist in der
-[Sächsischen Corona-Schutz-Verordnung](https://web.archive.org/web/20200406234231/https://www.coronavirus.sachsen.de/download/Fassung-RV-SaechsCoronaSchVO_31032020.pdf)
+bedürfen daher besonderen Schutzes.
+Deswegen ist in der [Sächsischen Corona-Schutz-Verordnung][SaechsCoronaSchVO]
 der Besuch von Alten- und Pflegeheimen untersagt.
 Das [Jugenrotkreuz Sachsen](https://jrksachsen.de) hat daher die Aktion
 [SchreibMit!](https://jrksachsen.de/schreibmit)
 gestartet, um der Vereinsamung von Sachsens Seniorinnen und Senioren in dieser
-Zeit entgegen zu wirken.
+Zeit entgegenzuwirken.
 
 Vor 10 Tagen hat mich ein Kamerad des DRK Kreisverbandes Dresden angerufen und
 kurz über die Idee informiert.
 Die interessierten Nutzer sollen die Kontaktadresse eines Alten- oder
-Pflegeheimes über eine Webanwendung erhalten.
+Pflegeheims über eine Webanwendung erhalten.
 Das ausgewählte Alten- oder Pflegeheim soll geografisch in der Nähe des Nutzers
 liegen.
 Dabei besteht die Hoffnung, dass sich ein Kontakt entwickelt, der auch in der
@@ -41,16 +40,16 @@ Natürlich habe ich mich sofort bereit erklärt, diese Anwendung zu entwickeln.
 ### Die Umkreissuche von Pflegeheimen
 
 Die erste Herausforderung ist das Finden des nächstgelegenen Alten- oder
-Pflegeheimes.
+Pflegeheims.
 Der Nutzer der Anwendung gibt seine Position anhand seiner Postleitzahl preis.
-Die Datenbank nach einem Pflegeheim mit der selben Postleitzahl zu durchsuchen
+Die Datenbank nach einem Pflegeheim mit derselben Postleitzahl zu durchsuchen
 wäre insuffizient, da nicht für jeden Postleitzahlbereich ein Pflegeheim
-eingetragen ist.
+veingetragen ist.
 Deswegen erfolgt die Suche anhand der Koordinaten der Pflegeheime.
-Dazu müssen als erstes jedem Postleitzahlbereich Koordinaten zugeordnet werden.
-Dazu wird die
-[Postleitzahlendatenbank des Lausitzer Unternehmens Launix](https://launix.de/launix/launix-gibt-plz-datenbank-frei/)
-verwendet.
+Dazu müssen als Erstes jedem Postleitzahlbereich Koordinaten zugeordnet werden.
+Diese Koordinaten werden der
+[Postleitzahlendatenbank des Lausitzer Unternehmens Launix][plz_db]
+entnommen.
 Die Daten dieser Datenbank sind gemeinfrei.
 Jeder Eintrag enthält eine Postleitzahl, die zugehörige Stadt sowie Längen- und
 Breitengrad für den Postleitzahlbereich.
@@ -69,7 +68,7 @@ Die Distanz zwischen zwei Breitengraden variiert minimal mit 110.6 Kilometern am
 Äquator und 111.7 Kilometern an den Polen.
 Für die Anwendung wird ein Mittelwert von 111.3 Kilometern angenommen.
 
-Der Distanz zwischen zwei Längengrade variiert jedoch in Abhängigkeit vom
+Die Distanz zwischen zwei Längengrade variiert jedoch in Abhängigkeit vom
 Breitengrad.
 Am Äquator, mit dem Erdradius r<sub>0</sub> berechnet sich die Distanz zwischen
 zwei Längengraden D<sub>0</sub> mit
@@ -141,7 +140,7 @@ immer mehr dem Wert 0 an.
 Um die Distanz in Abhängigkeit von der geografischen Breite φ zu bestimmen,
 benötigt man den Radius des Breitengrades.
 
-Dieser Radius, r<sub>φ</sub> berechnet sich
+Dieser Radius r<sub>φ</sub> berechnet sich
 
 <math display="block">
   <mrow>
@@ -241,13 +240,13 @@ lässt sich die Berechnung von D<sub>φ</sub> zusammenfassen auf
   </mtable>
 </math>
 
-![]({{ "assets/schreibmit/earth_longitude.png" | absolute_url }})
+[![Die Variablen D_0, D_φ, φ, r_0 und r_φ an einem Globus][laengengrade]][laengengrade]
 
 Für die Stadt Dresden werden die Koordinaten 51°05'N 13°45'E als Zentrum
 angenommen.
 Diese Koordinaten entsprechen in etwa dem Pirnaischen Platz.
 Für diesen Breitengrad kann man einen Abstand zwischen zwei Längengraden von
-70 Km annehmen
+70 km annehmen
 
 <math display="block">
   <mtable>
@@ -282,7 +281,7 @@ Für diesen Breitengrad kann man einen Abstand zwischen zwei Längengraden von
       <mtd>
         <mrow>
           <mn>70</mn>
-          <mi>Km</mi>
+          <mi>km</mi>
         </mrow>
       </mtd>
     </mtr>
@@ -291,10 +290,10 @@ Für diesen Breitengrad kann man einen Abstand zwischen zwei Längengraden von
 
 Mit diesen Informationen kann der Abstand zwischen zwei Koordinaten berechnet
 werden.
-Angenommen man hat zwei Punkte P<sub>1</sub> und P<sub>2</sub>.
+Angenommen, man hat zwei Punkte P<sub>1</sub> und P<sub>2</sub>.
 Deren Koordinaten werden mit den Breitengraden φ<sub>1</sub> und φ<sub>2</sub>
 sowie den Längengraden λ<sub>1</sub> und λ<sub>2</sub> beschrieben.
-Die Distanz zwischen diesen beiden Punkten wird wie folgt berechnet
+Die Distanz zwischen diesen beiden Punkten wird wie folgt berechnet:
 <math display="block">
   <mrow>
     <mi>D</mi>
@@ -346,17 +345,15 @@ Sie ist in zwei Komponenten unterteilt.
 Zum einen die Startseite mit einem Formular, welches den Nutzer nach seinem
 Namen, seiner Postleitzahl und seiner E-Mail-Adresse abfragt.
 
-![]({{ "assets/schreibmit/schreibmit_symfony.jpg" | absolute_url }})
+[![Ein Screenshot der Webanwendung von SchreibMit!][schreibmit_ui]][schreibmit_ui]
 
 Nachdem der Nutzer diese Daten übermittelt hat, wird mittels der oben
 beschriebenen Umkreissuche für Pflegeheime das nächstgelegene teilnehmende
 Pflegeheim ermittelt und dem Nutzer per E-Mail mitgeteilt.
-Danach kann sich der Nutzer auch schon mit dem Schreiben anfangen.
+Danach kann der Nutzer auch schon mit dem Schreiben anfangen.
 
 Die zweite Komponente ist das Backend.
-Dieses baut auf dem
-[EasyAdminBundle für Symfony](https://symfony.com/doc/master/bundles/EasyAdminBundle/index.html)
-auf.
+Dieses baut auf dem [EasyAdminBundle für Symfony][easyadmin_bundle] auf.
 In dem Backend können die teilnehmenden Pflegeheime eingetragen werden und die
 Verteilung der Nutzer auf die Pflegeheime kann eingesehen werden.
 
@@ -366,11 +363,18 @@ Der komplette Quellcode der Anwendung ist in dem
 
 ### Das Briefeschreiben
 
-Am wichtigsten ist bei dem Projekt nicht der technische Hintergrund, sondern
-das auch tatsächlich Briefe und Postkarten geschrieben werden.
-Zu Ostern war es in diesem Jahr gar nicht so einfach eine Osterkarte oder
+Am wichtigsten ist bei dem Projekt nicht der technische Hintergrund - sondern,
+dass auch tatsächlich Briefe und Postkarten geschrieben werden.
+Zu Ostern war es in diesem Jahr gar nicht so einfach, eine Osterkarte oder
 Briefumschläge zu bekommen, da alle Schreibwarenläden geschlossen haben.
 Ich habe mir mit allem, was ich noch an Schulzeug zuhause habe beholfen, um
-eine einfache Grußkarten und eine Briefumschlag selber zu basteln.
+eine einfache Grußkarte und einen Briefumschlag selber zu basteln.
 
-![]({{ "assets/schreibmit/letter.jpg" | absolute_url }})
+[![Ein Brief mit einem gezeichneten Osterhasen][brief]][brief]
+
+  [brief]: {{ "assets/2020-04-schreibmit/brief.jpg" | absolute_url }} 
+  [easyadmin_bundle]: https://symfony.com/doc/master/bundles/EasyAdminBundle/index.html
+  [laengengrade]: {{ "assets/2020-04-schreibmit/laengengrade.png" | absolute_url }}
+  [plz_db]: https://launix.de/launix/launix-gibt-plz-datenbank-frei/
+  [SaechsCoronaSchVO]: https://web.archive.org/web/20200406234231/https://www.coronavirus.sachsen.de/download/Fassung-RV-SaechsCoronaSchVO_31032020.pdf
+  [schreibmit_ui]: {{ "assets/2020-04-schreibmit/schreibmit_ui.jpg" | absolute_url }}
