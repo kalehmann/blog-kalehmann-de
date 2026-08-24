@@ -2,10 +2,10 @@
 categories:       blog
 date:             2024-05-15 20:25:00 +0200
 description:  >-
-   Prepare an ESP8266 for secure deployment with signed over the air updates
-   and setup a pipeline for continuous deployment using Woodpecker CI.
+   Preparing an ESP8266 for secure deployment with signed over the air updates
+   and setting up a pipeline for continuous deployment using Woodpecker CI.
 lang:             en
-last_modified_at: 2024-05-15 20:25:00 +0200
+last_modified_at: 2026-08-24 22:34:06 +0200
 layout:           post
 tags:
   - Coding
@@ -22,7 +22,7 @@ A great variety of boards with this chip in different form factors and with
 additional features like a USB-controller for programming have been developed
 and are being sold.
 
-{% include_relative embedded/esp8266_ota/esp8266.svg %}
+{% include_relative embedded/2024-05-esp8266-ota/esp8266.svg %}
 
 Hacking a demo together with the ESP8266 is easy and fast as the chip is
 well-supported by the Arduino ecosystem and there is even a MicroPython fork
@@ -31,30 +31,30 @@ With a large community, many beginner questions will be resolved
 after a quick search on the internet.
 
 However, making a professional appliance with the ESP8266 is harder.
-When using the chip in a production like setup, for example soldered into a
+When using the chip in a production-like setup, for example soldered into a
 circuit in a remote place, the board cannot easily be connected to a PC by wire
 every time the code changes.
 Furthermore, as the code may be published to some public version control
-platform, hard coding Wi-Fi credentials is not an option anymore.
+platform, hard-coding Wi-Fi credentials is not an option anymore.
 
 This post will describe all the various steps to set up automated and secure
 updates of the ESP8266 and provide common code snippets that can be reused in
 ESP8266 projects.
 
-## Avoiding hard coded WiFi credentials
+## Avoiding hard-coded Wi-Fi credentials
 
-Hard coded credentials, like a Wi-Fi password in the firmware, should be avoided.
+Hard-coded credentials, like a Wi-Fi password in the firmware, should be avoided.
 They require the device to be reprogrammed on configuration changes.
-Additionally, the source code or a binary firmware with hard coded credentials can
+Additionally, the source code or a binary firmware with hard-coded credentials can
 not be shared easily as sensitive information could be leaked.
 
-Therefore, it is strongly recommended to avoid hard coding credentials or
+Therefore, it is strongly recommended to avoid hard-coding credentials or
 sensitive configuration for the ESP8266.
 
 The ESP8266 then provides several ways to permanently store data in the flash
 memory, the two most popular ones are [EEPROM emulation][eeprom_library]
 for storing binary data in the flash memory and based on this multiple
-[APIs for file system like access to the flash memory.][filesystems].
+[APIs for file-system-like access to the flash memory.][filesystems].
 
 Gathering the credentials at runtime can happen in multiple ways, for example
 by reading commands over a serial connection.
@@ -149,7 +149,7 @@ void setup(void) {
 void loop(void) {}
 {% endhighlight %}
 
-### HTTPs on the ESP8266
+### HTTPS on the ESP8266
 
 Now, with a working Wi-Fi connection, let’s talk about communication with
 servers.
@@ -177,10 +177,10 @@ For example, Let’s Encrypt certificates expire after 90 days.
 
 Fortunately, certificates are usually signed by other certificates, which may
 themselves be signed by other certificates again.
-This list of signatures is called a certificate chain, and the certificate on
-top of the certificate chain is a long-living, so-called Root certificate.
+This list of signatures is called a certificate chain, and the certificate at the
+top of the certificate chain is a long-lived, so-called root certificate.
 
-The owner of the root certificate should be a trusted authority and guarantee,
+The owner of the root certificate should be a trusted authority and guarantee
 that all certificates signed by the root certificates can be trusted.
 Hence, in order to verify the certificate of a web server, a set of trustworthy
 root certificates must be obtained.
@@ -202,7 +202,7 @@ python3 cert.py -s wttr.in -n wttr_in > cert_wttr_in.h
 At the time this post is written, wttr.in uses Let's Encrypt, so the ESP8266
 needs the [ISRG Root X1][ISRG_Root_X1] as trusted root certificate.
 
-Furthermore, the EPS8266 needs the current date to check if the server's
+Furthermore, the ESP8266 needs the current date to check if the server's
 certificate is still valid.
 In ESP8266 core lives an
 [undocumented function called `configTime`][configTime]
@@ -281,7 +281,7 @@ onto the disk in some temporary folder hidden from the user.
 The common tools used to build and flash the firmware onto the board still
 provide ways to export the binary:
 
-1. The [Arduino cli][arduino_cli] will export the binary with
+1. The [Arduino CLI][arduino_cli] will export the binary with
    ```
    arduino-cli compile \
        --build-property compiler.cpp.extra_flags='-DMY_FLAG' \
@@ -298,7 +298,7 @@ provide ways to export the binary:
 
 Now a signed update consists of three parts:
 
-{% include_relative embedded/esp8266_ota/signed_update.svg %}
+{% include_relative embedded/2024-05-esp8266-ota/signed_update.svg %}
 
 Signing the binary requires an RSA-2048 key pair in PEM format.
 This pair can be created with OpenSSL using
@@ -328,7 +328,8 @@ length = struct.pack('<L', len(sys.stdin.buffer.read()))
 sys.stdout.buffer.write(length)
 {% endhighlight %}
 
-Finally packing it all together to sign the firmware manually
+Finally, packing the signature and its length can be appended to the firmware
+manually:
 
 {% highlight shell %}
 openssl dgst \
@@ -359,14 +360,14 @@ or have the update pushed from another system.
 Pushing updates implies exposing the ESP to the system deploying the updates.
 This post covers providing OTA updates from within a **C**ontinuous
 **I**ntegration pipeline.
-There are two problems with pushing updates to an IOT device:
+There are two problems with pushing updates to an IoT device:
 1. Generally, CI runners are not hosted at home, but somewhere on the internet.
 So pushing updates from the CI server to the ESP8266 means exposing the board to
 the internet.
 Depending on your network design, this may require serious effort,
 for example exposing the ESP behind a carrier-grade NAT.
-1. As you may already know, the *S* in *IOT* stands for security, and
-exposing your (homemade) IOT device over the internet may not be the best idea.
+1. As you may already know, the *S* in *IoT* stands for security, and
+exposing your (homemade) IoT device over the internet may not be the best idea.
 
 Therefore, letting the board periodically check for updates from a server seems
 to be the way to go.
@@ -436,9 +437,9 @@ function sendFile(string $body, string $name): never
 
 function firmwareMd5(string $firmware): string
 {
-    [0 => $padding] = unpack('V', $update, substr($update,  -4));
+    [0 => $padding] = unpack('V', substr($firmware,  -4));
 	
-    return md5(substr($update, 0, -1 * $padding - 4));
+    return md5(substr($firmware, 0, -4 - $padding));
 }
 
 $firmware = file_get_contents(__DIR__ . '/firmware.bin');
@@ -448,17 +449,17 @@ if (!$deployedVersion) {
     sendFile($firmware, 'firmware.bin');
 } elseif (version_compare($firmwareVersion, $deployedVersion, '==')) {
     $deployedHash = $_SERVER['HTTP_X_ESP8266_SKETCH_MD5'] ?? false;
-    if (firmwareMd5($update) !== $deployedHash) {
+    if (firmwareMd5($firmware) !== $deployedHash) {
         sendFile($firmware, 'firmware.bin');
     }
-} elseif (version_compare($firmwareVersion, $deployedVersion, '>=')) {
+} elseif (version_compare($firmwareVersion, $deployedVersion, '>')) {
     sendFile($firmware, 'firmware.bin');
 }
 
 respond('No update available', 304);
 {% endhighlight %}
 
-### Pulling signed OTA updates over HTTPs
+### Pulling signed OTA updates over HTTPS
 
 The code to let the ESP8266 pull an update from a server is simple.
 First, the ESP8266 needs the public key to verify the signature of the update.
@@ -478,7 +479,7 @@ const char * const signing_key = R"(-----BEGIN PUBLIC KEY-----
 #endif
 {% endhighlight %}
 
-First let the ESP8266 connect to a WiFi network and the setup the
+First, let the ESP8266 connect to a Wi-Fi network and then set up the
 [ESP8266httpUpdate class][esp8266_http_update] to query a server
 periodically for updates.
 
@@ -550,15 +551,15 @@ that is used.
 In the following, [Woodpecker CI][woodpecker_ci] is used, but the details should
 be similar for most other platforms.
 
-The pipeline will build to code at every commit to verify that the project
+The pipeline will build the code at every commit to verify that the project
 structure is still intact, and the compiler can make sense out of every change.
 However, signing and uploading the signed firmware only happens when a tag gets
 pushed.
 
-CI platforms usually run codes inside Docker images.
+CI platforms usually run jobs inside Docker containers.
 Let's assume there is a Docker image with [PlatformIO Core][platformio_core] set up
 and the `framework-arduinoespressif8266` package for PlatformIO installed hosted
-at `git.kalehmann.de` (the public DNS entry is only disguise, don't even try).
+at `git.kalehmann.de` (the public DNS entry is only a disguise, don't even try).
 
 The configuration for PlatformIO contains
 
@@ -572,11 +573,11 @@ build_flags=
 framework = arduino
 {% endhighlight %}
 
-The first step would be to fetch the certificate of the target host, which will
-contain OTA updates.
+The first step would be to fetch the certificate of the target host, that will
+be used to serve the OTA updates.
 That requires to know the URL where the updates will be placed.
 As the updater URL may be different when somebody forks the repository, it will
-not be hard coded, but is instead defined as a parameter to the pipeline.
+not be hard-coded, but is instead defined as a parameter to the pipeline.
 Woodpecker CI calls these parameters _"secrets"_.
 This step uses a secret called `ota_url`:
 
@@ -634,7 +635,7 @@ steps:
 When building the firmware, PlatformIO stores the binary firmware as
 `.pio/build/nodemcuv2/firmware.bin` inside the current working directory.
 The next step will use another secret `SIGN_PRIVATE_KEY`.
-That secret contains the base64 encoded private key, that is used to cryptographically
+That secret contains the base64 encoded private key that is used to cryptographically
 sign the firmware.
 
 {% highlight yaml %}
@@ -672,7 +673,7 @@ steps:
 Finally, the signed firmware has to be uploaded to the target host.
 The next step uses another image hosted on `git.kalehmann.de` which has **lftp**
 installed.
-As all the information needed to connect to the target host in sensitive, there
+As all the information needed to connect to the target host is sensitive, there
 are four more secrets `ftp_password`, `ftp_port`, `ftp_server` and `ftp_user`
 introduced:
 
@@ -718,15 +719,14 @@ steps:
 
 Most of the snippets provided above contain just boilerplate code, that can
 be smoothly added and adapted to new or existing projects.
-Having a continuous and secure roll out of code changes significantly reduces
+Having a continuous and secure rollout of code changes significantly reduces
 the effort required to roll out code changes and test them on real hardware.
-Besides keeping secrets and configuration out of the code and the repository
-facilitates sharing the code.
-
+Besides keeping secrets and configuration out of the code, this approach also
+makes the code easier to share.
 
   [arduino_cli]: https://arduino.github.io/arduino-cli/latest/
   [arduino_esp8266]: https://github.com/esp8266/Arduino
-  [arduino_ide_export_binary]: {{ "assets/esp8266_ota/arduino_ide_export_binary.jpg" | absolute_url }}
+  [arduino_ide_export_binary]: {{ "assets/2024-05-esp8266-ota/arduino_ide_export_binary.jpg" | absolute_url }}
   [ca_certificates_arch]: https://archlinux.org/packages/core/x86_64/ca-certificates-mozilla/
   [ca_certificates_debian]: https://packages.debian.org/stable/ca-certificates
   [cert_tool]: https://github.com/esp8266/Arduino/blob/master/tools/cert.py
