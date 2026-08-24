@@ -3,23 +3,23 @@ categories:       blog
 date:             2022-02-20 17:55:00 +0100
 description:  >-
   Setup Arch Linux with custom secure boot keys and automated kernel signing on
-  a Super Micro X11SCL-IF motherboard.
+  a Supermicro X11SCL-IF motherboard.
 lang:             en
-last_modified_at: 2022-10-31 16:40:00 +0100
+last_modified_at: 2026-08-24 21:46:45 +0200
 layout:           post
 tags:
   - Homelab
 title: >-
-  Enrolling custom keys for secureboot on a Super Micro X11SCL-IF motherboard
+  Enrolling custom keys for Secure Boot on a Supermicro X11SCL-IF motherboard
 ---
 
-After a Raspberry Pi A, a Banana Pro and a x86 mini PC I recently purchased a
-Super Micro X11SCL-IF motherboard for the next iteration of my homelab.
+After a Raspberry Pi A, a Banana Pro and an x86 mini PC I recently purchased a
+Supermicro X11SCL-IF motherboard for the next iteration of my homelab.
 
 [![Assembling the X11SCL-IF motherboard][1]][1]
 
-This document covers how to enroll your platform keys in the UEFI of this
-motherboard and use secure boot with Arch Linux.
+This post covers how to replace the factory keys in the UEFI of this
+motherboard with your own keys and use Secure Boot with Arch Linux.
 First start with some basics:
 
 ### What is ...
@@ -34,7 +34,7 @@ As advantages over the legacy BIOS interface, the UEFI specification includes
 among other things network capabilities, support to boot from disks larger
 than 2 TB and the ability to store data in (non-volatile) UEFI variables.
 
-**UEFI Application**: An UEFI application, also EFI application or EFI binary
+**UEFI Application**: A UEFI application, also EFI application or EFI binary
 is a special binary, that can be loaded by the UEFI firmware and uses functions
 provided by the firmware to perform various tasks.
 
@@ -47,15 +47,15 @@ for platform management running on the **B**aseboard **M**anagement
 **C**ontroller.
 The BMC is a micro controller embedded into the motherboard and always powered
 on.
-It's features are hardware monitoring and remote manage like powering the system
-on and off or mounting ISO images.
+Its features are hardware monitoring and remote management like powering the
+system on and off or mounting ISO images.
 The term IPMI is often used as a synonym for the web interface of the BMC.
 
 ### Creating the custom keys
 
 Relevant keys for secure boot are stored inside UEFI variables in the form of
 *EFI Signature Lists*.
-An EFI Signature Lists can contain either hashes or RSA signatures of hashes
+An EFI Signature List can contain either hashes or RSA signatures of hashes
 or public keys.
 Note that mixed entries, such as one hash and one public key are not possible
 in a single EFI signature list.
@@ -68,14 +68,14 @@ The variable can either be empty or hold an EFI Signature List with exactly one
 entry - the public half of the platform key.
 
 **KEK (key exchange key)**: The variable `KEK` holds a EFI Signature List with
-keys to update the signature database or sign binaries.
+keys authorized to update either of the two signature databases below.
 Changes to the variable `KEK` must be signed with the platform key.
 
 **DB (signature database)**: The variable `DB` can contain multiple EFI Signature
 Lists.
 Therefore the signature database can hold public keys as well as hashes and
 signatures.
-An efi binary will be booted if it is signed and the signing key or the signature
+An EFI binary will be booted if it is signed and the signing key or the signature
 itself is in the signature database or the hash of the binary (signed or not) is
 in the signature database.
 Changes to the variable `DB` must be signed with a key from the `KEK` variable.
@@ -89,7 +89,7 @@ Changes to the variable `DBX` must be signed with a key from the `KEK` variable.
 
 Various guides in the internet, like Microsoft's
 [Windows Secure Boot Key Creation and Management Guidance][2] or the
-[UEFI Specification in Version 2.9, Section 32.3][3] recommend  2048 bit keys,
+[UEFI Specification in Version 2.9, Section 32.3][3] recommend  2048-bit keys,
 however I experienced no problem with a public key size of 4096 bit of the
 X11SCL-IF board.
 Generate the keys with
@@ -104,10 +104,10 @@ Here `openssl req` is invoked with the following options
 
 * `-newkey rsa:4096` creates a new certificate and private key using RSA and a
 key size of 4096 bits.
-* `-nodes` do not encrypt the private key using DES.
+* `-nodes` do not encrypt the private key.
 That means no password will be asked when accessing the private key.
 * `-keyout {name}.key` write the private key to `{name}.key`.
-* `-new -x509` outputs a new self signed certificate.
+* `-new -x509` outputs a new self-signed certificate.
 * `-sha256` use SHA256 hash function to sign the certificate.
 * `-days 9125` certify the certificate for about 25 years.
 * `-subj "..."` the subject that identifies the entity associated with the
@@ -127,7 +127,7 @@ openssl x509 -outform DER -in KEK.crt -out KEK.der
 openssl x509 -outform DER -in db.crt -out db.der
 ```
 
-Certificates in in EFI Signature Lists are always accompanied by a GUID to
+Certificates in EFI Signature Lists are always accompanied by a GUID to
 identify the owner of the signature.
 Let's start by creating a random GUID to identify the key creator:
 
@@ -193,14 +193,14 @@ However a custom certificate can be rolled out later.
 
 The default user is `ADMIN` and for older boards the factory password was also
 `ADMIN`.
-Newer boards a configured with a random factory password.
-This password is printed on two stickers, one directly on the motherboard and the
-other on the protective chassis of the CPU socket.
+Newer boards are configured with a random factory password.
+This factory password is printed on two stickers, one directly on the
+motherboard and the other on the protective chassis of the CPU socket.
 
 [![sticker on the protective chassis of the CPU socket][5]][5]
 
 More information about the stickers and the password is available in the
-[Super Micro BMC Unique Password Guide][6].
+[Supermicro BMC Unique Password Guide][6].
 
 #### Activate the license
 
@@ -223,7 +223,7 @@ Go to `Configuration` -> `Date and Time`.
 There enter two NTP servers of your choice, your time zone and then proceed
 with `Save`.
 
-[![Configuring NTP servers in the web interface of a Super Micro BMC][8]][8]
+[![Configuring NTP servers in the web interface of a Supermicro BMC][8]][8]
 
 I choose the time server of the [Physikalisch-Technische Bundesanstalt][9] as
 primary server and one of [Google's time servers][10] as secondary server.
@@ -251,7 +251,7 @@ Then click `Upload` and confirm the dialog.
 Upon the next boot hit `F11` when prompted to select the boot device.
 A new entry named `UEFI: ATEN Virtual Floppy 3000` should appear.
 
-[![Boot device selection on Super Micro board][12]][12]
+[![Boot device selection on Supermicro board][12]][12]
 
 Make sure another LAN port than the dedicated BMC LAN port is connected and
 boot from the floppy.
@@ -301,16 +301,16 @@ in the samba log file, then lower the minimum protocol version by adding
 ```
 min protocol = NT1
 ```
-to the sambda configuration.
+to the Samba configuration.
 
 ### Enrolling the keys
 
 #### Backing up existing keys
 
-Setup a SSH connection to the live system to backup already existing keys
+Setup an SSH connection to the live system to backup already existing keys
 and transfer the keys created before onto the machine.
 SSHD should already be configured and running in the live system.
-This can by verified by first checking that the root user can login with
+This can be verified by first checking that the root user can log in with
 
 ```
 grep 'PermitRootLogin' /etc/ssh/sshd_config
@@ -339,7 +339,7 @@ pacman -S efitools sbsigntools
 ```
 
 Then call `efi-readvar`.
-On a new board no keys should be setup and the output should look like
+On a new board no keys should be set up and the output should look like
 
 ```
 Variable PK has no entries
@@ -366,8 +366,7 @@ scp -o 'StrictHostKeyChecking=no' -o "UserKnownHostsFile=/dev/null" 'root@<ip-ad
 
 #### Enroll the keys in the firmware
 
-First transfer the `*,auth` files to the live system with
-Transfer the `.auth` files to the server:
+First transfer the `.auth` files to the live system with
 
 ```
 scp -o 'StrictHostKeyChecking=no' -o "UserKnownHostsFile=/dev/null" *.auth root@<ip-address>:/root/
@@ -380,7 +379,7 @@ Now on the live system place them in the correct location for the tool
 mkdir -p /etc/secureboot/keys/{db,dbx,KEK,PK}
 cp /root/PK.auth /etc/secureboot/keys/PK/PK.auth
 cp /root/KEK.auth /etc/secureboot/keys/KEK/KEK.auth
-cp /root/db.auth /etc/secureboot/keys/db
+cp /root/db.auth /etc/secureboot/keys/db/db.auth
 ```
 
 Then perform a dry-run of the enrollment:
@@ -443,7 +442,7 @@ After that navigate to `Save & Exit` and hit `Save Changes and Reset`.
 
 Booting an unsigned application or image should now fail.
 
-[![Secure Boot Violation message on Super Micro motherboard][15]][15]
+[![Secure Boot Violation message on Supermicro motherboard][15]][15]
 
 #### Using iPXE
 
@@ -467,7 +466,7 @@ umount /mnt
 You can now boot iPXE, but will not be able to boot a kernel from an official
 mirror because they are not signed.
 
-To sign the kernel first download the necessary files from are mirror of your
+To sign the kernel first download the necessary files from a mirror of your
 choice and create a iPXE script that loads all components.
 In the following the mirror of the University of Technology Chemnitz is used:
 
@@ -613,7 +612,7 @@ keys.
 It is available in the [Arch User Repository][19] as [`sbupdate-git`][20].
 
 After the installation of **sbupdate**, the signature database key and
-certificate needs to be copied to the directory `/etc/efi-keys`.
+certificate need to be copied to the directory `/etc/efi-keys`.
 The recommended way to do this is using `scp`:
 
 
@@ -621,7 +620,7 @@ The recommended way to do this is using `scp`:
 scp -o 'StrictHostKeyChecking=no' -o "UserKnownHostsFile=/dev/null" db.{key,crt} root@<ip-address>:/mnt/etc/efi-keys/
 ```
 
-**Note**: the tool **sbupadte** assumes the signature database key and
+**Note**: the tool **sbupdate** assumes the signature database key and
 certificate names to be `db.key` and `db.crt` (uppercase, e.g. `DB.key` is also
 allowed).
 
@@ -658,21 +657,21 @@ Adapt `--disk` and `--part` for your system.
 * [ArchWiki Unified Extensible Firmware Interface/Secure Boot][22]
 * [National Security Agency, UEFI Secure Boot Customization, September 2020 ver 1.1][23]
 
-  [1]: {{ "assets/super-micro-secure-boot/assembling_motherboard.jpg" | relative_url }}
+  [1]: {{ "assets/2022-02-supermicro-secure-boot/assembling_motherboard.jpg" | relative_url }}
   [2]: https://web.archive.org/web/20220212191230/https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-secure-boot-key-creation-and-management-guidance?view=windows-11#13-secure-boot-pki-requirements
   [3]: https://uefi.org/sites/default/files/resources/UEFI_Spec_2_9_2021_03_18.pdf
-  [4]: {{ "assets/super-micro-secure-boot/ipmi_lan_socket.jpg" | relative_url }}
-  [5]: {{ "assets/super-micro-secure-boot/chassis_sticker.jpg" | relative_url }}
+  [4]: {{ "assets/2022-02-supermicro-secure-boot/ipmi_lan_socket.jpg" | relative_url }}
+  [5]: {{ "assets/2022-02-supermicro-secure-boot/chassis_sticker.jpg" | relative_url }}
   [6]: https://www.supermicro.com/support/BMC_Unique_Password_Guide.pdf
   [7]: https://peterkleissner.com/2018/05/27/reverse-engineering-supermicro-ipmi/
-  [8]: {{ "assets/super-micro-secure-boot/bmc_date_time.jpg" | relative_url }}
+  [8]: {{ "assets/2022-02-supermicro-secure-boot/bmc_date_time.jpg" | relative_url }}
   [9]: https://www.ptb.de/cms/de/ptb/fachabteilungen/abtq/gruppe-q4/ref-q42/zeitsynchronisation-von-rechnern-mit-hilfe-des-network-time-protocol-ntp.html
   [10]: https://developers.google.com/time/
   [11]: https://archlinux.org/releng/netboot/
-  [12]: {{ "assets/super-micro-secure-boot/boot_device_floppy.jpg" | relative_url }}
+  [12]: {{ "assets/2022-02-supermicro-secure-boot/boot_device_floppy.jpg" | relative_url }}
   [13]: https://archlinux.org/download/
   [14]: https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/about/
-  [15]: {{ "assets/super-micro-secure-boot/secure_boot_violation.jpg" | relative_url }}
+  [15]: {{ "assets/2022-02-supermicro-secure-boot/secure_boot_violation.jpg" | relative_url }}
   [16]: https://wiki.archlinux.org/title/Installation_guide
   [17]: https://github.com/andreyv/sbupdate/
   [18]: https://wiki.archlinux.org/title/Unified_kernel_image
