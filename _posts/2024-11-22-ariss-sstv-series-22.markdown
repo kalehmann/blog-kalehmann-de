@@ -2,10 +2,10 @@
 categories:       blog
 date:             2024-11-22 13:10:00 +0100
 description:  >-
-  Receiving a SSTV transmissions from the International Space Station in
+  Receiving SSTV transmissions from the International Space Station in
   celebration of 40 years of amateur radio in human spaceflight
 lang:             en
-last_modified_at: 2024-11-22 13:20:00 +0100
+last_modified_at: 2026-08-29 13:28:22 +0200
 layout:           post
 tags:
   - Radio
@@ -18,22 +18,21 @@ celebrate 40 years of amateur radio in human spaceflight.
 Since I already received good pictures and had a lot of fun at the
 [last ARISS SSTV event][sstv_post], I definitely wanted to participate in this
 event again.
-I advance to the event, last week I already built
-[a new Yagi-Uda antenna][yagi_post] with excellent reception performance in the
-2-meter band.
+In preparation for the event, I built [a new Yagi-Uda antenna][yagi_post]
+with excellent reception performance in the 2-meter band.
 
 Again, 12 images were transmitted over the course of a week.
-The ISS made several passes over my location that week and almost all of these
-passes took place in the evening.
-This fit in well with my schedule.
+The ISS made several passes over my location during the event, almost all of them
+in the evening.
+This fit well with my schedule.
 The pictures show the work and achievements of Owen Garriott, an astronaut and
 radio amateur who operated the first amateur radio station in space during the
 STS-9 mission under his callsign W5LFL.
 
-With the new antenna, last week was a great success.
-Thanks to the ability to attach my phone directly to the boom of the antenna and
-track and record simultaneously with my smartphone meant, I only had to carry a
-small amount of equipment and was able to set up my rig quickly.
+The event was a great success thanks to the new antenna.
+Thanks to the ability to attach my smartphone directly to the boom of the antenna
+and track the ISS while recording, I only had to carry a small amount of
+equipment and was able to set up my rig quickly.
 As you can see in the video below, I received a strong signal even though the ISS
 was only just above the horizon.
 The transmission shown in the video is [picture 7/12](#picture-7) which became
@@ -44,11 +43,11 @@ a little blurry at the end due to the ISS passing beyond the horizon.
   Your browser does not support the video tag.
 </video>
 
-Unfortunately, I was having trouble tracking the signal on my phone due to the
-Doppler shift.
-Since SDR records at a fixed frequency while the actual frequency of the
-transmission changes because of the Doppler shift, there was a DC offset in the
-recorded audio file.
+Unfortunately, I had trouble tracking the signal on my phone due to the Doppler
+shift.
+Since the SDR records at a fixed frequency while the frequency of the
+transmission changes due to the Doppler shift, the recorded audio file
+contained a DC offset.
 
 [![][dc_offset]][dc_offset]
 
@@ -57,7 +56,7 @@ audio file and I had to correct the DC offset manually in Audacity.
 While this worked fine for a constant DC offset - e.g. for a recording while the
 ISS was on the horizon moving towards or away from my position at an almost
 constant speed - it was a pain for a recording of a pass over my head, where the
-DC offset is not constant, but changing as in the picture above.
+DC offset was not constant, but changed continuously as in the picture above.
 
 Nevertheless, I achieved good results:
 
@@ -107,7 +106,7 @@ Nevertheless, I achieved good results:
   </ul>
 </div>
 
-  [announcement]: https://old.reddit.com/r/amateursatellites/comments/1gl81mo/here_comes_another_sstv_event_ariss_will_conduct/
+  [announcement]: https://web.archive.org/web/20241113125208/https://old.reddit.com/r/amateursatellites/comments/1gl81mo/here_comes_another_sstv_event_ariss_will_conduct/
   [dc_offset]: {{ "assets/2024-11-ariss-sstv/dc_offset.avif" | absolute_url }}
   [picture_01]: {{ "assets/2024-11-ariss-sstv/2024-11-15UTC212410-01.avif" | absolute_url }}
   [picture_02]: {{ "assets/2024-11-ariss-sstv/2024-11-15UTC212819-02.avif" | absolute_url }}
