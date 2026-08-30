@@ -3,7 +3,7 @@ layout:           post
 title:            PyInvaders2 - Space Invaders in Pygame
 date:             2015-07-27 11:23:58 +0200
 lang:             de
-last_modified_at: 2026-08-05 23:26:00 +0200
+last_modified_at: 2026-08-30 15:12:14 +0200
 categories:       blog
 tags:
   - Coding
@@ -21,7 +21,7 @@ Konfiguration.
 Wenn eine Textur als einzelne Datei vorliegt, wird sie als statisches Bild
 verwendet.
 Falls stattdessen ein Ordner mit dem Namen der Textur existiert und
-durchnummerierte Bildern enthält, dann werden diese als Animation angezeigt.
+durchnummerierte Bilder enthält, dann werden diese als Animation angezeigt.
 Andernfalls wird eine entsprechende Fehlermeldung ausgegeben.
 
 Das Spiel und dessen Quellcode kann
@@ -39,7 +39,7 @@ welches in der Horizontalen bewegt werden kann und die Möglichkeit besitzt
 selbst Schüsse auf die Invaders abzufeuern.
 Sind alle Invaders ausgelöscht, erscheint unmittelbar die nächste Welle.
 
-Dass Raumschiff hat zu Beginn des Spiels sechs Lebenspunkte, welche in der
+Das Raumschiff hat zu Beginn des Spiels sechs Lebenspunkte, welche in der
 rechten oberen Ecke angezeigt werden.
 Das Spiel ist beendet, wenn entweder das Raumschiff sechsmal von Schüssen der
 Aliens getroffen wurde - dabei verbraucht jeder Treffer einen Lebenspunkt - oder
@@ -50,7 +50,7 @@ hinter denen das Raumschiff Schutz finden kann.
 Außerdem bleibt die Geschwindigkeit der Aliens mit fortlaufendem Spiel konstant.
 
 <video controls>
-  <source src="{{ "assets/pyinvaders2/pyinvaders2-gameplay.webm" | absolute_url }}" type="video/webm">
+  <source src="{{ "assets/2015-07-pyinvaders2/pyinvaders2-gameplay.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
@@ -75,7 +75,7 @@ Zur Erstellung dieser Dateien existiert auch ein Level-Editor, welcher dem Spiel
 beiliegt.
 
 <video loop controls>
-  <source src="{{ "assets/pyinvaders2/pyinvaders2-editor.webm" | absolute_url }}" type="video/webm">
+  <source src="{{ "assets/2015-07-pyinvaders2/pyinvaders2-editor.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
