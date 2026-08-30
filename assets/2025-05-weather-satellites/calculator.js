@@ -101,7 +101,7 @@ const recalculate = () => {
     data.small_loop_adjusted = correct_loop_bending(data.small_loop);
     
     const alpha = Math.atan(data.width_to_height_ratio * Math.PI * 0.5);
-    const t = Math.cos(alpha) * data.width_to_height_ratio;
+    const t = Math.cos(alpha) * data.diameter_to_height_ratio;
 
     data.large_helix_length = data.large_loop_adjusted / (2 + 2 * t);
     data.small_helix_length = data.small_loop_adjusted / (2 + 2 * t);
@@ -109,8 +109,8 @@ const recalculate = () => {
     data.large_diameter = data.large_loop_adjusted / 2 - data.large_helix_length;
     data.small_diameter = data.small_loop_adjusted / 2 - data.small_helix_length;
 
-    data.large_height = data.large_diameter / data.width_to_height_ratio;
-    data.small_height = data.small_diameter / data.width_to_height_ratio;
+    data.large_height = data.large_diameter / data.diameter_to_height_ratio;
+    data.small_height = data.small_diameter / data.diameter_to_height_ratio;
 
     refill();
 };
@@ -154,7 +154,7 @@ const setupForm = () => {
     watch("conductor_diameter");
     watch("frequency");
     watch("source", false);
-    watch("width_to_height_ratio");
+    watch("diameter_to_height_ratio");
 
     recalculate();
 };

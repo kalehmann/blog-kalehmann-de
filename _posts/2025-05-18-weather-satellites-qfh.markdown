@@ -2,11 +2,12 @@
 categories:       blog
 date:             2025-05-18 10:05:00 +0200
 description:  >-
-  Calculation and assembly of a QFH antenna for receiving images from weather
-  satellites, as well as a detailed explanation how to setup SDR++ and SatDump
-  to receive and decode images from NOAA-15, NOAA-18, NOAA-19 and Meteor-M N2-4.
+  Calculations and assembly of a QFH antenna for receiving images from weather
+  satellites, along with a detailed explanation of how to set up SDR++ and
+  SatDump to receive and decode images from NOAA-15, NOAA-18, NOAA-19 and
+  Meteor-M N2-4.
 lang:             en
-last_modified_at: 2026-07-18 08:17:00 +0200
+last_modified_at: 2026-08-30 12:01:15 +0200
 layout:           post
 tags:
   - Make
@@ -15,7 +16,13 @@ title: >-
   Building a QFH antenna for weather satellites
 ---
 
-Did you know, that you can set up an antenna in your backyard and receive live
+**Please note** that this post was written in 2025.
+As of 2026, all satellites of the POES constellation have been
+[decommissioned](#eol).
+
+---
+
+Did you know that you can set up an antenna in your backyard and receive live
 satellite footage of the Earth?
 And I am not talking about satellite television.
 This is awesome!
@@ -25,31 +32,32 @@ owns or operates multiple satellites for various applications.
 Some of these satellites transmit data to Earth that can be received by ordinary
 people without any highly specialized equipment.
 Of these, the easiest to receive are the three Polar-orbiting Operational
-Environmental Satellites - short POES - NOAA-15, NOAA-18 and NOAA-19.
+Environmental Satellites - or POES for short - NOAA-15, NOAA-18, and NOAA-19.
 They each complete an orbit approximately every 102 minutes and transmit, among
 other things, low-resolution image signals, which can be easily received.
 
 ## Understanding the signal
 
-The three satellites from the NOAA POES constellation use the Automatic Picture
-Transmission system (APT), which includes two image channels, a synchronization
-signal and telemetry data.
-Notably the system does not send full images, instead it transmits data line by
-line.
-These lines have a fixed width of 2080 pixels with 909 pixels for each image
-channel at 4 kilometers per pixel.
+The three NOAA POES satellites use the Automatic Picture Transmission system
+(APT), which includes two image channels, a synchronization signal and telemetry
+data.
+Notably, the system does not send full images.
+Instead, it transmits data line by line.
+These lines have a fixed width of 2080 pixels, with 909 pixels allocated to each
+image channel at a resolution of 4 kilometers per pixel.
 In short, that means the longer you receive the signal from the satellite that
 passes over you, the more vertical lines the resulting image will have.
 If you could follow the satellite, you would receive a continuous image of our
 Earth like the skin of a peeled apple.
-Unfortunately, the satellites' velocity of around 7.5 km/s poses a grave
+Unfortunately, the satellites' speed of around 7.5 km/s poses a grave
 obstacle to actually following them on the ground.
 
-The signal itself is right-hand circularly polarized, because in contrast to
-linear polarization you don't have to worry about the relative orientation
-of the sender and transmitter - getting directions in space is still a problem
-and the signal may rotate due to the [Faraday effect][faraday_effect].
-Furthermore with a circularly polarized antenna, there is no need to worry about
+Determining directions in space is still a problem and a signal may rotate
+on its way through the atmosphere due to the [Faraday effect][faraday_effect].
+To work around this, the satellites transmit circularly polarized signals,
+because unlike with linear polarization, you don't have to worry about the
+relative orientation of the transmitting and receiving antennas.
+Furthermore, with a circularly polarized antenna, there is no need to worry about
 reflections as left-hand polarized signals become right-hand polarized when
 reflected and vice versa.
 
@@ -63,12 +71,12 @@ With the multipurpose dipole antenna kit that can be ordered with the RTL-SDR,
 it is quite easy and cheap to build that V-dipole antenna.
 
 In any case, let's take it a step further and take a look at an actual
-right-hand circularly polarized antenna: the quadrafilar helix antenna, also
+right-hand circularly polarized antenna: the quadrifilar helix antenna, also
 known as the QFH antenna.
 
 <div>
   <img
-    alt="A QFH antenna with two half turn loops and a cylinder draw around it"
+    alt="A QFH antenna with two half turn loops and a cylinder drawn around it"
     class="float-left float-small"
     src="{{ "assets/2025-05-weather-satellites/qfh_cylinder.avif" | absolute_url }}"
   />
@@ -120,7 +128,7 @@ known as the QFH antenna.
     <p>
       The diameter-to-height ratio of the cylinder is chosen to be 0.44 as
       <a href="http://www.kunstmanen.net/WKfiles/Techdocs/RQHA/RQHA1999-1eng.pdf">described</a>
-      in <a href=" https://www.jcoppens.com/ant/qfh/index.en.php">different publications</a> online.
+      in <a href="https://www.jcoppens.com/ant/qfh/index.en.php">several publications</a> online.
       However, decreasing the ratio may result in a better coverage at the
       horizon.
       Given the total length of each loop and the diameter-to-height ratio,
@@ -131,14 +139,14 @@ known as the QFH antenna.
 
 <div>
   <div class="float-right float-small">
-    {% include_relative embedded/2025_05_weather_satellites/cylinder.svg %}
+    {% include_relative embedded/2025-05-weather-satellites/cylinder.svg %}
   </div>
   <div>
     <p>
-      Finally with the corrected loop length and some basic math, the diameter,
-      height and helix length can be calculated.
+      Finally, with the corrected loop length and some basic math, the diameter,
+      height, and helix length can be calculated.
       Imagine a cylinder around the smaller and the larger loops of the antenna.
-      The horizontal elements correspond to the  cylinder's diameters, while the
+      The horizontal elements correspond to the cylinder's diameters, while the
       vertical elements are curved around its surface.
     </p>
     <p>
@@ -244,7 +252,7 @@ known as the QFH antenna.
 </div>
 
 <p>
-  Then how long should these loops be now?
+  But how long should these loops be now?
   All three NOAA-POES satellites transmit at different frequencies around
   137.5 MHz.
   The wavelength in free space is calculated as follows:
@@ -266,7 +274,7 @@ known as the QFH antenna.
   for QFH antennas, which provides the length of the larger loop, as well as a
   deviation factor
   <math><msub><mi>Δ</mi><mi>f</mi></msub></math>
-  which is determined by experiment depending on the conductor's diameter and
+  which is determined by experiment based on the conductor's diameter and
   gives the length of the smaller loop.
 </p>
 
@@ -298,8 +306,8 @@ known as the QFH antenna.
     </select>
   </label>
   <label>
-    Width to height ratio
-    <input id="width_to_height_ratio" type="number" min="0.01" value="0.44" />
+    Diameter to height ratio
+    <input id="diameter_to_height_ratio" type="number" min="0.01" value="0.44" step="0.1" />
   </label>
   <label>
     Frequency (MHz)
@@ -518,10 +526,10 @@ known as the QFH antenna.
 With all the necessary values ready, the antenna can finally be assembled.
 Copper tubing with a 12 mm diameter and a 40 mm diameter PVC pipe for the boom
 were purchased from the local hardware store for that purpose.
-The bending radius was determined to be 32 mm because those were the only
-right-angle joints available.
+The bending radius was determined to be 32 mm because the only available
+right-angle joints had a radius of 32 mm.
 
-[![A 90 degree joint for 12mm copper tubing][bending]][bending]{:.image-left}
+[![A 90 degree joint for 12 mm copper tubing][bending]][bending]{:.image-left}
 [![12 mm copper tubing cut into multiple elements for the antenna][elements]][elements]{:.image-right}
 
 First, all of the elements were cut to the correct length.
@@ -541,10 +549,10 @@ each of the longer loops.
 Then, wire them in a clockwise direction to one of the
 shorter loops:
 
-{% include_relative embedded/2025_05_weather_satellites/qfh_wiring.svg %}
+{% include_relative embedded/2025-05-weather-satellites/qfh_wiring.svg %}
 
 
-## Setup a PC for receive operation
+## Setup a PC for reception
 
 Finally, it's time to set up the antenna and receive some birds.
 
@@ -560,14 +568,14 @@ passing by at the same time.
 For ease of use, the appropriate frequencies for the satellites should be entered
 into the frequency manager first.
 The transmissions themselves have a bandwidth of 34 kHz.
-However due to the satellites moving quite fast and the Doppler effect, the
+However, due to the satellites moving quite fast and the Doppler effect, the
 center frequency varies during a pass.
 Setting a broader bandwidth of 45 kHz eliminates the need to manually adjust
 each VFO to track the satellite.
 
-Next, in the module manager, two radios need to be configured to have two
+Next, in the module manager, two radio modules need to be configured to have two
 independent VFOs.
-Additionally, each radio also needs its own recorder.
+Additionally, each radio module needs its own recorder.
 
 [![Frequency manager of SDR++ with the frequencies and bandwidths of the three NOAA satellites][sdrpp_frequencies]][sdrpp_frequencies]{:.image-left}
 [![Adding a new radio module in the module manager of SDR++][sdrpp_radio_recorder_modules]][sdrpp_radio_recorder_modules]{:.image-right}
@@ -579,10 +587,10 @@ And don't forget to set the stream to the appropriate radio for each recorder.
 [![Setting up a recorder for the new radio module in SDR++][sdrpp_recorder_setup]][sdrpp_recorder_setup]{:.image-right}
 
 Finally, set up the source module.
-It is advised that you enable decimation, which antialiases and downsamples the
-data from the SDR thus decreasing the available bandwidth.
-However, this should improve the signal-to-noise ratio (SNR) by about 3 dB for
-each doubling of the decimation.
+It is recommended that you enable decimation, which antialiases and downsamples
+the data from the SDR thus decreasing the available bandwidth.
+However, this can improve the in-band signal-to-noise ratio (SNR) by about 3 dB
+for each doubling of the decimation factor.
 With a sampling rate of <math displaystyle>
     <mn>2.048</mn>
     <mfrac>
@@ -595,12 +603,13 @@ three NOAA satellites simultaneously.
 
 [![SDR++ with an RTL-SDR as source receiving NOAA-18 and NOAA-19 simultaneously][sdrpp_source_setup]][sdrpp_source_setup]
 
-Now each of the three NOAA satellites carries an advanced very-high-resolution
-radiometer (AVHRR/3), which scans the Earth in [six channels][avhrr_description].
-The data transmitted via the APT system contains two of these channels, typically
-one of the infrared spectrum between 10.3 and 11.3 micrometers and one from either
-near-visible infrared between 0.725 and 1 micrometers or mid-wave infrared between
-3.55 - 3.93 micrometers, depending whether it's daytime or nighttime.
+Each of the three NOAA satellites carried an Advanced Very-High-Resolution
+Radiometer (AVHRR/3), which scans the Earth in [six channels][avhrr_description].
+The data transmitted via the APT system contains two of these channels:
+typically one from the infrared spectrum between 10.3 and 11.3 micrometers, and
+one from either the near-visible infrared spectrum between 0.725 and 1 micrometers
+or the mid-wave infrared spectrum between 3.55 - 3.93 micrometers, depending on
+whether it's daytime or nighttime.
 
 [![Two black and white raw images of central Europe from NOAA-19 with telemetry lines next to them][noaa19_raw]][noaa19_raw]
 
@@ -613,15 +622,15 @@ A description of these enhancements can be found in the
 
 See the two images below for examples.
 The first image shows cold cloud top temperatures indicating heavy rainfall
-(clouptop enhancement), and the second image shows greatly increased IR contrast
+(Cloud Top enhancement), and the second image shows greatly increased IR contrast
 with cloud coloring (NO enhancement).
 
-[![Black and white image of central Europe with cloud tops highligthed in color][noaa19_cloudtop]][noaa19_cloudtop]{:.image-left}
+[![Black and white image of central Europe with cloud tops highlighted in color][noaa19_cloudtop]][noaa19_cloudtop]{:.image-left}
 [![Grayscale image of central Europe with multiple color enhancements][noaa19_no]][noaa19_no]{:.image-right}
 
 The process of decoding and projecting multiple transmissions together in
 SatDump is a bit more complicated and comprises some more steps.
-All of these steps are all documented in the following video:
+All of these steps are documented in the following video:
 
 <video controls>
   <source src="{{ "assets/2025-05-weather-satellites/satdump_noaa_composite.webm" | absolute_url }}" type="video/webm">
@@ -636,14 +645,14 @@ It's still a bit blurry at the top and bottom since it's an analog transmission.
 
 ## Side note to Meteor-M N2-4
 
-Aside from the 3 NOAA satellites, there is also a Russian weather satellite
+Aside from the three NOAA satellites, there is also a Russian weather satellite
 Meteor-M N2-4 transmitting around 137 MHz.
 Instead of the analog APT, it uses digital low rate picture transmission (LRPT)
 with quadrature phase shift keying modulation, so recording an audio file to
 decode it later won't work here.
-Instead directly record the baseband in SatDump.
-Go to the **Recording** tab, select **Meteor M2-x LRPT 72k**, choose the primary
-frequency for 137.9 MHz, click **Start** and when the signal can be seen in the
+Instead, record the baseband directly in SatDump.
+Go to the **Recording** tab, select **Meteor M2-x LRPT 72k**, select 137.9 MHz as
+the primary frequency, click **Start** and when the signal can be seen in the
 waterfall or the demodulator in the bottom shows four green dots, start the
 recording.
 
@@ -653,7 +662,7 @@ Later in the **Offline Processing** tab, select **Meteor M2-x LRPT 72k** again
 and open the previously created recording.
 The **Input level**, **Baseband Format** and **Samplerate** fields will then
 be filled in automatically with the appropriate values.
-Finally select an **Output Directory** and start decoding the signal.
+Finally, select an **Output Directory** and start decoding the signal.
 
 [![Decoding Meteor-M N2-4 in SatDump][satdump_meteor_m2_4_decoding]][satdump_meteor_m2_4_decoding]
 
@@ -662,14 +671,20 @@ images from the NOAA satellites:
 
 [![Noiseless color-image of central Europe][meteor_m2_4_image]][meteor_m2_4_image]
 
-## End of service for NOAA satellites
+## End of service for NOAA satellites {#eol}
 
-Unfortunately in April 2025, NOAA [announced the end of service][end_of_service]
+Unfortunately, in April 2025, NOAA [announced the end of service][end_of_service]
 for June 16, 2025 for the three satellites from the POES constellation.
 In practice however, this should not be as tragic as it sounds.
-The satellites will not be suddenly turned off, but no efforts will be taken to
-resolve any issues.
-So hopefully, they will continue transmitting for many more years.
+The satellites will probably not be turned off suddenly, but no further efforts
+will be taken to resolve any issues.
+So hopefully they will continue transmitting for many more years.
+
+---
+
+Revisiting this post in 2026, I unfortunately have to reflect that the last
+sentence aged like milk.
+**All satellites from the POES constellation have now been decommissioned**.
 
 <script src="{{ "assets/2025-05-weather-satellites/calculator.js" | absolute_url }}"></script>
 
