@@ -5,7 +5,7 @@ description:  >-
   The famous game Pong as boot code written in assembly using only BIOS calls
   and further experiments in assembly.
 lang:             en
-last_modified_at: 2026-08-07 13:46:00 +0200
+last_modified_at: 2026-08-30 15:37:25 +0200
 layout:           post
 tags:
   - Coding
@@ -16,7 +16,7 @@ title:            "Pong from scratch: My first steps in assembly"
 I really did write Pong from scratch using only the functions provided by the
 BIOS.
 You could write the game to a USB stick, boot from it and then play it.
-![Screenshot of the game Pong running on a real PC]({{ "assets/pong/pong_real_pc.jpg" | absolute_url }})
+[![Screenshot of the game Pong running on a real PC][real_hardware]][real_hardware]
 
 ### My first assembly projects
 
@@ -105,7 +105,7 @@ and then tested with QEMU using
 qemu-system-i386 -fda bootloader.bin
 ```
 
-![Screenshot of the hello world bootloader running in qemu]({{ "assets/pong/bootcode.png" | absolute_url }})
+[![Screenshot of the hello world bootloader running in qemu][qemu_hello_world]][qemu_hello_world]
 
 Then one day, I decided to write a game.
 With all those limits I knew I would face during the implementation of the
@@ -336,7 +336,7 @@ in the first example.
 With all this combined, the game Pong can be implemented:
 
 <video controls>
-  <source src="{{ "assets/pong/gameplay.webm" | absolute_url }}" type="video/webm">
+  <source src="{{ "assets/2016-07-pong/gameplay.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
@@ -356,3 +356,6 @@ not include one, because it would take up too much memory.
 1. C Programming A Modern Approach 2nd Edition on<small><a id="ref-1"></a> [archive.org](https://archive.org/details/c-programming-a-modern-approach-2nd-ed-c-89-c-99-king-by)</small>
 2. The x86 Interrupt List aka "Ralf Brown's Interrupt List", "RBIL" on <small><a id="ref-2"></a> [cs.cmu.edu](https://www.cs.cmu.edu/~ralf/files.html)</small>
 3. Real Mode - OSDev Wiki on <small><a id="ref-3"></a> [wiki.osdev.org](https://wiki.osdev.org/Real_Mode)</small>
+
+  [qemu_hello_world]: {{ "assets/2016-07-pong/bootcode.png" | absolute_url }}
+  [real_hardware]: {{ "assets/2016-07-pong/pong_real_pc.jpg" | absolute_url }}
