@@ -3,11 +3,11 @@ categories:       blog
 date:             2015-04-20 13:12:29 +0200
 description:  >-
   Der vernetzte Bierkasten erkennt den Füllstand seiner Flaschen.
-  Im Internet der Dinge (IOT) darf auch ein Bierkasten nicht fehlen.
-  Mittels einem Raspberry Pi wird der Bierkasten der Marke Sternburg um smarte
+  Im Internet der Dinge (IoT) darf auch ein Bierkasten nicht fehlen.
+  Mittels eines Raspberry Pi wird der Bierkasten der Marke Sternburg um smarte
   Funktionen erweitert.
 lang:             de
-last_modified_at: 2026-08-04 23:03:00 +0200
+last_modified_at: 2026-08-30 15:09:43 +0200
 layout:           post
 tags:
   - Coding
@@ -17,7 +17,7 @@ title:            Der vernetzte Bierkasten
 ---
 
 Das Internet der Dinge ist der Joker im Bullshit Bingo.
-Um mit der Zeit zu gehen möchte ich einen Bierkasten in das Internet der Dinge
+Um mit der Zeit zu gehen, möchte ich einen Bierkasten in das Internet der Dinge
 bringen.
 
 Doch was genau macht einen vernetzten Bierkasten aus?
@@ -27,7 +27,7 @@ Das Europäische Parlament definiert ein Gerät im Internet der Dinge als
 sie einzuwirken und mit anderen Maschinen zu kommunizieren".
 <sup style="font-style: normal;">[[1]](#quelle-1)</sup>
 
-Mein Bierkasten soll seine Umgebung wahrnehmen indem er erkennt, welche Flasche
+Mein Bierkasten soll seine Umgebung wahrnehmen, indem er erkennt, welche Flasche
 in ihm noch gefüllt und welche Flasche bereits leer ist.
 Zusätzlich soll diese Information über eine Web-API von anderen Geräten
 ausgelesen und zum Beispiel auf dem Smartphone grafisch dargestellt werden.
@@ -45,15 +45,15 @@ schon leer ist?
 Da ich zum Zeitpunkt der Entwicklung noch ein Schüler war, habe ich mich für die
 einfachste Lösung entschieden: Die Unterscheidung zwischen einer vollen oder
 leeren Flasche durch die Gewichtskraft.
-Eine leere Bierflasche wiegt ungefähr 350 Gramm und eine volle Bierflasche cirka
+Eine leere Bierflasche wiegt ungefähr 350 Gramm und eine volle Bierflasche circa
 850 Gramm.
 Dementsprechend wird ein Drucktaster benötigt, welcher zwischen einer Kraft von
 4 und 8 Newton auslöst.
 Da diese Anforderung sehr speziell ist und sich in 20-facher Ausführung durchaus
-auf den Geldbeutel schlägt fiel die Entscheidung auf eine Lösung Marke Eigenbau.
+auf den Geldbeutel schlägt, fiel die Entscheidung auf eine Lösung Marke Eigenbau.
 
 Die 20 Drucktaster habe ich aus 10 leeren Bierdosen selber gebaut.
-Ein Taster besteht jeweils aus 3 Elementen:
+Ein Taster besteht jeweils aus drei Elementen:
 
 * einer elektrisch leitfähigen Grundplatte aus dem Mantel einer Bierdose.
 * einem beweglichen und elektrisch leitfähigen Element aus dem Boden oder Deckel
@@ -64,25 +64,25 @@ Je nach Gewicht der Bierflasche wird über das bewegliche Element und die
 Grundplatte ein Stromkreis geschlossen oder nicht.
 
 <video autoplay loop muted class="image-left">
-  <source src="{{ "assets/der-vernetzte-bierkasten/flaschensensor.webm" | absolute_url }}" type="video/webm">
+  <source src="{{ "assets/2015-04-der-vernetzte-bierkasten/flaschensensor.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
 <video autoplay loop muted class="image-right">
-  <source src="{{ "assets/der-vernetzte-bierkasten/bierdose-boden.webm" | absolute_url }}" type="video/webm">
+  <source src="{{ "assets/2015-04-der-vernetzte-bierkasten/bierdose-boden.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
 Die Ober- und Unterseiten der Bierdosen werden abgetrennt und anschließend
 abgeschliffen, um eventuelle Verschmutzungen, welche die elektrische Leitfähigkeit
-einschränken zu entfernen.
+einschränken, zu entfernen.
 Danach werden die 20 Taster in den Bierkasten eingebaut.
 
 ![einzelner Flaschensensor im Vernetzten Bierkasten][flaschensensor]{:.image-left}
 ![Draufsicht auf den Vernetzten Bierkasten mit allen Flaschensensoren][draufsicht]{:.image-right}
 
 Die Taster werden von einem Raspberry Pi ausgelesen.
-Um möglichst wenig Hardware zu verbrauchen soll jeder Taster direkt zwischen
+Um möglichst wenig Hardware zu verbrauchen, soll jeder Taster direkt zwischen
 dem Datenkabel (auf Eingang geschalteter GPIO) und der Masse geschaltet werden.
 Diese Schaltung ist auf dem linken Bild dargestellt.
 In dieser Schaltung liegt bei geschlossenem Taster an dem Datenkabel eine
@@ -94,16 +94,16 @@ und der Stromquelle mit einem zwischengeschalteten Widerstand permanent auf 1
 (High) gezogen.
 
 <figure class="image-left">
-  <img src="{{ "assets/der-vernetzte-bierkasten/button-simple.png" | absolute_url }}" alt="" />
-  <figcaption>Button ohne externen PullUp Widerstand</figcaption>
+  <img src="{{ "assets/2015-04-der-vernetzte-bierkasten/button-simple.png" | absolute_url }}" alt="" />
+  <figcaption>Button ohne externen Pull-up-Widerstand</figcaption>
 </figure>
 <figure class="image-right">
-  <img src="{{ "assets/der-vernetzte-bierkasten/button-pull-up.png" | absolute_url }}" alt="" />
-  <figcaption>Button mit externem PullUp Widerstand</figcaption>
+  <img src="{{ "assets/2015-04-der-vernetzte-bierkasten/button-pull-up.png" | absolute_url }}" alt="" />
+  <figcaption>Button mit externem Pull-up-Widerstand</figcaption>
 </figure>
 
-Um externe Pullup Widerstände zu vermeiden werden die internen Pullup
-Widerstände des Raspberry Pi verwendet.
+Um externe Pull-up-Widerstände zu vermeiden, werden die internen
+Pull-up-Widerstände des Raspberry Pi verwendet.
 Das folgende Codebeispiel demonstriert, wie diese zugeschaltet werden:
 
 {% highlight python %}
@@ -128,11 +128,11 @@ finally:
 Somit kann ein einzelner Button ausgelesen werden.
 Der Bierkasten hat jedoch 20 Flaschen und benötigt dementsprechend auch dieselbe
 Anzahl an Tastern.
-Durch den 26 Pin P1 Header des Raspberry Pi werden insgesamt 17 GPIOs welche als
+Durch den 26 Pin P1 Header des Raspberry Pi werden insgesamt 17 GPIOs, welche als
 Eingänge geschaltet werden exponiert.
 
 <figure>
-  <img src="{{ "assets/der-vernetzte-bierkasten/gpio-p1.svg" | absolute_url }}" alt="" />
+  <img src="{{ "assets/2015-04-der-vernetzte-bierkasten/gpio-p1.svg" | absolute_url }}" alt="" />
   <figcaption>Raspberry Pi P1 Header</figcaption>
 </figure>
 
@@ -148,7 +148,7 @@ den P5 Header bereitgestellt.
 Dieser hat von oben gesehen das folgende Layout:
 
 <figure>
-  <img src="{{ "assets/der-vernetzte-bierkasten/gpio-p5.svg" | absolute_url }}" alt="" />
+  <img src="{{ "assets/2015-04-der-vernetzte-bierkasten/gpio-p5.svg" | absolute_url }}" alt="" />
   <figcaption>Raspberry Pi P5 Header</figcaption>
 </figure>
 
@@ -164,7 +164,7 @@ Pi und eine Zuführung der Kabel zu dem SoC erweitert werden.
 
 Alle Bodenplatten sind untereinander verbunden und über ein einzelnes Kabel an
 die Masse des Raspberry Pi angeschlossen.
-Jedes einzelne bewegliche Elemente der selbst gebauten Taster ist über ein Kabel
+Jedes einzelne bewegliche Element der selbst gebauten Taster ist über ein Kabel
 mit dem Raspberry Pi an der Vorderseite des Bierkastens verbunden.
 
 ![Unterseite des Vernetzten Bierkastens][unterseite]
@@ -180,8 +180,8 @@ direkt verbunden.
 
 Das *Gehirn* des Bierkastens - der Raspberry Pi - wird in einer alten
 Videokassette an der Vorderseite des Bierkastens verstaut.
-Alte Videokassetten sind Perfekt als Gehäuse für Bastelprojekte geeignet.
-Sie sind einfach zu beschaffen, bieten genung Platz für alle gängigen
+Alte Videokassetten sind perfekt als Gehäuse für Bastelprojekte geeignet.
+Sie sind einfach zu beschaffen, bieten genug Platz für alle gängigen
 Mikrocomputer- oder Mikrocontrollerboards und können einfach bearbeitet werden.
 
 ![Raspberry Pi in einer Videokassette][videokassette]
@@ -193,15 +193,15 @@ an einer durchschnittlichen Powerbank tatsächlich ist.
 
 ## Auswertung der Daten
 
-Nachdem der Raspberry Pi die Daten über den Füllstand des Bierkastens erfasst,
-müssen diese Daten auch noch dem Nutzer zugänglich gemacht und grafisch
+Nachdem der Raspberry Pi die Daten über den Füllstand des Bierkastens erfasst
+hat, müssen diese Daten auch noch dem Nutzer zugänglich gemacht und grafisch
 aufbereitet werden.
 
 Der Raspberry Pi selbst exponiert die Daten über eine einfache Webschnittstelle.
-Diese Webschnittstelle ist in Python2 geschrieben und verwendet den
+Diese Webschnittstelle ist in Python 2 geschrieben und verwendet den
 [BaseHTTPServer][basehttpserver] um einen Endpunkt mit den Füllstandsdaten
 bereitzustellen.
-Das Skript umfasst Klassen den Füllstand sowohl über die GPIOs des Raspberry Pi
+Das Skript umfasst Klassen um den Füllstand sowohl über die GPIOs des Raspberry Pi
 als auch einen Port-Expander auszulesen.
 Der Quellcode des Skriptes ist auf GitHub unter
 [DasBierkastenProjekt/Bierkasten][bierkasten-code]
@@ -211,7 +211,7 @@ Die exponierten Daten können zum einem im Browser und zum anderen über eine Ap
 für Android ausgewertet werden.
 Die Webanwendung ist in PHP geschrieben und feuert bei jedem Seitenaufruf eine
 Anfrage an den Endpunkt mit den Füllstandsdaten ab.
-Um die Nutzung angenehmer zu gestalten wird zusätzlich eine JavaScript Datei
+Um die Nutzung angenehmer zu gestalten wird zusätzlich eine JavaScript-Datei
 eingebunden, welche die Daten in regelmäßigen Abständen automatisch abfragt.
 
 ![Webanwendung des Vernetzten Bierkastens][webapp]
@@ -245,20 +245,20 @@ Facebook, Login erforderlich).
 1. <small><a id="quelle-1"></a>
 EPRS Briefing - The Internet of Things, Opportunities and challenges: [https://www.europarl.europa.eu/RegData/etudes/BRIE/2015/557012/EPRS_BRI%282015%29557012_EN.pdf][eu-iot] (zuletzt abgerufen am 04.08.2026)</small>
 
-  [android-app]: {{ "assets/der-vernetzte-bierkasten/android-app.jpg" | absolute_url }}
+  [android-app]: {{ "assets/2015-04-der-vernetzte-bierkasten/android-app.jpg" | absolute_url }}
   [android-code]: https://github.com/DasBierkastenProjekt/DerVernetzteBierkasten-Android
   [basehttpserver]: https://docs.python.org/2/library/basehttpserver.html
   [bierkasten-code]: https://github.com/DasBierkastenProjekt/Bierkasten
   [bpb-iot]: https://www.bpb.de/gesellschaft/medien-und-sport/medienpolitik/237583/kennzeichen-fuer-das-internet-der-dinge
-  [custom-icon]: {{ "assets/der-vernetzte-bierkasten/custom-icon.jpg" | absolute_url }}
-  [draufsicht]: {{ "assets/der-vernetzte-bierkasten/vernetzter-bierkasten-draufsicht.jpg" | absolute_url }}
+  [custom-icon]: {{ "assets/2015-04-der-vernetzte-bierkasten/custom-icon.jpg" | absolute_url }}
+  [draufsicht]: {{ "assets/2015-04-der-vernetzte-bierkasten/vernetzter-bierkasten-draufsicht.jpg" | absolute_url }}
   [eu-iot]: https://www.europarl.europa.eu/RegData/etudes/BRIE/2015/557012/EPRS_BRI%282015%29557012_EN.pdf
   [facebook]: https://www.facebook.com/sternburg.bier/posts/10153218808859438
-  [flaschensensor]: {{ "assets/der-vernetzte-bierkasten/flaschensensor.jpg" | absolute_url }}
-  [ide-verbinder]: {{ "assets/der-vernetzte-bierkasten/ide-kabel-steckverbinder.jpg" | absolute_url }}
-  [p5-header]: {{ "assets/der-vernetzte-bierkasten/raspberry-pi-p5-header.jpg" | absolute_url }}
-  [unterseite]: {{ "assets/der-vernetzte-bierkasten/vernetzter-bierkasten-unterseite.jpg" | absolute_url }}
-  [vernetzter-bierkasten]: {{ "assets/der-vernetzte-bierkasten/vernetzter-bierkasten.jpg" | absolute_url }}
-  [videokassette]: {{ "assets/der-vernetzte-bierkasten/raspberry-pi-videokassette.jpg" | absolute_url }}
-  [webapp]: {{ "assets/der-vernetzte-bierkasten/webapp.jpg" | absolute_url }}
+  [flaschensensor]: {{ "assets/2015-04-der-vernetzte-bierkasten/flaschensensor.jpg" | absolute_url }}
+  [ide-verbinder]: {{ "assets/2015-04-der-vernetzte-bierkasten/ide-kabel-steckverbinder.jpg" | absolute_url }}
+  [p5-header]: {{ "assets/2015-04-der-vernetzte-bierkasten/raspberry-pi-p5-header.jpg" | absolute_url }}
+  [unterseite]: {{ "assets/2015-04-der-vernetzte-bierkasten/vernetzter-bierkasten-unterseite.jpg" | absolute_url }}
+  [vernetzter-bierkasten]: {{ "assets/2015-04-der-vernetzte-bierkasten/vernetzter-bierkasten.jpg" | absolute_url }}
+  [videokassette]: {{ "assets/2015-04-der-vernetzte-bierkasten/raspberry-pi-videokassette.jpg" | absolute_url }}
+  [webapp]: {{ "assets/2015-04-der-vernetzte-bierkasten/webapp.jpg" | absolute_url }}
   [webapp-code]: https://github.com/DasBierkastenProjekt/DerVernetzteBierkasten-WebApp
