@@ -5,7 +5,7 @@ description:  >-
   Ein in Python geschriebener Klon des Klassikers Lunar Lander, welcher die
   Grundlage meiner komplexen Leistung in der Oberstufe darstellt.
 lang:             de
-last_modified_at: 2026-08-05 17:35:00 +0200
+last_modified_at: 2026-08-30 15:24:19 +0200
 layout:           post
 tags:
   - Coding
@@ -60,7 +60,7 @@ Die Kernkomponente ist die Steuerung der Raumsonde.
 Die Raumsonde selbst ist lose am *LM-5 (Lunar Module 5)* der ersten Mondlandung
 im Rahmen der Apollo-11-Mission angelehnt.
 
-![Bild des Lunar Modules im Spiel]({{ "assets/lander/lunarmodule.png" | absolute_url }})
+![Bild des Lunar Modules im Spiel]({{ "assets/2016-04-lander/lunarmodule.png" | absolute_url }})
 
 Die Physik des Raumschiffs ist sehr stark vereinfacht.
 Es wird mit einer Masse der Landefähre von 4 Tonnen gerechnet.
@@ -90,7 +90,7 @@ Das Lunar Module startet in einer geringen Höhe über der Mondoberfläche.
 Die Geschwindigkeit, Höhe über der Mondoberfläche und Richtung, mit der es sich
 bewegt, können dabei am rechten oberen Bildschirmrand eingesehen werden.
 
-![Bild des Lunar Modules kurz nach Spielstart]({{ "assets/lander/lander_gameplay.jpg" | absolute_url }})
+![Bild des Lunar Modules kurz nach Spielstart]({{ "assets/2016-04-lander/lander_gameplay.jpg" | absolute_url }})
 
 Dabei muss man den Steinen auf dem Boden ausweichen und sooft wie möglich
 landen, um Proben zu entnehmen.
@@ -104,7 +104,7 @@ sein.
 Die Stelle einer erfolgreichen Landung wird dabei von der
 [Flagge der Erde nach Oskar Pernefeldt](https://www.flagofplanetearth.com/) markiert.
 
-![Bild des Lunar Modules kurz nach Spielstart]({{ "assets/lander/landingzone.jpg" | absolute_url }})
+![Bild des Lunar Modules kurz nach Spielstart]({{ "assets/2016-04-lander/landingzone.jpg" | absolute_url }})
 
 Für jede erfolgreiche Landung erhält man einen Punkt.
 Die Zahl der erreichten Punkte wird in der linken oberen Ecke des Fensters
@@ -113,7 +113,7 @@ angezeigt.
 Insgesamt dauert ein Spiel bis maximal 3 Minuten.
 
 <video controls>
-  <source src="{{ "assets/lander/gameplay.webm" | absolute_url }}" type="video/webm">
+  <source src="{{ "assets/2016-04-lander/gameplay.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
@@ -126,7 +126,7 @@ Aber auch für die Erstellung der animierten Flammen der Triebwerke des Lunar
 Moduls ist Blender durch seine Smoke-Simulation perfekt geeignet.
 
 Einige wenige Grafiken - wie zum Beispiel die Elemente des Nutzerinterfaces oder
-der Sternenhimmel im Hintergrund, sind hingegen mit GIMP gezeichnet.
+der Sternenhimmel im Hintergrund - sind hingegen mit GIMP gezeichnet.
 
 ### Der Sound
 
@@ -136,13 +136,13 @@ Die Triebwerksgeräusche entstammen beispielsweise einer Sprühflasche und der
 nach verlorenem Spiel zu hörende Track geht aus einer Aufnahme von Rauschen aus
 dem Radio mit einem Echo-Effekt hervor.
 
-Der Soundtrack im Hintergrund hingegen ist einer meiner ersten Versuche mit
+Der Soundtrack im Hintergrund hingegen ist einer meiner ersten Versuche, mit
 LMMS Musik zu erstellen.
 
-# Quellen:
+## Quellen:
 
 1. <small><a id="quelle-1"></a>
 Freistaat Sachsen - Staatsministerium für Kultus: Handreichung Qualitätskriterien für die
-Komplexe Leistung: [https://www.schule.sachsen.de/download/download_smk/hr_komplexe_leistung_09.pdf](https://www.schule.sachsen.de/download/download_smk/hr_komplexe_leistung_09.pdf) (abgerufen am 17.10.2018)</small>
+Komplexe Leistung: [https://www.schule.sachsen.de/download/download_smk/hr_komplexe_leistung_09.pdf](https://web.archive.org/web/20160330095022/http://www.schule.sachsen.de/download/download_smk/hr_komplexe_leistung_09.pdf) (abgerufen am 17.10.2018)</small>
 
-2. <small><a id="quelle-2"></a> NASA, LUNAR MODULE - QUICK REFERENCE DATA: [https://www.hq.nasa.gov/alsj/LM04_Lunar_Module_ppLV1-17.pdf](https://www.hq.nasa.gov/alsj/LM04_Lunar_Module_ppLV1-17.pdf) (abgerufen am 14.11.2018)</small>
+2. <small><a id="quelle-2"></a> NASA, LUNAR MODULE - QUICK REFERENCE DATA: [https://www.hq.nasa.gov/alsj/LM04_Lunar_Module_ppLV1-17.pdf](https://web.archive.org/web/20171116191149/https://www.hq.nasa.gov/alsj/LM04_Lunar_Module_ppLV1-17.pdf) (abgerufen am 14.11.2018)</small>
