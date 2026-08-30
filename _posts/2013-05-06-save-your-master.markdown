@@ -3,10 +3,10 @@ categories:       blog
 date:             2013-05-06 14:28:57 +0200
 description: >-
   Mein erstes richtiges Computerspiel. Ein Egoshooter basierend auf der Blender
-  Game Engine mit primitiver Steuerung, simpler Grafik und einem einfachem
+  Game Engine mit primitiver Steuerung, simpler Grafik und einem einfachen
   Spielprinzip.
 lang:             de
-last_modified_at: 2026-08-04 22:55:00 +0200
+last_modified_at: 2026-08-30 14:52:06 +0200
 layout:           post
 tags:
   - Coding
@@ -15,7 +15,7 @@ title:            Save Your Master
 ---
 
 **Die Inhalte dieses Beitrages und des beschriebenen Spiels sollen schockieren
-und unterhalten jedoch, nicht die Meinungsbildung beeinflussen oder zu realen
+und unterhalten, jedoch nicht die Meinungsbildung beeinflussen oder zu realen
 Handlungen anregen.**
 
 Mein erstes Computerspiel, fertiggestellt Mitte 2013.
@@ -32,67 +32,71 @@ springen von rotierenden Plattformen auf das Spielfeld, welches über einem
 Lavasee schwebt. In der Mitte des Spielfeldes wird die Masterarbeit durch ein
 aufgeschlagenes Buch auf einem Podest symbolisiert.
 
-![Blender Modell des Professors]( {{ "assets/save-your-master/prof.jpg" | absolute_url }})
+[![Blender Modell des Professors][professor]][professor]
 
 Das Spiel gilt dann als verloren, sobald drei Professoren das Podest erreicht
 haben.
-Das Ziel des Spielers ist es dies zu verhindern. Als Werkzeug dazu dient ihm
-natürlich ein Flammenwerfer.
+Das Ziel des Spielers ist es, dies zu verhindern.
+Als Werkzeug dazu dient ihm natürlich ein Flammenwerfer.
 Mit diesem können die Angreifer in Brand gesetzt werden.
 
 Zusätzlich befinden sich auf dem Spielfeld noch zwei Hindernisse in Form von
 frei rotierenden Zahnrädern.
-Wenn ein Angreifer von diesem erfasst wird, wird diesem der Unterkörper
-abgetrennt und er kann nur noch auf dem Boden weiter kriechen.
+Wenn ein Angreifer von einem dieser Zahnräder erfasst wird, wird ihm der
+Unterkörper abgetrennt und er kann nur noch auf dem Boden weiter kriechen.
 
 <video controls>
-  <source src="{{ "assets/save-your-master/save_your_master_gameplay.webm" | absolute_url }}" type="video/webm">
+  <source src="{{ "assets/2013-05-save-your-master/save_your_master_gameplay.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
 ## Inspiration
 
-Als Vorbild für das Spiel diente unter anderem das Kapital "We don't go to
-Ravenholm" aus dem Spiel Half Life 2.
+Als Vorbild für das Spiel diente unter anderem das Kapitel "We don't go to
+Ravenholm" aus dem Spiel Half-Life 2.
 
 <video loop controls>
-  <source src="{{ "assets/save-your-master/hl2_zombies.webm" | absolute_url }}" type="video/webm">
+  <source src="{{ "assets/2013-05-save-your-master/hl2_zombies.webm" | absolute_url }}" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
-Weiterhin ist die Steuerung an den Klassiker Doom aus dem Jahre 1993 angelehnt.
+Weiterhin ist die Steuerung an den Klassiker DOOM aus dem Jahre 1993 angelehnt.
 Aufgrund mangelnder Programmierkenntnisse meinerseits lässt sich das Blickfeld
-der Spielfigur nicht mit der Maus, sondern lediglich mit den Pfeiltasten Links
-und Rechts beeinflussen.
+der Spielfigur nicht mit der Maus, sondern lediglich mit den Pfeiltasten links
+und rechts beeinflussen.
 
 ## Technischer Hintergrund
 
 Das Spiel läuft in der in Blender integrierten Game Engine.
-Die Modelle wurden alle in Blender modelliert und die Texturen mittels Gimp
+Die Modelle wurden alle in Blender modelliert und die Texturen mittels GIMP
 generiert. Allerdings hätte es Paint wohl auch getan.
 
 Die Spiellogik wurde komplett mit dem Logic Editor von Blender umgesetzt.
 
-Im Logiceditor werden **Sensoren** über **Controller** mit **Aktuatoren**
-verbunden. Damit lassen sich zum einen einfache Zusammenhänge abbilden, wie
-Bluttropfen berührt den Boden (*Collision*) und verschwindet
+Im Logic Editor werden **Sensoren** über **Controller** mit **Aktuatoren**
+verbunden. Damit lassen sich zum einen einfache Zusammenhänge abbilden, wie zum
+Beispiel: Ein Bluttropfen berührt den Boden (*Collision*), verschwindet
 (*End Object*) und hinterlässt einen Blutsfleck (*Add Object*).
 
-![Blender Logic Editor simple logic]( {{ "assets/save-your-master/blender_logic_editor_simple.jpeg" | absolute_url }})
+[![Blender Logic Editor simple logic][logic]][logic]
 
 Aber auch komplexe Prozesse können mittels sogenannter States moduliert werden,
 wie zum Beispiel die eingeblendete Lebensanzeige.
 
-![Blender Logic Editor working with states]( {{ "assets/save-your-master/blender_logic_editor_states.jpeg" | absolute_url }})
+[![Blender Logic Editor working with states][states]][states]
 
 Vom ersten State (volle Leben) wird bei Erhalt einer bestimmten Nachricht in den
 zweiten State gewechselt. Dort wird das äußerste Leben entfernt und wieder bei
-Erhalt der Nachricht in der nächsten State gewechselt. Dies geht so weiter, bis
-alle Leben verbraucht sind.
+Erhalt der Nachricht in den nächsten State gewechselt.
+Dies geht so weiter, bis alle Leben verbraucht sind.
 
 ## Wo kann man das spielen?
 
-Das *.blend* File und die Texturen für das Spiel sind auf GitLab in dem
+Das *.blend*-File und die Texturen für das Spiel sind auf GitLab in dem
 Repository
 [`kalehmann/SaveYourMaster`](https://gitlab.com/kalehmann/saveyourmaster)
-einsehbar.
+zu finden.
+
+  [logic]: {{ "assets/2013-05-save-your-master/blender_logic_editor_simple.jpeg" | absolute_url }}
+  [professor]: {{ "assets/2013-05-save-your-master/prof.jpg" | absolute_url }}
+  [states]: {{ "assets/2013-05-save-your-master/blender_logic_editor_states.jpeg" | absolute_url }}
