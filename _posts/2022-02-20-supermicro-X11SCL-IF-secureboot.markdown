@@ -604,6 +604,11 @@ mokutil --sb-state
 
 ### Automatically sign the kernel after updates
 
+The following section is out of date as of 2026.
+See my [post about migrating to `sbctl`][24] for up-to-date instructions.
+
+---
+
 Without any additional configuration the system would refuse to boot the new
 kernel after an update because it is still unsigned.
 There is a tool called [sbupdate][17], that provides a pacman hook to
@@ -680,3 +685,4 @@ Adapt `--disk` and `--part` for your system.
   [21]: https://man.archlinux.org/man/kernel-command-line.7
   [22]: https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot
   [23]: https://web.archive.org/web/20211006123252/https://media.defense.gov/2020/Sep/15/2002497594/-1/-1/0/CTR-UEFI-SECURE-BOOT-CUSTOMIZATION-20200915.PDF/CTR-UEFI-SECURE-BOOT-CUSTOMIZATION-20200915.PDF
+  [24]: {% post_url 2026-09-20-revisiting-the-homelab-secureboot-setup %}
