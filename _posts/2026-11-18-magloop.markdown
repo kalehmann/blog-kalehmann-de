@@ -1,0 +1,372 @@
+---
+categories:       blog
+date:             2026-11-18 19:37:18 +0100
+description:  >-
+  Designing and building an indoor magnetic loop antenna with a homemade air
+  variable capacitor using only parts from the local hardware store.
+  The post covers the construction process, measurement results and how the
+  antenna performs on the air.
+lang:             en
+last_modified_at: 2026-11-18 19:37:18 +0100
+layout:           post
+tags:
+  - Make
+  - Radio
+title: >-
+  Homebrew magnetic loop antenna with DIY variable capacitor
+---
+
+Recently, I moved into a new shared flat.
+Unfortunately, that meant I could no longer install a random wire antenna for
+amateur radio.
+For the past few weeks now, I have been looking for an alternative antenna setup
+to get on the air from my new home.
+Finally, I have settled on the concept of building a magnetic loop antenna.
+
+This post documents the design of such a magnetic loop antenna for indoor QRP
+operation as well as its assembly process using only inexpensive parts from the
+local hardware store.
+
+[![The magnetic loop antenna on the ceiling with a cat looking up to it.][loop_antenna]][loop_antenna]
+
+> **Note of warning:** Magnetic loop antennas tend to reach thousands of volts
+> across the capacitor terminals even at QRP operation.
+> If this post inspires you to build your own loop, please proceed with care and
+> with caution.
+>
+> Do not touch a magnetic loop antenna during transmission and keep a safe
+> distance.
+
+## What is a magnetic loop antenna?
+
+A magnetic loop antenna is basically an LC circuit consisting of the main loop
+as inductor and a variable capacitor for tuning to the operating frequency.
+Since the impedance of the LC circuit at resonance will be far lower than the
+50 Ω impedance that is common in amateur radio, a smaller loop - called the
+coupling loop - is placed inside the main loop.
+Together, the two loops act as a transformer for impedance matching.
+
+{% include_relative embedded/2026-11-magloop/lc_circuit.svg %}
+
+The antenna is called a magnetic loop because electromagnetic fields are the
+combination of a time-varying electric field component <math><mi>E</mi></math>
+and a magnetic field component <math><mi>H</mi></math>, which are perpendicular
+to each other mutually coupled, thus propagating electromagnetic waves through
+space.
+Unlike an antenna like a standard electrical dipole, whose near field is
+dominated by its electric field - the  magnetic loop antenna with its primary
+loop as an inductor, has a near field dominated by its magnetic component.
+Although it should be mentioned, that in the far field both antennas produce
+electromagnetic waves consisting of perpendicular <math><mi>E</mi></math>
+and <math><mi>H</mi></math> components.
+
+Furthermore, the voltage across the terminals of the variable capacitor can
+easily exceed a thousand volts, even with a low transmission power of 5 watts.
+Therefore the capacitor needs to be able to withstand a high voltage.
+High voltage air variable capacitors - where the plates are separated only by
+air - can be bought on the internet.
+But they are not as common as they used to be and quite expensive.
+However, they are not that complex mechanically.
+Therefore, I decided to build one myself.
+
+## How to build an air variable capacitor?
+
+An air variable capacitor consists of two groups of plates.
+One group is fixed - called the _stator_ and the other group is placed on a
+rotating shaft - called the _rotor_.
+By slowly rotating the rotor over the stator, the overlapping area between the
+two groups of plates can be increased or decreased - thus varying the
+capacitance.
+
+The dielectric strength of air is given as
+approximately <math displaystyle="true"><mn>3</mn><mfrac><mtext>kV</mtext><mtext>mm</mtext></mfrac></math>
+under ideal conditions in textbooks.
+However, the actual dielectric strength can vary and sharp edges may
+significantly lower the breakdown voltage.
+Therefore, as a rule of thumb, I want to have at least one millimeter of distance
+between the plates for every kilovolt in my design to be on the safe side.
+
+Next, to avoid making an electrical connection to a moving part of the capacitor,
+such as the rotor, I used two groups of stator plates which are electrically
+separated and use each group as a terminal.
+Electrically, this is equivalent to putting two identical capacitors in series,
+which requires more plates as the total capacitance <math><mi>C</mi></math>
+becomes halved.
+However at the same time, in a series circuit of two equal ideal capacitors,
+the voltage at each capacitor equals half the total voltage,
+thus also lowering the required voltage tolerance for my DIY capacitor.
+
+But how many plates will my capacitor need, and how large should they be?
+The capacitance required to tune the loop can be calculated with the
+[Magloop Antenna Calculator from Miguel VK3CPU][vk3cpu_calculator] and the
+formula for the capacitance of a plate capacitor is
+<math display="block">
+  <mrow>
+    <mi>C</mi>
+    <mo>=</mo>
+    <msub><mi>ε</mi><mn>0</mn></msub>
+    <mo>⋅</mo>
+    <msub><mi>ε</mi><mi>r</mi></msub>
+    <mo>⋅</mo>
+    <mfrac>
+      <mi>A</mi>
+      <mi>d</mi>
+    </mfrac>
+  </mrow>
+</math>
+
+Now, while in theory the number of plates can be calculated exactly for a given
+loop size, overlapping area and distance between the plates, the built capacitor
+will most likely not match the calculated capacitance at all due to several
+factors.
+Twisted plates, separators and terminals may induce additional capacitance.
+
+Nevertheless, you have to start somewhere.
+The following section contains a calculator for the capacitance of two variable
+capacitors connected in series based on their number of rotor plates and the
+plate distance:
+
+<noscript>
+  <strong>The calculator requires JavaScript to work interactively.</strong>
+</noscript>
+<form id="capacitor_form">
+  <label>
+    Number of rotor plates
+    <input id="rotor_plates" type="number" min="2" step="2" value="10" disabled />
+  </label>
+  <label>
+    Overlapping area (<math><msup><mtext>cm</mtext><mn>2</mn></msup></math>) when fully closed
+    <input id="area" type="number" min="1" value="25.0" disabled />
+  </label>
+  <label>
+    Plate distance in mm
+    <input id="distance" type="number" min="1" value="2.5" disabled />
+  </label>
+</form>
+
+In this design, the two capacitors in series will have
+<span id="n_stator_plates">6</span> stator plates each
+and <math><mi>N</mi><mo>=</mo><mn id="n_active_gaps">10</mn></math> active
+gaps between plates.
+This results in a capacitance of
+<math display="block">
+  <mrow>
+    <msub><mi>C</mi><mn>1</mn></msub>
+    <mo>=</mo>
+    <msub><mi>C</mi><mn>2</mn></msub>
+    <mo>=</mo>
+    <msub><mi>ε</mi><mn>0</mn></msub>
+    <mo>⋅</mo>
+    <msub><mi>ε</mi><mi>r</mi></msub>
+    <mo>⋅</mo>
+    <mfrac>
+      <mrow>
+        <mi>N</mi>
+        <mo>⋅</mo>
+        <mi>A</mi>
+      </mrow>
+      <mi>d</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mn>8.854</mn>
+    <mo>⋅</mo>
+    <msup><mn>10</mn><mn>-12</mn></msup>
+    <mfrac><mi>F</mi><mi>m</mi></mfrac>
+    <mo>⋅</mo>
+    <mn>1</mn>
+    <mo>⋅</mo>
+    <mfrac>
+      <mrow>
+        <mn id="plate_gaps">10</mn>
+        <mo>⋅</mo>
+        <mn id="plate_area">0.0025</mn>
+        <msup>
+          <mtext>m</mtext>
+          <mn>2</mn>
+        </msup>
+      </mrow>
+      <mrow>
+        <mn id="plate_distance">0.0025</mn>
+        <mtext>m</mtext>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn id="series_capacitance">88.54</mn>
+    <mtext>pF</mtext>
+  </mrow>
+</math>
+
+<p>
+  per capacitor in series.
+  With <math displaystyle="true">
+    <mfrac><mn>1</mn><mi>C</mi></mfrac>
+    <mo>=</mo>
+    <mfrac><mn>1</mn><msub><mi>C</mi><mn>1</mn></msub></mfrac>
+    <mo>+</mo>
+    <mfrac><mn>1</mn><msub><mi>C</mi><mn>2</mn></msub></mfrac>
+  </math>, this yields a total capacitance of
+</p>
+<math display="block">
+  <mrow>
+    <mi>C</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>C</mi><mn>1</mn></msub>
+        <mo>⋅</mo>
+        <msub><mi>C</mi><mn>2</mn></msub>
+      </mrow>
+      <mrow>
+        <msub><mi>C</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>C</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mn id="capacitance_c1_1">88.54</mn>
+        <mtext>pF</mtext>
+        <mo>⋅</mo>
+        <mn id="capacitance_c2_1">88.54</mn>
+        <mtext>pF</mtext>
+      </mrow>
+      <mrow>
+        <mn id="capacitance_c1_2">88.54</mn>
+        <mtext>pF</mtext>
+        <mo>+</mo>
+        <mn id="capacitance_c2_2">88.54</mn>
+        <mtext>pF</mtext>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn id="total_capacitance">44.27</mn>
+    <mtext>pF</mtext>
+  </mrow>
+</math>
+
+<div id="capacitor_svg_container" style="display: none;">
+  <p>
+    Now take a look at the layout below for better understanding how to build
+    the capacitor:
+    <br />
+    Red elements represent the axis and rotor plates; green elements represent
+    the first group of stator plates, which are wired to one terminal; and the
+    blue elements represent the second group of stators, which is wired to the
+    other terminal.
+    All elements with the same color are electrically connected and isolated
+    from elements with a different color.
+  </p>
+
+  {% include_relative embedded/2026-11-magloop/capacitor.svg %}
+</div>
+
+In the end, I decided to cut 10 semicircular rotor plates from a 0.5 mm thick
+sheet of aluminum and placed them on threaded rods, separated by hex nuts.
+Next, the stators were cut as rectangular plates and also separated by nuts.
+The overlapping area between each stator and rotor plate is about
+25 <math><msup><mtext>cm</mtext><mn>2</mn></msup></math> when fully closed.
+Using the nuts as spacers gives a distance of about 2.5 millimeters between
+the plates.
+Furthermore, I cut additional spacers from an aluminum pipe for the threaded
+rods that do not hold plates, but serve only as stabilizers for the
+construction.
+Finally, the top and bottom plates of the capacitor were cut from acrylic glass.
+
+[![The partially assembled variable capacitor with a set of plates next to it][capacitor_plates]][capacitor_plates]{:.image-left}
+[![The fully assembled variable capacitor][variable_capacitor]][variable_capacitor]{:.image-right}
+
+After assembling the capacitor, I cut a little cogwheel from acrylic glass and
+mounted it on the rotor, to have some more torque when turning the rotor.
+Then, I calibrated my NanoVNA from 1 to 30 MHz and connected the capacitor to
+it to get a rough estimate of its actual capacitance.
+
+[![A NanoVNA connected to the capacitor displaying a Smith chart][capacitance_measurement]][capacitance_measurement]
+
+While I do not trust the results too much due to inaccuracies introduced
+by the VNA itself and the test leads, I measured the capacitance to range
+from about 20 pF fully open to 60 pF fully closed.
+This differs quite a bit from my previously calculated capacitance of about
+45 pF fully closed.
+However, I consider this still a reasonable deviation given the additional
+capacitance introduced by the threaded rods and spacers, as well as inaccuracies
+in the construction.
+
+## How to assemble the antenna?
+
+With the capacitor finished, building the loop was easy.
+I got all the parts except the coax for connecting the antenna to my transceiver
+from the local hardware store.
+The full bill of materials for the antenna, including the variable capacitor, is
+as follows:
+
+| Material                              | Price       |
+|---------------------------------------|-------------|
+| Aluminum plate 250 x 500 x 0.5 mm     |  4.45 €     |
+| Threaded rod M4 x 1000 mm             |  0.80 €     |
+| 100 M4 hex nuts (3 mm thick)          |  2.55 €     |
+| Acrylic glass plate 250 x 500 x 4 mm  |  7.95 €     |
+| Aluminum beam 25 x 2 mm, 2.6 meters   |  8.45 €     |
+| Aluminum pipe Ø 6 mm, 1 m             |  1.80 €     |
+| 2 cylinder bolts M4 16 mm             |  0.66 €     |
+| 2 wingnuts M4                         |  0.44 €     |
+| 1 meter of H07 V-K 1x10 mm² wire      |  1.98 €     |
+| **Total**                             | **29.08 €** |
+
+At just under 30 Euros, that seems like a reasonable price to me.
+
+For the construction, first I bent the main loop out of an aluminum beam.
+The longest available beam was 2.6 meters long.
+That gives a loop diameter of about 80 centimeters.
+With a cross section of 25 x 2 mm, bending the beam was easy.
+In fact, I already bent it at the hardware store as a ring was easier to
+transport than the long beam.
+Finally at home, I drilled two 4-millimeter holes at the ends of the beam for
+connecting the terminals of my variable capacitor.
+
+Next, I took about 60 centimeters of
+a 10 <math><msup><mtext>mm</mtext><mn>2</mn></msup></math> cable for the coupling
+loop and connected it to a BNC-to-screw-terminal adapter.
+Then I placed the coupling loop inside the main loop, turned the capacitor half
+open and connected the NanoVNA to the coupling loop.
+
+Sweeping from 1 to 30 MHz, I could already see the resonance frequency, but the
+lowest SWR was still above 3:1.
+To improve the SWR match, I reduced the length of the coupling loop a bit and
+used duct tape to secure it tightly to the top of the main loop.
+
+And that's it - the magnetic loop antenna is finished:
+[![The fully assembled antenna with both loops clearly visible][loop_assembled]][loop_assembled]
+
+After assembling the two loops and wiring up the capacitor, I used some leftover
+rope to attach the antenna to the ceiling of my room.
+
+## How does the loop perform?
+
+Well, I am satisfied with the antenna's performance.
+Turning the variable capacitor from fully open to fully closed tunes the
+antenna over the range from 16 to 30 MHz.
+This includes the 10, 12, 15 and 17 meter amateur radio bands.
+
+<video autoplay controls loop muted>
+  <source src="{{ "assets/2026-11-magloop/magloop_swr.webm" | absolute_url }}" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+I may modify the capacitor in the future so it can also tune the 20-meter
+band at 14 MHz, but for now, I am happy that I get on the air in the first place.
+Look at all those FT8 contacts I made over the span of a few days, using only 5
+watts on all four bands.
+And that's despite the fact that we are currently in the declining phase of the
+solar cycle and it's winter:
+[![Map of europe with path lines for FT8 contacts all over][magloop_ft8]][magloop_ft8]
+
+<script src="{{ "assets/2026-11-magloop/capacitor.js" | absolute_url }}"></script>
+
+  [capacitance_measurement]: {{ "assets/2026-11-magloop/capacitance_measurement.jxl" | absolute_url }}
+  [capacitor_plates]: {{ "assets/2026-11-magloop/capacitor_plates.jxl" | absolute_url }}
+  [loop_antenna]: {{ "assets/2026-11-magloop/loop_antenna.jxl" | absolute_url }}
+  [loop_assembled]: {{ "assets/2026-11-magloop/loop_assembled.jxl" | absolute_url }}
+  [magloop_ft8]: {{ "assets/2026-11-magloop/magloop_ft8.jxl" | absolute_url }}
+  [variable_capacitor]: {{ "assets/2026-11-magloop/diy_variable_capacitor.jxl" | absolute_url }}
+  [vk3cpu_calculator]: https://miguelvaca.github.io/vk3cpu/magloop.html
